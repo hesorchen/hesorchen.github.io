@@ -5164,7 +5164,7 @@ button,
 input,
 select,
 textarea {
-    color: #1a1a1a;
+    color: #867979;
     font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
     font-size: 16px;
     font-size: 1rem;
@@ -8592,3 +8592,8 @@ a.pswp__share--download:hover {
     text-decoration: underline
 }
 /* .left-col #header .header-menu*/
+/* body,
+button,
+input,
+select,
+textarea */
