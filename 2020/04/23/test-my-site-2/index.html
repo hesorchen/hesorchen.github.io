@@ -319,6 +319,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/04/23/test-my-site-2/",
+  owner: 'true',
+  repo: 'https://github.com/hesorchen/hesorchen.github.io.git',
+  oauth: {
+    client_id: 'hesorchen',
+    client_secret: '@cxs1026759643',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
