@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "C++_workspace",
+			"path": "..\\..\\..\\C++_workspace"
+		},
+		{
+			"name": "Python_workspace",
+			"path": "..\\..\\..\\Python_workspace"
+		},
+		{
+			"name": "blog",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
