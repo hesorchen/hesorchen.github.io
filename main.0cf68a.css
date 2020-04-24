@@ -5275,7 +5275,7 @@ html {
 
 .left-col #header .header-menu {
     font-weight: 300;
-    line-height: 49px;
+    line-height: 16px;
     text-transform: uppercase;
     float: none;
     min-height: 0px;
@@ -5284,7 +5284,9 @@ html {
     display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
-    -webkit-box-align: center
+    -webkit-box-align: center;
+    /* margin-top: 50px; */
+    margin-top: 65px;
 }
 
 .left-col #header .header-menu li {
