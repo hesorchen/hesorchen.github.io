@@ -437,20 +437,20 @@
 
 
   
-    <article id="post-vscode配置C++开发环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CodeForces-51C题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">vscode配置C++开发环境</a>
+      <a class="article-title" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/">CodeForces - 51C 修信号站_思维+二分答案</a>
     </h1>
   
 
         
         <!--  -->
-<a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+<a href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/" class="archive-article-date">
   	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
         
@@ -458,11 +458,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。"><a href="#昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。" class="headerlink" title="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。"></a>昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。</h4><hr>
-<h4 id="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"><a href="#虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。" class="headerlink" title="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"></a>虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。</h4><hr>
-<h2 id="第一步，先去官网下载vscode。安装在自己想要的位置即可。"><a href="#第一步，先去官网下载vscode。安装在自己想要的位置即可。" class="headerlink" title="第一步，先去官网下载vscode。安装在自己想要的位置即可。"></a>第一步，先去官网下载vscode。安装在自己想
+        <h4 id="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"><a href="#给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。" class="headerlink" title="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"></a>给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。</h4><h4 id="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。"><a href="#解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。" class="headerlink" title="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。"></a>解题思路：前半个问题应该不难，直接二分答
         
-          <a class="article-more-a" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#more">... >></a>
+          <a class="article-more-a" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/#more">... >></a>
         
       
 
@@ -476,7 +474,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VScode配置环境</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CodeForces题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分答案</a>
         		</li>
       		
 		</ul>
@@ -486,7 +488,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/">展开全文 >></a>
         </p>
       
       
@@ -592,20 +594,20 @@
 
 
   
-    <article id="post-CodeForces-51C题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vscode配置C++开发环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/">CodeForces - 51C 修信号站_思维+二分答案</a>
+      <a class="article-title" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">vscode配置C++开发环境</a>
     </h1>
   
 
         
         <!--  -->
-<a href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/" class="archive-article-date">
+<a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
         
@@ -613,9 +615,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"><a href="#给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。" class="headerlink" title="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"></a>给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。</h4><h4 id="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。"><a href="#解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。" class="headerlink" title="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。"></a>解题思路：前半个问题应该不难，直接二分答
+        <h4 id="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。"><a href="#昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。" class="headerlink" title="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。"></a>昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。</h4><hr>
+<h4 id="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"><a href="#虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。" class="headerlink" title="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"></a>虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。</h4><hr>
+<h2 id="第一步，先去官网下载vscode。安装在自己想要的位置即可。"><a href="#第一步，先去官网下载vscode。安装在自己想要的位置即可。" class="headerlink" title="第一步，先去官网下载vscode。安装在自己想要的位置即可。"></a>第一步，先去官网下载vscode。安装在自己想
         
-          <a class="article-more-a" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/#more">... >></a>
+          <a class="article-more-a" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#more">... >></a>
         
       
 
@@ -629,11 +633,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CodeForces题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分答案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VScode配置环境</a>
         		</li>
       		
 		</ul>
@@ -643,7 +643,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">展开全文 >></a>
         </p>
       
       
@@ -1033,15 +1033,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
             
             <div class="clearfix"></div>
