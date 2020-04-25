@@ -218,16 +218,16 @@
             <article id="post-CodeForces-51C题解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       CodeForces - 51C 修信号站_思维+二分答案
     </h1>
   
 
-        
-        <!-- 
+  
+  <!-- 
 	不蒜子统计
 	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
@@ -236,22 +236,22 @@
 <a href="/2020/04/23/CodeForces-51C%E9%A2%98%E8%A7%A3/" class="archive-article-date">
   	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
-        
-        </header>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"><a href="#给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。" class="headerlink" title="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"></a>给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。</h4><h4 id="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。"><a href="#解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。" class="headerlink" title="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。"></a>解题思路：前半个问题应该不难，直接二分答<a id="more"></a>案即可，后半个问题则有些思维成分。<font color=red>另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。</h4><h4 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h4><p><img src="https://img-blog.csdnimg.cn/20200422112326385.png" alt="在这里插入图片描述"></p>
+    <h4 id="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"><a href="#给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。" class="headerlink" title="给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。"></a>给你x轴上的n个点，可以用三段相同长度的区间进行覆盖，问你这三个区间的最小长度是多少，并输出三段区间的中点。</h4><h4 id="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。"><a href="#解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0-500000，这是保留六位小数的效果，但是，它的实际值可能是0-500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0-0000001。" class="headerlink" title="解题思路：前半个问题应该不难，直接二分答案即可，后半个问题则有些思维成分。另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。"></a>解题思路：前半个问题应该不难，直接二分答<a id="more"></a>案即可，后半个问题则有些思维成分。<font color=red>另外，这题让我明白了，有时候可以用’精度’换’精度’，由于double的精度问题，有时候求得的值很可能不是与实际值一模一样的。例如，假设二分后的答案是0.500000，这是保留六位小数的效果，但是，它的实际值可能是0.500000999，这样的话，后续可能出错。所以我们在题目精度误差允许的条件下，将它的值-0.0000001。</h4><h4 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h4><p><img src="https://img-blog.csdnimg.cn/20200422112326385.png" alt="在这里插入图片描述"></p>
 <h4 id="后半部分，用二分出来的答案进行贪心覆盖，然后最后看有没有输出三段，如果不足，剩下的都覆盖在最后一个点上即可。special-judge，只需满足题意即可。"><a href="#后半部分，用二分出来的答案进行贪心覆盖，然后最后看有没有输出三段，如果不足，剩下的都覆盖在最后一个点上即可。special-judge，只需满足题意即可。" class="headerlink" title="后半部分，用二分出来的答案进行贪心覆盖，然后最后看有没有输出三段，如果不足，剩下的都覆盖在最后一个点上即可。special judge，只需满足题意即可。"></a>后半部分，用二分出来的答案进行贪心覆盖，然后最后看有没有输出三段，如果不足，剩下的都覆盖在最后一个点上即可。special judge，只需满足题意即可。</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI cos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> p[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">double</span> anss[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span> cot = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">double</span> mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> temp = p[i] - p[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (sum + temp &gt; mid)</span><br><span class="line">        &#123;</span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">            res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            sum += temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (res &lt;= <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; p[i];</span><br><span class="line">    sort(p + <span class="number">1</span>, p + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">double</span> l = <span class="number">0.00000001</span>, r = <span class="number">1000000000000</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt;= <span class="number">0.000001</span>)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (check(mid))</span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> ans = l / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.6f\n"</span>, ans);</span><br><span class="line">    <span class="keyword">double</span> last = p[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">double</span> mx = p[<span class="number">1</span>] + <span class="number">2</span> * ans;</span><br><span class="line">    <span class="keyword">int</span> ct = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (p[i] &lt;= mx + <span class="number">0.000001</span>) <span class="comment">//在题目精度误差允许的条件下，放弃一部分精度</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            ct++;</span><br><span class="line">            anss[cot++] = last + (mx - last) / <span class="number">2</span>;</span><br><span class="line">            last = p[i];</span><br><span class="line">            mx = p[i] + <span class="number">2</span> * ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (ct &lt;= <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        anss[cot++] = p[n] - ans;</span><br><span class="line">        ct++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.6f %.6f %.6f\n"</span>, anss[<span class="number">1</span>], anss[<span class="number">2</span>], anss[<span class="number">3</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -267,11 +267,11 @@
 		</ul>
 	</div>
 
-      
+    
 
-      
-      
-        
+    
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -321,13 +321,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="/2020/04/23/hexo%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -366,8 +366,15 @@
 
 
 
-  
-    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
@@ -375,11 +382,11 @@
 
 if(true){
 	var gitalk = new Gitalk({
-  	clientID: '',
-  	clientSecret: '',
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
   	repo: 'hesorchen.github.io',
-  	owner: '',
-  	admin: [''],
+  	owner: 'hesorchen',
+  	admin: ['[&#39;hesorchen.github.io&#39;,&#39;hesorchen.github.io&#39;]'],
   	id: 'Thu Apr 23 2020 19:20:08 GMT+0800',
   	distractionFreeMode: 'true'
 })
@@ -388,17 +395,8 @@ gitalk.render('gitalk-container')
 </script>
 
 
-    
 
-  
-  
-  
 
-  
-
-  
-
-  
 
 
           </div>

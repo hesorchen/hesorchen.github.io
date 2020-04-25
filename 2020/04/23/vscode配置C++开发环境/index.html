@@ -232,16 +232,16 @@
             <article id="post-vscode配置C++开发环境" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       vscode配置C++开发环境
     </h1>
   
 
-        
-        <!-- 
+  
+  <!-- 
 	不蒜子统计
 	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
@@ -250,12 +250,12 @@
 <a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
-        
-        </header>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。"><a href="#昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。" class="headerlink" title="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。"></a>昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。</h4><hr>
+    <h4 id="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。"><a href="#昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C-编译环境，今天早上又弄了一下，现在OK了。" class="headerlink" title="昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。"></a>昨天从下午一直研究到晚上十一点，查阅了很多博客资料，还是没配置好vscode的C++编译环境，今天早上又弄了一下，现在OK了。</h4><hr>
 <h4 id="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"><a href="#虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。" class="headerlink" title="虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。"></a>虽然很多东西的原理不懂，但是现在知道这样就行了，以后用多了应该会慢慢熟悉。</h4><hr>
 <h2 id="第一步，先去官网下载vscode。安装在自己想要的位置即可。"><a href="#第一步，先去官网下载vscode。安装在自己想要的位置即可。" class="headerlink" title="第一步，先去官网下载vscode。安装在自己想要的位置即可。"></a>第一步，先去官网下载vscode。安装在自己想<a id="more"></a>要的位置即可。</h2><h4 id="vscode官网传送门"><a href="#vscode官网传送门" class="headerlink" title="vscode官网传送门"></a><a href="https://www.baidu.com/link?url=v99bAXwtBr-_hGLuPMQMp87PPygXcEBQANawVk9Nxd_JLHpr1q-fHts_vZjwqpMg&wd=&eqid=da3bbf0c0005b6c1000000055e950cb4" target="_blank" rel="noopener">vscode官网传送门</a></h4><hr>
 <h2 id="第二步，去官网下载MinGW。安装在自己想要的位置即可。"><a href="#第二步，去官网下载MinGW。安装在自己想要的位置即可。" class="headerlink" title="第二步，去官网下载MinGW。安装在自己想要的位置即可。"></a>第二步，去官网下载MinGW。安装在自己想要的位置即可。</h2><h4 id="MinGW官网传送门"><a href="#MinGW官网传送门" class="headerlink" title="MinGW官网传送门"></a><a href="https://sourceforge.net/projects/mingw-w64/files/" target="_blank" rel="noopener">MinGW官网传送门</a></h4><p><strong>进入网站后不要点击 <code>&quot;Download Lasted Version&quot;</code>，往下滑，找到<code>最新版</code>的 <code>&quot;x86_64-posix-seh&quot;</code>下载。</strong></p>
@@ -290,13 +290,13 @@
 <h2 id="接下来，在code-test文件夹底下应该会有-一个-vscode文件夹，其中已经包含了launch-json文件和tasks-json文件，我们在-vscode中创建一个setting-json文件，并粘贴上下面的代码："><a href="#接下来，在code-test文件夹底下应该会有-一个-vscode文件夹，其中已经包含了launch-json文件和tasks-json文件，我们在-vscode中创建一个setting-json文件，并粘贴上下面的代码：" class="headerlink" title="接下来，在code_test文件夹底下应该会有 一个.vscode文件夹，其中已经包含了launch.json文件和tasks.json文件，我们在.vscode中创建一个setting.json文件，并粘贴上下面的代码："></a>接下来，在code_test文件夹底下应该会有 一个<code>.vscode</code>文件夹，其中已经包含了<code>launch.json</code>文件和<code>tasks.json</code>文件，我们在<code>.vscode</code>中创建一个<code>setting.json</code>文件，并粘贴上下面的代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;files.associations&quot;: &#123;</span><br><span class="line">        &quot;iostream&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cmath&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;ostream&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstring&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;queue&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;chrono&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;random&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;limits&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;valarray&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;*.tcc&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;iosfwd&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;bitset&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;complex&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstddef&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;iomanip&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;istream&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;algorithm&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;map&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;array&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;atomic&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cctype&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cfenv&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;charconv&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cinttypes&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;clocale&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;codecvt&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;condition_variable&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;csetjmp&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;csignal&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstdarg&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstdint&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstdio&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cstdlib&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;ctime&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cuchar&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cwchar&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;cwctype&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;deque&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;forward_list&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;list&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;unordered_map&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;unordered_set&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;vector&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;exception&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;functional&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;iterator&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;memory&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;memory_resource&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;numeric&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;optional&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;ratio&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;regex&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;set&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;string&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;string_view&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;system_error&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;tuple&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;type_traits&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;utility&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;fstream&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;future&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;initializer_list&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;mutex&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;new&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;scoped_allocator&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;shared_mutex&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;sstream&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;stdexcept&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;streambuf&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;thread&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;typeindex&quot;: &quot;cpp&quot;,</span><br><span class="line">        &quot;typeinfo&quot;: &quot;cpp&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="这时，我们返回到test-cpp文件，按下ctrl-F5，应该就可以正常编译运行了。"><a href="#这时，我们返回到test-cpp文件，按下ctrl-F5，应该就可以正常编译运行了。" class="headerlink" title="这时，我们返回到test.cpp文件，按下ctrl+F5，应该就可以正常编译运行了。"></a>这时，我们返回到test.cpp文件，按下ctrl+F5，应该就可以正常编译运行了。</h2><p><img src="https://img-blog.csdnimg.cn/20200414101250489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -308,11 +308,11 @@
 		</ul>
 	</div>
 
-      
+    
 
-      
-      
-        
+    
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -362,13 +362,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEPython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -407,8 +407,15 @@
 
 
 
-  
-    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
@@ -416,11 +423,11 @@
 
 if(true){
 	var gitalk = new Gitalk({
-  	clientID: '',
-  	clientSecret: '',
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
   	repo: 'hesorchen.github.io',
-  	owner: '',
-  	admin: [''],
+  	owner: 'hesorchen',
+  	admin: ['[&#39;hesorchen.github.io&#39;,&#39;hesorchen.github.io&#39;]'],
   	id: 'Thu Apr 23 2020 19:20:08 GMT+0800',
   	distractionFreeMode: 'true'
 })
@@ -429,17 +436,8 @@ gitalk.render('gitalk-container')
 </script>
 
 
-    
 
-  
-  
-  
 
-  
-
-  
-
-  
 
 
           </div>
