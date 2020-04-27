@@ -723,40 +723,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <div class="tools-nav header-menu">
     
     
-      
-      
-      
     
-      
-      
-      
     
-      
-      
-      
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 
     <ul style="width: 70%">
-    
-    
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">目录</a></li>
       
-        
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)"
+          q-class="active:innerArchive">目录</a></li>
       
-        
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
-        
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)"
+          q-class="active:friends">友链</a></li>
+      
+      
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)"
+          q-class="active:aboutme">关于我</a></li>
+      
+      
     </ul>
   </div>
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
+      <section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
           <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
@@ -768,55 +771,56 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二分答案</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo语法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">VScode配置环境</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他题解</a>
-              </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color5">二分答案</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color2">Hexo语法</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color1">VScode配置环境</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">相册</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">DP</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">博客</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color5">其他题解</a>
+            </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br />1、请确保node版本大于6.2<br />2、在博客根目录（注意不是yilia根目录）执行以下命令：<br /> npm i hexo-generator-json-content
+            --save<br /><br />
             3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
+            <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
     meta: false
     pages: false
@@ -838,7 +842,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </pre>
           </p>
           <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span
+                q-text="title"></span></a>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>
@@ -849,62 +854,52 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </p>
           </li>
         </ul>
-    	</section>
-    
+      </section>
+      
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
+      <section class="tools-section tools-section-friends" q-show="friends">
+        
         <ul class="search-ul">
           
-            <li class="search-li">
-              <a href="https://blog.csdn.net/hesorchen" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
-            </li>
+          <li class="search-li">
+            <a href="https://blog.csdn.net/hesorchen" target="_blank" class="search-title"><i
+                class="icon-quo-left icon"></i>CSDN</a>
+          </li>
           
-            <li class="search-li">
-              <a href="https://vain-algorithm.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>vain-algorithm.github.io</a>
-            </li>
+          <li class="search-li">
+            <a href="https://vain-algorithm.github.io/" target="_blank" class="search-title"><i
+                class="icon-quo-left icon"></i>vain-algorithm.github.io</a>
+          </li>
           
-            <li class="search-li">
-              <a href="https://blog.nuoyanli.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>blog.nuoyanli.com</a>
-            </li>
+          <li class="search-li">
+            <a href="https://blog.nuoyanli.com/" target="_blank" class="search-title"><i
+                class="icon-quo-left icon"></i>blog.nuoyanli.com</a>
+          </li>
           
-            <li class="search-li">
-              <a href="https://kunyuwan.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>kunyuwan.github.io</a>
-            </li>
+          <li class="search-li">
+            <a href="https://kunyuwan.github.io/" target="_blank" class="search-title"><i
+                class="icon-quo-left icon"></i>kunyuwan.github.io</a>
+          </li>
           
         </ul>
-  		
+        
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
         
-        
-        
-  	  		<div class="aboutme-wrap">
-				<div style="display:;">
-					<script type="text/javascript" src="https://api.lwl12.com/hitokoto/v1?encode=js&charset=utf-8"></script>
-					<p style="margin:0 20px 0 20px;">
-						<span id="lwlhitokoto">
-							<script>
-								lwlhitokoto();
-							</script>
-						</span>
-					</p>
-					<p id="js-aboutme" style="margin:0 20px 0 20px;">一名ACMer蒟蒻             Fighting~</P>
-				</div>
-			</div>
-  	  	
+        <section class="tools-section tools-section-me" q-show="aboutme">
+
+          
+          <div class="aboutme-wrap" id="js-aboutme">
+            一名ACMer蒟蒻             Fighting~
+          </div>
+          
 
     	</section>
     
   </div>
 </div>
-
-
-
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
