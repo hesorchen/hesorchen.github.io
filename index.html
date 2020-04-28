@@ -66,7 +66,7 @@
 		</nav>
 
 		<nav>
-			总文章数 11
+			总文章数 12
 			</nav>
 		<nav class="header-smart-menu">
     		
@@ -208,6 +208,83 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-C-file-to-read-and-write" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/C-file-to-read-and-write/">C_file_to_read_and_write</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/04/28/C-file-to-read-and-write/" class="archive-article-date">
+	<time datetime="2020-04-28T01:45:46.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-04-28</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/04/28/C-file-to-read-and-write/">C_file_to_read_and_write</a>
+    </h1>
+  
+</p></center>
+    
+    <h4 id="文件读写一直不太会，今早学了一点C语言基础"><a href="#文件读写一直不太会，今早学了一点C语言基础" class="headerlink" title="文件读写一直不太会，今早学了一点C语言基础"></a>文件读写一直不太会，今早学了一点C语言基础</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    FILE *fp = fopen(<span class="string">"test.txt"</span>, <span class="string">"mod"</span>); <span class="comment">//mod需要根据情况选择</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    模式                操作              区别                        文件要求</span></span><br><span class="line"><span class="comment">    r                   读            从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    r+                  读写          从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    w                   写            从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    w+                  读写          从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    a                   写            从文件尾开始                    文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    a+                  读写          从文件头读取，从文件尾写入       文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">// rewind(fp);//光标指向文件开头</span></span><br><span class="line">    fseek(fp, <span class="number">0</span>, origin);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    origin选 SEEK_SET:光标指向文件开头</span></span><br><span class="line"><span class="comment">    origin选 SEEK_CUR:光标指向当前位置</span></span><br><span class="line"><span class="comment">    origin选 SEEK_END:光标指向文件结尾</span></span><br><span class="line"><span class="comment">    第二个参数代表偏移量，有兴趣的可以自己搜索</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, a + b);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/28/C-file-to-read-and-write/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-C++_Constant Pointers and constants" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -928,85 +1005,6 @@
 
 
   
-    <article id="post-丽水仙都风景区" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/%E4%B8%BD%E6%B0%B4%E4%BB%99%E9%83%BD%E9%A3%8E%E6%99%AF%E5%8C%BA/">丽水仙都风景区</a>
-    </h1>
-  
- -->
-  
-  <a href="/2019/07/02/%E4%B8%BD%E6%B0%B4%E4%BB%99%E9%83%BD%E9%A3%8E%E6%99%AF%E5%8C%BA/" class="archive-article-date">
-	<time datetime="2019-07-02T06:46:44.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/07/02/%E4%B8%BD%E6%B0%B4%E4%BB%99%E9%83%BD%E9%A3%8E%E6%99%AF%E5%8C%BA/">丽水仙都风景区</a>
-    </h1>
-  
-</p></center>
-    
-    <p><img src="http://i1.fuimg.com/717250/a5327fc8866a9992.jpg" alt=""></p>
-    
-    <a class="article-more-a" href="/2019/07/02/%E4%B8%BD%E6%B0%B4%E4%BB%99%E9%83%BD%E9%A3%8E%E6%99%AF%E5%8C%BA/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">相册</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/07/02/%E4%B8%BD%E6%B0%B4%E4%BB%99%E9%83%BD%E9%A3%8E%E6%99%AF%E5%8C%BA/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1186,6 +1184,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
             <li class="article-tag-list-item">
               <a href="javascript:void(0)" class="js-tag color3">记录</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color1">C语言基础</a>
             </li>
             
             <div class="clearfix"></div>
