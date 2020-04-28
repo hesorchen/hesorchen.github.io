@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C_file_to_read_and_write | hesorchen</title>
+  <title>C语言文件读写 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文件读写一直不太会，今早学了一点C语言基础123456789101112131415161718192021222324252627int main()&amp;#123;    int a, b;    FILE *fp &#x3D; fopen(&quot;test.txt&quot;, &quot;mod&quot;); &#x2F;&#x2F;mod需要根据情况选择    &#x2F;*    模式                操作              区别">
+  <meta name="description" content="文件读写一直不太会，今早学了一点C语言文件读写基础123456789101112131415161718192021222324252627int main()&amp;#123;    int a, b;    FILE *fp &#x3D; fopen(&quot;test.txt&quot;, &quot;mod&quot;); &#x2F;&#x2F;mod需要根据情况选择    &#x2F;*    模式       操作              区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C_file_to_read_and_write">
+<meta property="og:title" content="C语言文件读写">
 <meta property="og:url" content="http://yoursite.com/2020/04/28/C-file-to-read-and-write/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="文件读写一直不太会，今早学了一点C语言基础123456789101112131415161718192021222324252627int main()&amp;#123;    int a, b;    FILE *fp &#x3D; fopen(&quot;test.txt&quot;, &quot;mod&quot;); &#x2F;&#x2F;mod需要根据情况选择    &#x2F;*    模式                操作              区别">
+<meta property="og:description" content="文件读写一直不太会，今早学了一点C语言文件读写基础123456789101112131415161718192021222324252627int main()&amp;#123;    int a, b;    FILE *fp &#x3D; fopen(&quot;test.txt&quot;, &quot;mod&quot;); &#x2F;&#x2F;mod需要根据情况选择    &#x2F;*    模式       操作              区别">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-28T01:45:46.000Z">
-<meta property="article:modified_time" content="2020-04-28T01:52:59.658Z">
+<meta property="article:modified_time" content="2020-04-28T01:57:12.175Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="C语言基础">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      C_file_to_read_and_write
+      C语言文件读写
     </h1>
   
  -->
@@ -244,12 +244,12 @@
     <center><p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      C_file_to_read_and_write
+      C语言文件读写
     </h1>
   
 </p></center>
     
-    <h4 id="文件读写一直不太会，今早学了一点C语言基础"><a href="#文件读写一直不太会，今早学了一点C语言基础" class="headerlink" title="文件读写一直不太会，今早学了一点C语言基础"></a>文件读写一直不太会，今早学了一点C语言基础</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    FILE *fp = fopen(<span class="string">"test.txt"</span>, <span class="string">"mod"</span>); <span class="comment">//mod需要根据情况选择</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    模式                操作              区别                        文件要求</span></span><br><span class="line"><span class="comment">    r                   读            从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    r+                  读写          从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    w                   写            从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    w+                  读写          从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    a                   写            从文件尾开始                    文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    a+                  读写          从文件头读取，从文件尾写入       文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">// rewind(fp);//光标指向文件开头</span></span><br><span class="line">    fseek(fp, <span class="number">0</span>, origin);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    origin选 SEEK_SET:光标指向文件开头</span></span><br><span class="line"><span class="comment">    origin选 SEEK_CUR:光标指向当前位置</span></span><br><span class="line"><span class="comment">    origin选 SEEK_END:光标指向文件结尾</span></span><br><span class="line"><span class="comment">    第二个参数代表偏移量，有兴趣的可以自己搜索</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, a + b);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="文件读写一直不太会，今早学了一点C语言文件读写基础"><a href="#文件读写一直不太会，今早学了一点C语言文件读写基础" class="headerlink" title="文件读写一直不太会，今早学了一点C语言文件读写基础"></a>文件读写一直不太会，今早学了一点C语言文件读写基础</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    FILE *fp = fopen(<span class="string">"test.txt"</span>, <span class="string">"mod"</span>); <span class="comment">//mod需要根据情况选择</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    模式       操作              区别                        文件要求</span></span><br><span class="line"><span class="comment">    r         读            从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    r+        读写          从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    w         写            从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    w+        读写          从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    a         写            从文件尾开始                    文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    a+        读写          从文件头读取，从文件尾写入       文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">// rewind(fp);//光标指向文件开头</span></span><br><span class="line">    fseek(fp, <span class="number">0</span>, origin);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    origin选 SEEK_SET:光标指向文件开头</span></span><br><span class="line"><span class="comment">    origin选 SEEK_CUR:光标指向当前位置</span></span><br><span class="line"><span class="comment">    origin选 SEEK_END:光标指向文件结尾</span></span><br><span class="line"><span class="comment">    第二个参数代表偏移量，有兴趣的可以自己搜索</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, a + b);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
 
@@ -352,7 +352,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件读写一直不太会，今早学了一点C语言基础"><span class="toc-number">1.</span> <span class="toc-text">文件读写一直不太会，今早学了一点C语言基础</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件读写一直不太会，今早学了一点C语言文件读写基础"><span class="toc-number">1.</span> <span class="toc-text">文件读写一直不太会，今早学了一点C语言文件读写基础</span></a></li></ol>
                     </div>
                 </span>
             </div>
