@@ -870,8 +870,8 @@ select,
 textarea {
     color: #000000;
     font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 1.75
 }
 
@@ -2365,7 +2365,7 @@ pre .id {
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
-    font-size: 14px
+    font-size: 18px
 }
 
 .article-entry blockquote {
@@ -2411,7 +2411,7 @@ pre .id {
 
 .article-entry ol,
 .article-entry ul {
-    font-size: 14px;
+    font-size: 18px;
     margin: 10px 0
 }
 
@@ -5165,9 +5165,9 @@ input,
 select,
 textarea {
     color: #000000;
-    font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
-    font-size: 16px;
-    font-size: 0.8rem;
+    font-family: 
+    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 1.75
 }
 
@@ -6655,7 +6655,7 @@ pre .id {
     margin-top: 10px
 }
 
-.article-entry li code,
+
 .article-entry p code {
     padding: 1px 3px;
     margin: 0 3px;
@@ -6663,7 +6663,7 @@ pre .id {
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
-    font-size: 14px
+    font-size: 18px
 }
 
 .article-entry blockquote {
@@ -6709,7 +6709,7 @@ pre .id {
 
 .article-entry ol,
 .article-entry ul {
-    font-size: 14px;
+    font-size: 18px;
     margin: 10px 0
 }
 
@@ -8600,4 +8600,3 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
-font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
