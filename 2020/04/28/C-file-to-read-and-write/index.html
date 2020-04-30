@@ -241,13 +241,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <center><p>
+    <center>
+      <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
       C语言文件读写
     </h1>
   
-</p></center>
+</p>
+    </center>
     
     <h4 id="文件读写一直不太会，今早学了一点C语言文件读写基础"><a href="#文件读写一直不太会，今早学了一点C语言文件读写基础" class="headerlink" title="文件读写一直不太会，今早学了一点C语言文件读写基础"></a>文件读写一直不太会，今早学了一点C语言文件读写基础<a id="more"></a></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    FILE *fp = fopen(<span class="string">"test.txt"</span>, <span class="string">"mod"</span>); <span class="comment">//mod需要根据情况选择</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    模式       操作              区别                        文件要求</span></span><br><span class="line"><span class="comment">    r         读            从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    r+        读写          从文件头开始                    文件需存在</span></span><br><span class="line"><span class="comment">    w         写            从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    w+        读写          从文件头开始                    文件不存在则创建，存在则清空</span></span><br><span class="line"><span class="comment">    a         写            从文件尾开始                    文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    a+        读写          从文件头读取，从文件尾写入       文件不存在进行创建，存在则追加</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">// rewind(fp);//光标指向文件开头</span></span><br><span class="line">    fseek(fp, <span class="number">0</span>, origin);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    origin选 SEEK_SET:光标指向文件开头</span></span><br><span class="line"><span class="comment">    origin选 SEEK_CUR:光标指向当前位置</span></span><br><span class="line"><span class="comment">    origin选 SEEK_END:光标指向文件结尾</span></span><br><span class="line"><span class="comment">    第二个参数代表偏移量，有兴趣的可以自己搜索</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, a + b);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -399,7 +401,6 @@ if(true){
 gitalk.render('gitalk-container') 
 }
 </script>
-
 
 
 
