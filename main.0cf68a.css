@@ -366,7 +366,7 @@ body {
     font-size: 14px;
     font-family: KaiTi;
     line-height: 1.5;
-    color: #333;
+    color: #FFFFFF;
     background-color: #fff;
     min-height: 100%
 }
@@ -411,7 +411,7 @@ template {
 a {
     background: transparent;
     text-decoration: none;
-    color: #08c
+    color: #FFFFFF
 }
 
 a:active {
@@ -868,7 +868,7 @@ button,
 input,
 select,
 textarea {
-    color: #000000;
+    color: #FFFFFF;
     font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
     font-size: 18px;
     font-size: 1.1rem;
@@ -877,7 +877,7 @@ textarea {
 
 body {
     overflow-y: hidden;
-    background: #eaeaea
+    background:  	 	 	#787878
 }
 
 #container,
@@ -914,7 +914,7 @@ html {
     position: absolute;
     right: 0;
     min-height: 100%;
-    background: #eaeaea;
+    background:  	 	 	#787878;
     left: 300px;
     width: auto
 }
@@ -1133,7 +1133,7 @@ html {
 .article-entry .gist .gist-file .gist-data .line-numbers,
 .article-entry .highlight .gutter pre,
 .article-entry .highlight .gutter pre .line {
-    color: #666
+    color: #AFEEEE
 }
 
 .article-entry code,
@@ -1769,7 +1769,7 @@ pre .id {
 }
 
 .archives-wrap .archive-year-wrap a {
-    color: #666;
+    color: #AFEEEE;
     font-weight: 700;
     padding-left: 48px
 }
@@ -1857,7 +1857,7 @@ pre .id {
     display: inline-block;
     vertical-align: middle;
     zoom: 1;
-    color: #666;
+    color: #AFEEEE;
     font-size: 14px
 }
 
@@ -2279,7 +2279,9 @@ pre .id {
 }
 
 .article-inner {
-    border-color: #d1d1d1
+    border-color: #787878;
+    background:#323232;
+    color: #F5F5F5;
 }
 
 .article-inner h1 {
@@ -3335,7 +3337,7 @@ pre .id {
     .article .article-meta .article-date {
         font-size: 12px;
         border-radius: 0;
-        color: #666;
+        color: #AFEEEE;
         background: none;
         height: auto;
         padding: 0;
@@ -4708,7 +4710,7 @@ template {
 a {
     background: transparent;
     text-decoration: none;
-    color: #08c
+    color: #FFFFFF
 }
 
 a:active {
@@ -5165,7 +5167,7 @@ button,
 input,
 select,
 textarea {
-    color: #000000;
+    color: #FFFFFF;
     font-family: 
     font-size: 18px;
     font-size: 1.1rem;
@@ -5211,7 +5213,7 @@ html {
     position: absolute;
     right: 0;
     min-height: 100%;
-    background: #eaeaea;
+    background:  	#787878;
     left: 300px;
     width: auto
 }
@@ -5432,7 +5434,7 @@ html {
 .article-entry .gist .gist-file .gist-data .line-numbers,
 .article-entry .highlight .gutter pre,
 .article-entry .highlight .gutter pre .line {
-    color: #666
+    color: #AFEEEE
 }
 
 .article-entry code,
@@ -5563,7 +5565,7 @@ html {
 }
 
 pre .comment {
-    color: #75715e
+    color:  	#778899
 }
 
 pre .class .params,
@@ -6068,7 +6070,7 @@ pre .id {
 }
 
 .archives-wrap .archive-year-wrap a {
-    color: #666;
+    color: #AFEEEE;
     font-weight: 700;
     padding-left: 48px
 }
@@ -6156,7 +6158,7 @@ pre .id {
     display: inline-block;
     vertical-align: middle;
     zoom: 1;
-    color: #666;
+    color:  	#E1FFFF;
     font-size: 14px
 }
 
@@ -6670,11 +6672,11 @@ pre .id {
 
 .article-entry blockquote {
     background: #ddd;
-    border-left: 5px solid #ccc;
+    border-left: 5px solid  	#000000;
     padding: 15px 20px;
     margin-top: 10px;
     border-left: 5px solid #657b83;
-    background: #f6f6f6
+    background:  	#A9A9A9
 }
 
 .article-entry blockquote p {
@@ -6737,7 +6739,7 @@ pre .id {
 .article-entry h6 {
     margin-top: 20px;
     font-weight: 700;
-    color: #574c4c;
+    color: #F5F5F5;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd
 }
@@ -7634,7 +7636,7 @@ pre .id {
     .article .article-meta .article-date {
         font-size: 12px;
         border-radius: 0;
-        color: #666;
+        color: #AFEEEE;
         background: none;
         height: auto;
         padding: 0;
@@ -8594,7 +8596,7 @@ a.pswp__share--download:hover {
     text-decoration: underline
 }
 .article-inner h1.article-title_code_ant, .article-title_code_ant {
-	color: #000000;
+	color: #FFFFFF;
 	margin-left: 0;
 	font-weight: 300;
 	line-height: 35px;
@@ -8602,3 +8604,6 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
+#FFFFFF
+#FFFFFF
+#81a6ed
