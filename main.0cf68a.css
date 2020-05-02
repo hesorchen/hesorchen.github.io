@@ -1730,13 +1730,13 @@ pre .id {
 }
 
 #page-nav .extend {
-    color: #4d4d4d;
+    color: #fffdd8;
     margin: 0 27px;
     opacity: 1
 }
 
 #page-nav .extend:hover {
-    color: #5e5e5e
+    color: #fffdd8
 }
 
 #page-nav:hover .extend {
@@ -3110,8 +3110,9 @@ pre .id {
 #footer {
     font-size: 12px;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
-    text-shadow: 0 1px #fff;
-    position: absolute;
+    text-shadow: 0 1px grey;
+    position: absolute;    
+    color:#FFFFFF;
     bottom: 30px;
     opacity: .6;
     width: 100%;
@@ -6031,13 +6032,13 @@ pre .id {
 }
 
 #page-nav .extend {
-    color: #4d4d4d;
+    color: #fffdd8;
     margin: 0 27px;
     opacity: 1
 }
 
 #page-nav .extend:hover {
-    color: #5e5e5e
+    color: #fffdd8
 }
 
 #page-nav:hover .extend {
@@ -7409,7 +7410,8 @@ pre .id {
 #footer {
     font-size: 12px;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
-    text-shadow: 0 1px #FFFFFF;
+    text-shadow: 0 1px grey;
+    color:#FFFFFF;
     position: absolute;
     bottom: 30px;
     opacity: .6;
@@ -8604,3 +8606,6 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
+#footer
+#page-nav .extend
+#page-nav .extend
