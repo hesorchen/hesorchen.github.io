@@ -6,26 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>程序设计结课作业 | hesorchen</title>
+  <title>C++常量与常指针 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由于上学期 决策不当，和lql大佬两个人做了个十分简单的五子棋小游戏，导致含泪拿中，所以这学期一个人肝了个400行的高校师生信息管理系统。">
+  <meta name="description" content="首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。1.变量与指针变量 当一个指针变量指向一个变量时，指针变量本身可以改变，也可以通过指针变量改变变量。如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序设计结课作业">
-<meta property="og:url" content="http://yoursite.com/2020/04/29/C-desine/index.html">
+<meta property="og:title" content="C++常量与常指针">
+<meta property="og:url" content="http://yoursite.com/2020/04/27/C++%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="由于上学期 决策不当，和lql大佬两个人做了个十分简单的五子棋小游戏，导致含泪拿中，所以这学期一个人肝了个400行的高校师生信息管理系统。">
+<meta property="og:description" content="首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。1.变量与指针变量 当一个指针变量指向一个变量时，指针变量本身可以改变，也可以通过指针变量改变变量。如下：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020042917063075.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200429165838232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200429170032559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200429170129465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200429170152746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-04-29T09:05:17.000Z">
-<meta property="article:modified_time" content="2020-05-01T02:08:27.510Z">
+<meta property="article:published_time" content="2020-04-27T11:48:25.000Z">
+<meta property="article:modified_time" content="2020-05-02T12:02:21.445Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="程序设计">
+<meta property="article:tag" content="C++基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020042917063075.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -218,21 +212,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C-desine" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C++常量与常指针" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      程序设计结课作业
+      C++常量与常指针
     </h1>
   
  -->
   
-  <a href="/2020/04/29/C-desine/" class="archive-article-date">
-	<time datetime="2020-04-29T09:05:17.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-29</time>
+  <a href="/2020/04/27/C++%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E6%8C%87%E9%92%88/" class="archive-article-date">
+	<time datetime="2020-04-27T11:48:25.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-04-27</time>
 </a>
 
   
@@ -251,480 +245,27 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      程序设计结课作业
+      C++常量与常指针
     </h1>
   
 </p>
     </center>
     
-    <blockquote>
-<p><strong>由于上学期 决策不当，和lql大佬两个人做了个十分简单的五子棋小游戏，导致含泪拿<code>中</code>，所以这学期一个人肝了个400行的高校师生信息管理系统。</strong><a id="more"></a></p>
-</blockquote>
+    <h2 id="首先，常量与变量的概念很容易区分，在c-中，常量常用const修饰，即不可变的量。"><a href="#首先，常量与变量的概念很容易区分，在c-中，常量常用const修饰，即不可变的量。" class="headerlink" title="首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。"></a>首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。</h2><h3 id="1-变量与指针变量"><a href="#1-变量与指针变量" class="headerlink" title="1.变量与指针变量"></a>1.变量与指针变量</h3><p><font size=4><font color=white> 当一个指针变量指向一个变量时，指针变量本身可以改变，也可以通过指针变量改变变量。如下：<a id="more"></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">*p++;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">p++;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <hr>
-<p> 设计流程图：<br><img src="https://img-blog.csdnimg.cn/2020042917063075.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="2-常量与指针变量"><a href="#2-常量与指针变量" class="headerlink" title="2.常量与指针变量"></a>2.常量与指针变量</h3><p><font size=4><font color=white> 当一个指针变量指向一个常量时，指针变量本身可以改变，但是不能通过指针变量改变常量。例如下面的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">(*p)++; <span class="comment">//错误，(*p)也就是常量a，不可改变常量的值</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">p++; <span class="comment">//正确，指针变量可以改变，不过不再指向a</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>部分运行界面截图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20200429165838232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200429170032559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200429170129465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200429170152746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>代码如下：</strong></p>
-<pre><code class="cpp"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-<span class="keyword">int</span> teacher_counter = <span class="number">1</span>, student_counter = <span class="number">1</span>;
-<span class="class"><span class="keyword">class</span> <span class="title">PERSON</span></span>
-<span class="class">{</span>
-<span class="keyword">public</span>:
-    <span class="built_in">string</span> Name, Professional, ID, Gender, Telephone;
-    <span class="keyword">int</span> Age;
-} person[<span class="number">1000000</span>];
+<h3 id="3-变量与常指针"><a href="#3-变量与常指针" class="headerlink" title="3.变量与常指针"></a>3.变量与常指针</h3><p><font size=4><font color=white> 当一个指针常量指向一个变量时，指针变量本身不可以改变，但是可以通过常指针改变变量。例如下面的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> p = &amp;a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">(*p)++; <span class="comment">//正确，(*p)也就是变量a，可改变变量的值</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">p++; <span class="comment">//错误，指针常量不可以改变</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="4-常量与常指针"><a href="#4-常量与常指针" class="headerlink" title="4.常量与常指针"></a>4.常量与常指针</h3><p><font size=4><font color=white> 当一个指针常量指向一个常量时，指针常量本身不可以改变，并且不能通过指针常量改变常量。例如下面的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> p = &amp;a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">(*p)++; <span class="comment">//错误，(*p)也就是常量a，不可改变常量的值</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">p++; <span class="comment">//错误，指针常量不可以改变</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">' '</span> &lt;&lt; *p &lt;&lt; <span class="string">' '</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><font size=4><font color=white> <font color =red>应特别注意char类型变量与常量，牢记char数组数组名即为首地址。<font color=end></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *name = <span class="string">"chen"</span>;</span><br><span class="line"><span class="comment">//定义一个常cahr型数组name[5]，但是name作为数组首地址，本身是指针变量</span></span><br><span class="line"><span class="comment">// name[0] = 'w'; //错误，name[0]是常量，不可改变</span></span><br><span class="line">name = <span class="string">"zhao"</span>;        <span class="comment">//正确，name本身是指针变量，可以指向别的空间。</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出"zhao"</span></span><br></pre></td></tr></table></figure>
 
-<span class="class"><span class="keyword">class</span> <span class="title">STUDENT</span> :</span> <span class="keyword">public</span> PERSON
-{
-<span class="keyword">public</span>:
-    <span class="keyword">int</span> Math, PE, C_Language, English;
-    STUDENT()
-    {
-        Math = PE = C_Language = English = <span class="number">0</span>;
-    }
-    <span class="function"><span class="keyword">void</span> <span class="title">out_student1</span><span class="params">()</span></span>
-<span class="function">    </span>{
-        <span class="built_in">printf</span>(<span class="string">"姓名：%s\n职业：%s\n学号：%s\n性别：%s\n年龄：%d\n电话号码：%s\n"</span>, Name.c_str(), Professional.c_str(), ID.c_str(), Gender.c_str(), Age, Telephone.c_str());
-    }
-    <span class="function"><span class="keyword">void</span> <span class="title">out_student2</span><span class="params">()</span></span>
-<span class="function">    </span>{
-        <span class="keyword">int</span> sum = Math + PE + C_Language + English;
-        <span class="built_in">printf</span>(<span class="string">"数学：%d\n体育：%d\nC语言：%d\n英语：%d\n平均分：%.2f\n"</span>, Math, PE, C_Language, English, <span class="number">1.0</span> * sum / <span class="number">4</span>);
-    }
-} student[<span class="number">1000000</span>];
-<span class="class"><span class="keyword">class</span> <span class="title">TEACHER</span> :</span> <span class="keyword">public</span> PERSON
-{
-<span class="keyword">public</span>:
-    <span class="built_in">string</span> xueli;
-    <span class="keyword">int</span> gonzi;
-    TEACHER()
-    {
-        <span class="built_in">string</span> xueli = <span class="string">"大学"</span>;
-        gonzi = <span class="number">0</span>;
-    }
-    <span class="function"><span class="keyword">void</span> <span class="title">out_teacher1</span><span class="params">()</span></span>
-<span class="function">    </span>{
-        <span class="built_in">printf</span>(<span class="string">"姓名：%s\n职业：%s\n学号：%s\n性别：%s\n年龄：%d\n电话号码：%s\n"</span>, Name.c_str(), Professional.c_str(), ID.c_str(), Gender.c_str(), Age, Telephone.c_str());
-    }
-    <span class="function"><span class="keyword">void</span> <span class="title">out_teacher2</span><span class="params">()</span></span>
-<span class="function">    </span>{
-        <span class="built_in">printf</span>(<span class="string">"学历：%s\n工资：%d\n"</span>, xueli.c_str(), gonzi);
-    }
-} teacher[<span class="number">1000000</span>];
-
-<span class="function"><span class="keyword">void</span> <span class="title">menu</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">printf</span>(<span class="string">" —————————————————————————————\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|****************************|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*高校师生信息管理系统主菜单*|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******1.新增教师信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******2.新增学生信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******3.删除教师信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******4.删除学生信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******5.查询教师信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******6.查询学生信息*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******7.查询师生人数*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*******8.安全退出系统*******|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*****9.输出所有基本信息*****|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">"|*!!!使用结束务必安全退出!!!*|\n"</span>);
-    <span class="built_in">printf</span>(<span class="string">" —————————————————————————————\n"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option1</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">string</span> str1, str2, str3, str4, str5, str6;
-    <span class="keyword">int</span> b1, b2, b3, b4, b5;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入姓名：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str1;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入工号：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str3;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入性别：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str4;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入电话号码：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str5;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入年龄：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b1;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入学历：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str6;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入工资：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b3;
-    teacher[teacher_counter].Name = str1;
-    teacher[teacher_counter].Professional = <span class="string">"教师"</span>;
-    teacher[teacher_counter].ID = str3;
-    teacher[teacher_counter].Gender = str4;
-    teacher[teacher_counter].Telephone = str5;
-    teacher[teacher_counter].Age = b1;
-    teacher[teacher_counter].xueli = str6;
-    teacher[teacher_counter++].gonzi = b3;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"教师信息录入成功！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option2</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">string</span> str1, str2, str3, str4, str5, str6;
-    <span class="keyword">int</span> b1, b2, b3, b4, b5;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入姓名：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str1;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入学号：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str3;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入性别：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str4;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入电话号码：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; str5;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入年龄：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b1;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入数学成绩：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b2;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入体育成绩：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b3;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入C语言成绩：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b4;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入英语成绩：\n"</span>;
-    <span class="built_in">cin</span> &gt;&gt; b5;
-    student[student_counter].Name = str1;
-    student[student_counter].Professional = <span class="string">"学生"</span>;
-    student[student_counter].ID = str3;
-    student[student_counter].Gender = str4;
-    student[student_counter].Telephone = str5;
-    student[student_counter].Age = b1;
-    student[student_counter].Math = b2;
-    student[student_counter].PE = b3;
-    student[student_counter].C_Language = b4;
-    student[student_counter++].English = b5;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"学生信息录入成功！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option3</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要删除的教师信息的教师工号：\n"</span>;
-    <span class="built_in">string</span> num;
-    <span class="built_in">cin</span> &gt;&gt; num;
-    <span class="keyword">int</span> len = num.size();
-    <span class="keyword">int</span> pos = <span class="number">-1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; teacher_counter; i++)
-    {
-        <span class="keyword">if</span> (teacher[i].ID.substr(<span class="number">0</span>, len) == num)
-        {
-            pos = i;
-            <span class="keyword">break</span>;
-        }
-    }
-    <span class="keyword">if</span> (pos == <span class="number">-1</span>)
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"没有该工号的教师！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="keyword">else</span>
-    {
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].Name.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"职业："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].Professional.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"工号："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].ID.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"性别："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].Gender.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"电话号码："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].Telephone.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"年龄："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, teacher[pos].Age);
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"学历："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, teacher[pos].xueli.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"确认删除该教师信息吗？"</span> &lt;&lt; <span class="built_in">endl</span>;
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入1确认，输入2取消：\n"</span>;
-        <span class="keyword">int</span> flagg = <span class="number">0</span>;
-        <span class="built_in">cin</span> &gt;&gt; flagg;
-        <span class="keyword">if</span> (flagg == <span class="number">1</span>)
-        {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"成功删除该教师信息！"</span> &lt;&lt; <span class="built_in">endl</span>;
-            teacher[pos].Name = <span class="string">"***"</span>;
-        }
-        <span class="keyword">else</span>
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"取消操作！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    }
-
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option4</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要删除的学生信息的学生学号：\n"</span>;
-    <span class="built_in">string</span> num;
-    <span class="built_in">cin</span> &gt;&gt; num;
-    <span class="keyword">int</span> len = num.size();
-    <span class="keyword">int</span> pos = <span class="number">-1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; student_counter; i++)
-    {
-        <span class="keyword">if</span> (student[i].ID.substr(<span class="number">0</span>, len) == num)
-        {
-            pos = i;
-            <span class="keyword">break</span>;
-        }
-    }
-    <span class="keyword">if</span> (pos == <span class="number">-1</span>)
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"没有该学号的学生！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="keyword">else</span>
-    {
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, student[pos].Name.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"职业："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, student[pos].Professional.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"学号："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, student[pos].ID.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"性别："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, student[pos].Gender.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"电话号码："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, student[pos].Telephone.c_str());
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"年龄："</span>;
-        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, student[pos].Age);
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"确认删除该学生信息吗？"</span> &lt;&lt; <span class="built_in">endl</span>;
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入1确认，输入2取消：\n"</span>;
-        <span class="keyword">int</span> flagg = <span class="number">0</span>;
-        <span class="built_in">cin</span> &gt;&gt; flagg;
-        <span class="keyword">if</span> (flagg == <span class="number">1</span>)
-        {
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"成功删除该学生信息！"</span> &lt;&lt; <span class="built_in">endl</span>;
-            student[pos].Name = <span class="string">"***"</span>;
-        }
-        <span class="keyword">else</span>
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"取消操作！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    }
-
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option5</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要查询的教师信息的教师工号：\n"</span>;
-    <span class="built_in">string</span> num;
-    <span class="built_in">cin</span> &gt;&gt; num;
-    <span class="keyword">int</span> len = num.size();
-    <span class="keyword">int</span> pos = <span class="number">-1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; teacher_counter; i++)
-    {
-        <span class="keyword">if</span> (teacher[i].ID.substr(<span class="number">0</span>, len) == num)
-        {
-            pos = i;
-            <span class="keyword">break</span>;
-        }
-    }
-    <span class="keyword">if</span> (pos == <span class="number">-1</span>)
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"没有该工号的教师！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="keyword">else</span>
-    {
-        teacher[pos].out_teacher1();
-        teacher[pos].out_teacher2();
-    }
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option6</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要查询的学生信息的学生学号：\n"</span>;
-    <span class="built_in">string</span> num;
-    <span class="built_in">cin</span> &gt;&gt; num;
-    <span class="keyword">int</span> len = num.size();
-    <span class="keyword">int</span> pos = <span class="number">-1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; student_counter; i++)
-    {
-        <span class="keyword">if</span> (student[i].ID.substr(<span class="number">0</span>, len) == num)
-        {
-            pos = i;
-            <span class="keyword">break</span>;
-        }
-    }
-    <span class="keyword">if</span> (pos == <span class="number">-1</span>)
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"没有该学号的学生！"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="keyword">else</span>
-    {
-        student[pos].out_student1();
-        student[pos].out_student2();
-    }
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option7</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"全校共有教师"</span> &lt;&lt; teacher_counter - <span class="number">1</span> &lt;&lt; <span class="string">"人"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"        学生"</span> &lt;&lt; student_counter - <span class="number">1</span> &lt;&lt; <span class="string">"人"</span> &lt;&lt; <span class="built_in">endl</span>;
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">option9</span><span class="params">()</span></span>
-<span class="function"></span>{
-    system(<span class="string">"cls"</span>);
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"总共"</span> &lt;&lt; student_counter - <span class="number">1</span> &lt;&lt; <span class="string">"位学生信息如下：\n"</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; student_counter; i++)
-    {
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; i &lt;&lt; <span class="string">"位学生的基本信息："</span>
-             &lt;&lt; <span class="string">":\n"</span>;
-        student[i].out_student1();
-        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;
-    }
-
-    <span class="built_in">cout</span> &lt;&lt; <span class="string">"总共"</span> &lt;&lt; teacher_counter - <span class="number">1</span> &lt;&lt; <span class="string">"位教师信息如下：\n"</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; teacher_counter; i++)
-    {
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; i &lt;&lt; <span class="string">"位教师的基本信息："</span>
-             &lt;&lt; <span class="string">":\n"</span>;
-        teacher[i].out_teacher1();
-        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;
-    }
-    system(<span class="string">"pause"</span>);
-}
-<span class="function"><span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span>
-<span class="function"></span>{
-    <span class="keyword">while</span> (<span class="number">1</span>)
-    {
-        menu();
-        <span class="keyword">int</span> option;
-        <span class="built_in">cin</span> &gt;&gt; option;
-
-        <span class="keyword">if</span> (option == <span class="number">1</span>)
-            option1();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">2</span>)
-            option2();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">3</span>)
-            option3();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">4</span>)
-            option4();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">5</span>)
-            option5();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">6</span>)
-            option6();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">7</span>)
-            option7();
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">8</span>)
-        {
-            system(<span class="string">"cls"</span>);
-            <span class="built_in">cout</span> &lt;&lt; <span class="string">"感谢使用,系统已经安全退出"</span> &lt;&lt; <span class="built_in">endl</span>;
-            <span class="keyword">return</span>;
-        }
-        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">9</span>)
-            option9();
-    }
-}
-<span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>
-<span class="function"></span>{
-    FILE *fp = fopen(<span class="string">"message.txt"</span>, <span class="string">"a+"</span>);
-    <span class="keyword">char</span> ch = fgetc(fp);
-    <span class="keyword">if</span> (ch == EOF)
-        <span class="built_in">fprintf</span>(fp, <span class="string">"*** ***\n*** ***"</span>);
-    fseek(fp, <span class="number">0</span>, SEEK_SET);
-    <span class="keyword">int</span> ff = <span class="number">0</span>;
-    <span class="keyword">while</span> (!feof(fp))
-    {
-        <span class="built_in">string</span> str1, str2, str3, str4, str5, str6;
-        <span class="keyword">int</span> b1, b2, b3, b4, b5;
-        str1.resize(<span class="number">20</span>);
-        str2.resize(<span class="number">20</span>);
-        str3.resize(<span class="number">20</span>);
-        str4.resize(<span class="number">20</span>);
-        str5.resize(<span class="number">20</span>);
-        str6.resize(<span class="number">20</span>);
-        <span class="built_in">fscanf</span>(fp, <span class="string">"%s%s"</span>, &amp;str1[<span class="number">0</span>], &amp;str2[<span class="number">0</span>]);
-        <span class="keyword">if</span> (str2[<span class="number">0</span>] == <span class="string">'*'</span>)
-        {
-            ff = <span class="number">1</span>;
-            <span class="keyword">continue</span>;
-        }
-        <span class="keyword">if</span> (!ff)
-        {
-            <span class="built_in">fscanf</span>(fp, <span class="string">"%s%s%s%d%d%d%d%d"</span>, &amp;str3[<span class="number">0</span>], &amp;str4[<span class="number">0</span>], &amp;str5[<span class="number">0</span>], &amp;b1, &amp;b2, &amp;b3, &amp;b4, &amp;b5);
-            student[student_counter].Name = str1;
-            student[student_counter].Professional = str2;
-            student[student_counter].ID = str3;
-            student[student_counter].Gender = str4;
-            student[student_counter].Telephone = str5;
-            student[student_counter].Age = b1;
-            student[student_counter].Math = b2;
-            student[student_counter].PE = b3;
-            student[student_counter].C_Language = b4;
-            student[student_counter++].English = b5;
-        }
-        <span class="keyword">else</span> <span class="keyword">if</span> (ff &amp;&amp; str2[<span class="number">0</span>] != <span class="string">'*'</span>)
-        {
-            <span class="built_in">fscanf</span>(fp, <span class="string">"%s%s%s%d%s%d"</span>, &amp;str3[<span class="number">0</span>], &amp;str4[<span class="number">0</span>], &amp;str5[<span class="number">0</span>], &amp;b1, &amp;str6[<span class="number">0</span>], &amp;b2);
-            teacher[teacher_counter].Name = str1;
-            teacher[teacher_counter].Professional = str2;
-            teacher[teacher_counter].ID = str3;
-            teacher[teacher_counter].Gender = str4;
-            teacher[teacher_counter].Telephone = str5;
-
-            teacher[teacher_counter].Age = b1;
-            teacher[teacher_counter].xueli = str6;
-            teacher[teacher_counter++].gonzi = b2;
-        }
-    }
-    fclose(fp);
-    fp = fopen(<span class="string">"message.txt"</span>, <span class="string">"w"</span>);
-    fclose(fp); <span class="comment">//清空文件重新打开文件</span>
-}
-<span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>
-<span class="function"></span>{
-    FILE *fp = fopen(<span class="string">"message.txt"</span>, <span class="string">"a+"</span>);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; student_counter; i++)
-    {
-        <span class="keyword">if</span> (student[i].Name[<span class="number">0</span>] == <span class="string">'*'</span>)
-            <span class="keyword">continue</span>;
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, student[i].Name.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, student[i].Professional.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, student[i].ID.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, student[i].Gender.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, student[i].Telephone.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d "</span>, student[i].Age);
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d "</span>, student[i].Math);
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d "</span>, student[i].PE);
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d "</span>, student[i].C_Language);
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, student[i].English);
-    }
-    <span class="built_in">fprintf</span>(fp, <span class="string">"*** ***\n"</span>);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; teacher_counter; i++)
-    {
-        <span class="keyword">if</span> (teacher[i].Name[<span class="number">0</span>] == <span class="string">'*'</span>)
-            <span class="keyword">continue</span>;
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].Name.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].Professional.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].ID.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].Gender.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].Telephone.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d "</span>, teacher[i].Age);
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%s "</span>, teacher[i].xueli.c_str());
-        <span class="built_in">fprintf</span>(fp, <span class="string">"%d\n"</span>, teacher[i].gonzi);
-    }
-    <span class="built_in">fprintf</span>(fp, <span class="string">"*** ***"</span>);
-    fclose(fp);
-}
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
-<span class="function"></span>{
-    read();
-    operation(); <span class="comment">//对系统进行的操作</span>
-    save();
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-
-
-
-
-</code></pre>
 
     
 
@@ -770,7 +311,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C++基础</a>
         		</li>
       		
 		</ul>
@@ -782,7 +323,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/课程//" class="article-tag-list-link color3">课程</a>
+        			<a href="/categories/c//" class="article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/c/课程//" class="article-tag-list-link color3">课程</a>
         		</li>
       		
 		</ul>
@@ -836,7 +381,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/29/C-desine/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/27/C++%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E6%8C%87%E9%92%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -850,18 +395,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/01/figure/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/28/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          存图方法
+          C语言文件读写
         
       </div>
     </a>
   
   
-    <a href="/2020/04/28/C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++程序设计课程笔记</div>
+    <a href="/2020/04/26/NYIST%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E7%A7%AF%E5%88%86%E8%B5%9B%E7%AD%BE%E5%88%B0%E9%A2%98%E9%A2%98%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NYIST第十一次积分赛签到题题解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -879,7 +424,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先，常量与变量的概念很容易区分，在c-中，常量常用const修饰，即不可变的量。"><span class="toc-number">1.</span> <span class="toc-text">首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-变量与指针变量"><span class="toc-number">1.1.</span> <span class="toc-text">1.变量与指针变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常量与指针变量"><span class="toc-number">1.2.</span> <span class="toc-text">2.常量与指针变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-变量与常指针"><span class="toc-number">1.3.</span> <span class="toc-text">3.变量与常指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常量与常指针"><span class="toc-number">1.4.</span> <span class="toc-text">4.常量与常指针</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -911,7 +456,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Wed Apr 29 2020 17:05:17 GMT+0800',
+  	id: 'Mon Apr 27 2020 19:48:25 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
