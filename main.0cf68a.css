@@ -364,7 +364,7 @@ html {
 body {
     margin: 0;
     font-size: 14px;
-    font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+    font-family: KaiTi;
     line-height: 1.5;
     color: #333;
     background-color: #fff;
@@ -929,19 +929,20 @@ html {
 }
 
 .left-col {
-    background: #fff;
     width: 300px;
     position: fixed;
     opacity: 1;
     transition: all .2s ease-in;
     height: 100%;
-    z-index: 999
+    z-index: 999;
+    background-image: url("/img/22222.png");
 }
 
 .left-col .overlay {
     width: 100%;
-    height: 118px;
-    position: absolute
+    height: 1800px;
+    position: absolute;
+    background-image: url("/img/22222.png");
 }
 
 .left-col .intrude-less {
@@ -958,16 +959,16 @@ html {
 }
 
 .left-col #header a {
-    color: #696969
+    color:  	#FFFFFF
 }
 
 .left-col #header a:hover {
-    color: #b0a0aa
+    color: 	#FFFFFF
 }
 
 .left-col #header .header-subtitle {
     text-align: center;
-    color: #999;
+    color: 	#FFFFFF;
     font-size: 14px;
     line-height: 25px;
     overflow: hidden;
@@ -1046,7 +1047,7 @@ html {
 .left-col #header .header-author {
     text-align: center;
     margin: 0 0;
-    font-family: Roboto, serif;
+    font-family: KaiTi;
     font-size: 30px;
     transition: .3s
 }
@@ -1947,7 +1948,7 @@ pre .id {
     background: none;
     border: none;
     border-bottom: 2px solid #fff;
-    font-family: Roboto, serif
+    font-family: KaiTi
 }
 
 .tools-col .tools-section .search-wrap .icon {
@@ -3484,12 +3485,12 @@ pre .id {
         color: #424242
     }
 
-    #mobile-nav .overlay {
+     {
         height: 110px;
         position: absolute;
         width: 100%;
         z-index: 2;
-        background: #4d4d4d
+        background-image:url("/img/22222.png");
     }
 
     #mobile-nav #header {
@@ -3599,7 +3600,7 @@ pre .id {
     .header-author {
         text-align: center;
         margin: .67em 0;
-        font-family: Roboto, serif;
+        font-family: KaiTi;
         font-size: 30px;
         transition: .3s
     }
@@ -4660,7 +4661,7 @@ html {
 body {
     margin: 0;
     font-size: 14px;
-    font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+    font-family: KaiTi;
     line-height: 1.5;
     color: #333;
     background-color: #fff;
@@ -5225,7 +5226,7 @@ html {
 }
 
 .left-col {
-    background: #fff;
+    background-image: url("/img/22222.png");
     width: 300px;
     position: fixed;
     opacity: 1;
@@ -5236,8 +5237,9 @@ html {
 
 .left-col .overlay {
     width: 100%;
-    height: 118px;
-    position: absolute
+    height: 180px;
+    position: absolute;
+    background-image: url("/img/22222.png");
 }
 
 .left-col .intrude-less {
@@ -5254,16 +5256,16 @@ html {
 }
 
 .left-col #header a {
-    color: #696969
+    color: 	#FFFFFF
 }
 
 .left-col #header a:hover {
-    color: #b0a0aa
+    color:  	#FFFFFF
 }
 
 .left-col #header .header-subtitle {
     text-align: center;
-    color: #999;
+    color: 	#FFFFFF;
     font-size: 14px;
     line-height: 25px;
     overflow: hidden;
@@ -5344,7 +5346,7 @@ html {
 .left-col #header .header-author {
     text-align: center;
     margin: 0 0;
-    font-family: Roboto, serif;
+    font-family: KaiTi;
     font-size: 30px;
     transition: .3s
 }
@@ -6245,7 +6247,7 @@ pre .id {
     background: none;
     border: none;
     border-bottom: 2px solid #fff;
-    font-family: Roboto, serif
+    font-family: KaiTi
 }
 
 .tools-col .tools-section .search-wrap .icon {
@@ -7782,12 +7784,12 @@ pre .id {
         color: #424242
     }
 
-    #mobile-nav .overlay {
+     {
         height: 110px;
         position: absolute;
         width: 100%;
         z-index: 2;
-        background: #4d4d4d
+        background-image:url("/img/22222.png");
     }
 
     #mobile-nav #header {
@@ -7897,7 +7899,7 @@ pre .id {
     .header-author {
         text-align: center;
         margin: .67em 0;
-        font-family: Roboto, serif;
+        font-family: KaiTi;
         font-size: 30px;
         transition: .3s
     }
