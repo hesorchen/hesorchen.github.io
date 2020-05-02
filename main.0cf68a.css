@@ -868,7 +868,7 @@ button,
 input,
 select,
 textarea {
-    color: #FFFFFF;
+    color: #787878;
     font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
     font-size: 18px;
     font-size: 1.1rem;
@@ -5168,7 +5168,7 @@ button,
 input,
 select,
 textarea {
-    color: #FFFFFF;
+    color: #787878;
     font-family: 
     font-size: 18px;
     font-size: 1.1rem;
@@ -8606,6 +8606,4 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
-#footer
-#page-nav .extend
-#page-nav .extend
+body,
