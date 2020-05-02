@@ -366,7 +366,7 @@ body {
     font-size: 14px;
     font-family: KaiTi;
     line-height: 1.5;
-    color: #FFFFFF;
+    color: #787878;
     background-color: #fff;
     min-height: 100%
 }
@@ -5168,7 +5168,7 @@ button,
 input,
 select,
 textarea {
-    color: #787878;
+    color: #FFFFFF;
     font-family: 
     font-size: 18px;
     font-size: 1.1rem;
