@@ -2364,7 +2364,7 @@ pre .id {
 .article-entry p code {
     padding: 1px 3px;
     margin: 0 3px;
-    background:#FFC0CB;
+    background:#778899;
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
@@ -4710,7 +4710,7 @@ template {
 a {
     background: transparent;
     text-decoration: none;
-    color: #FFFFFF
+    color:  	#00BFFF
 }
 
 a:active {
@@ -6663,7 +6663,7 @@ pre .id {
 .article-entry p code {
     padding: 1px 3px;
     margin: 0 3px;
-    background:#FFC0CB;
+    background: 	#778899;
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
@@ -6676,7 +6676,7 @@ pre .id {
     padding: 15px 20px;
     margin-top: 10px;
     border-left: 5px solid #657b83;
-    background:  	#A9A9A9
+    background:  	#797979
 }
 
 .article-entry blockquote p {
@@ -8604,6 +8604,7 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
-#FFFFFF
-#FFFFFF
-#81a6ed
+.article-inner
+#A9A9A9
+#00BFFF
+#00BFFF 	#778899
