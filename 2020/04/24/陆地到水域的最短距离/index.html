@@ -72,12 +72,12 @@
 		</nav>
 
 		<nav>
-			总文章数 20
+			总文章数 21
 			</nav>
 		<nav class="header-smart-menu">
     		
 		
-		<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">分类</a>
+		<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">标签</a>
 		
 		
 		
@@ -547,7 +547,8 @@ gitalk.render('gitalk-container')
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: true,
+		showCategories: false,
 	}
 </script>
 
@@ -581,7 +582,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
       <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)"
-          q-class="active:innerArchive">分类</a></li>
+          q-class="active:innerArchive">标签</a></li>
       
       
       
@@ -699,16 +700,16 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       title: true
       date: true
       path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
+      text: false 
+      raw: false 
+      content: false 
+      slug: false 
+      updated: false 
+      comments: false 
+      link: false 
+      permalink: false 
+      excerpt: false 
+      categories: true 
       tags: true
 </pre>
           </p>

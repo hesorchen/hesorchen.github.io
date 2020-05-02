@@ -66,12 +66,12 @@
 		</nav>
 
 		<nav>
-			总文章数 20
+			总文章数 21
 			</nav>
 		<nav class="header-smart-menu">
     		
 		
-		<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">分类</a>
+		<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">标签</a>
 		
 		
 		
@@ -219,6 +219,35 @@
           <a href="/archives/2020" class="archive-year">2020</a>
         </div>
         <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/05/03/test/" class="archive-article-date">
+	<time datetime="2020-05-02T22:37:39.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-03</time>
+</a>
+
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/05/03/test/">test</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -713,61 +742,6 @@
   </div>
 </article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
-	<time datetime="2020-04-24T14:20:58.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/">hihocoder-1478 陆地到水域的最短距离</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
   
     </div></section>
   
@@ -844,7 +818,8 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: true,
+		showCategories: false,
 	}
 </script>
 
@@ -878,7 +853,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
       <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)"
-          q-class="active:innerArchive">分类</a></li>
+          q-class="active:innerArchive">标签</a></li>
       
       
       
@@ -996,16 +971,16 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       title: true
       date: true
       path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
+      text: false 
+      raw: false 
+      content: false 
+      slug: false 
+      updated: false 
+      comments: false 
+      link: false 
+      permalink: false 
+      excerpt: false 
+      categories: true 
       tags: true
 </pre>
           </p>
