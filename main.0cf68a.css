@@ -2364,7 +2364,7 @@ pre .id {
 .article-entry p code {
     padding: 1px 3px;
     margin: 0 3px;
-    background:#FFC0CB;
+    background:#778899;
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
@@ -8604,7 +8604,4 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
-.article-inner
-#A9A9A9
-#00BFFF
-#00BFFF 	#778899
+#778899
