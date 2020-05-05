@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目传送门：传送门">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-05T00:16:44.000Z">
-<meta property="article:modified_time" content="2020-05-05T03:55:43.974Z">
+<meta property="article:modified_time" content="2020-05-05T04:35:48.543Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="最短路">
 <meta property="article:tag" content="Floyd">
@@ -72,7 +72,7 @@
 		</nav>
 
 		<nav>
-			总文章数 22
+			总文章数 23
 			</nav>
 		<nav class="header-smart-menu">
     		
@@ -253,17 +253,18 @@
     </center>
     
     <p>题目传送门：<a href="https://www.luogu.com.cn/problem/P1119" target="_blank" rel="noopener">传送门</a><a id="more"></a></p>
-<p>今天写了一个题，对Floyd的理解大大加深了，不得不说，这是个Floyd的好题，如果对Floyd理解不够深的话，可能无从下手，但是如果理解了Floyd，这道题就非常简单了。</p>
+<p>今天写了一个题，对<code>Floyd</code>的理解大大加深了，不得不说，这是个<code>Floyd</code>的好题，如果对<code>Floyd</code>理解不够深的话，可能无从下手，但是如果理解了<code>Floyd</code>，这道题就非常简单了。</p>
 <hr>
+<p>(复制粘贴出错了，不想改了 想看题面走传送门吧)</p>
 <p>题目背景</p>
 <p>BBB地区在地震过后，所有村庄都造成了一定的损毁，而这场地震却没对公路造成什么影响。但是在村庄重建好之前，所有与未重建完成的村庄的公路均无法通车。换句话说，只有连接着两个重建完成的村庄的公路才能通车，只能到达重建完成的村庄。<br>题目描述</p>
 <p>给出BBB地区的村庄数NNN，村庄编号从000到N−1N-1N−1，和所有MMM条公路的长度，公路是双向的。并给出第iii个村庄重建完成的时间tit_iti​，你可以认为是同时开始重建并在第tit_iti​天重建完成，并且在当天即可通车。若tit_iti​为000则说明地震未对此地区造成损坏，一开始就可以通车。之后有QQQ个询问(x,y,t)(x, y, t)(x,y,t)，对于每个询问你要回答在第ttt天，从村庄xxx到村庄y的最短路径长度为多少。如果无法找到从xxx村庄到yyy村庄的路径，经过若干个已重建完成的村庄，或者村庄xxx或村庄yyy在第t天仍未重建完成 ，则需要返回−1-1−1。<br>输入格式</p>
 <p>第一行包含两个正整数N,MN,MN,M，表示了村庄的数目与公路的数量。</p>
-<p>第二行包含NNN个非负整数t0,t1,…,tN−1t_0, t_1,…, t_{N-1}t0​,t1​,…,tN−1​，表示了每个村庄重建完成的时间，数据保证了t0≤t1≤…≤tN−1t_0 ≤ t_1 ≤ … ≤ t_{N-1}t0​≤t1​≤…≤tN−1​。</p>
-<p>接下来MMM行，每行333个非负整数i,j,wi, j, wi,j,w，www为不超过100001000010000的正整数，表示了有一条连接村庄iii与村庄jjj的道路，长度为www，保证i≠ji≠ji​=j，且对于任意一对村庄只会存在一条道路。</p>
-<p>接下来一行也就是M+3M+3M+3行包含一个正整数QQQ，表示QQQ个询问。</p>
-<p>接下来QQQ行，每行333个非负整数x,y,tx, y, tx,y,t，询问在第ttt天，从村庄xxx到村庄yyy的最短路径长度为多少，数据保证了ttt是不下降的。<br>输出格式</p>
-<p>共QQQ行，对每一个询问(x,y,t)(x, y, t)(x,y,t)输出对应的答案，即在第ttt天，从村庄xxx到村庄yyy的最短路径长度为多少。如果在第t天无法找到从xxx村庄到yyy村庄的路径，经过若干个已重建完成的村庄，或者村庄x或村庄yyy在第ttt天仍未修复完成，则输出−1-1−1。<br>输入输出样例<br>输入 #1</p>
+<p>第二行包含NNN个非负整数t0,t1,…,tN−1​，表示了每个村庄重建完成的时间，数据保证了t0≤t1≤…≤tN−1。</p>
+<p>接下来M行，每行333个非负整数i,j,wi, j, wi,j,w，www为不超过10000的正整数，表示了有一条连接村庄iii与村庄j的道路，长度为www，保证i≠j，且对于任意一对村庄只会存在一条道路。</p>
+<p>接下来一行也就是M+3行包含一个正整数Q，表示Q个询问。</p>
+<p>接下来Q行，每行333个非负整数x,y,t，询问在第t天，从村庄x到村庄y的最短路径长度为多少，数据保证了t是不下降的。<br>输出格式</p>
+<p>共Q行，对每一个询问(x,y,t)输出对应的答案，即在第t天，从村庄x到村庄y的最短路径长度为多少。如果在第t天无法找到从x村庄到y村庄的路径，经过若干个已重建完成的村庄，或者村庄x或村庄y在第t天仍未修复完成，则输出−1。<br>输入输出样例<br>输入 #1</p>
 <p>4 5<br>1 2 3 4<br>0 2 1<br>2 3 1<br>3 1 2<br>2 1 4<br>0 3 5<br>4<br>2 0 2<br>0 1 2<br>0 1 3<br>0 1 4</p>
 <p>输出 #1</p>
 <p>-1<br>-1<br>5<br>4</p>
@@ -405,6 +406,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/05/05/%E6%B4%9B%E8%B0%B7p1462%E4%BA%8C%E5%88%86-%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          二分+迪杰斯特拉
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/03/51nod%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/" id="article-nav-older" class="article-nav-link-wrap">
@@ -679,6 +689,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
             <li class="article-tag-list-item">
               <a href="javascript:void(0)" class="js-tag color1">Floyd</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color3">题解</a>
             </li>
             
             <div class="clearfix"></div>
