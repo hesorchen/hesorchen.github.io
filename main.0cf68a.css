@@ -1142,9 +1142,13 @@ html {
 }
 
 .article-entry code {
-    background: #eee;
-    padding: 0 .3em;
-    border: none
+    padding: 1px 3px;
+    margin: 0 3px;
+    background: #778899;
+    border: 1px solid #ccc;
+    font-family: KaiTi;
+    word-wrap: break-word;
+    font-size: 18px;
 }
 
 .article-entry pre code {
@@ -1329,7 +1333,7 @@ pre .id {
     position: relative;
     border-radius: 0 5px 5px 0;
     margin: 5px 9px 5px 8px;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
+    font-family: KaiTi
 }
 
 .tagcloud a:hover {
@@ -2366,18 +2370,22 @@ pre .id {
     margin: 0 3px;
     background:#778899;
     border: 1px solid #ccc;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    font-family: KaiTi;
     word-wrap: break-word;
     font-size: 18px
 }
 
 .article-entry blockquote {
-    background: #ddd;
-    border-left: 5px solid #ccc;
+    border-style:solid; 
+    border-width:1px; 
+    border-left-width:5px; 
+    border-color:  	#C0C0C0;
+    border-left-color:#666666;
+
     padding: 15px 20px;
     margin-top: 10px;
-    border-left: 5px solid #657b83;
-    background: #f6f6f6
+    /* border-left: 5px solid #657b83; */
+    background:  	#797979
 }
 
 .article-entry blockquote p {
@@ -2477,7 +2485,7 @@ pre .id {
     color: #657b83;
     border: 1px solid #ccc;
     text-shadow: 0 1px #444;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
+    font-family: KaiTi
 }
 
 .article-entry pre code {
@@ -2507,7 +2515,8 @@ pre .id {
 .article-entry table td,
 .article-entry table th {
     border: 1px solid #dedede;
-    padding: 0 10px
+    padding: 0 10px;
+    background-color: 	#696969
 }
 
 .article-entry figure table {
@@ -3044,7 +3053,7 @@ pre .id {
     margin: 0 0 -10px -185px;
     cursor: default;
     pointer-events: none;
-    font-family: Satisfy, cursive;
+    font-family: KaiTi;
     -webkit-font-smoothing: antialiased;
     transition: opacity .3s .3s;
     padding-bottom: 80px
@@ -3109,7 +3118,7 @@ pre .id {
 
 #footer {
     font-size: 12px;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    font-family: KaiTi;
     text-shadow: 0 1px grey;
     position: absolute;    
     color:#FFFFFF;
@@ -4905,7 +4914,7 @@ textarea::-webkit-input-placeholder {
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
 td,
@@ -5444,9 +5453,13 @@ html {
 }
 
 .article-entry code {
-    background: #eee;
-    padding: 0 .3em;
-    border: none
+    padding: 1px 3px;
+    margin: 0 3px;
+    background: #778899;
+    border: 1px solid #ccc;
+    font-family: KaiTi;
+    word-wrap: break-word;
+    font-size: 18px;
 }
 
 .article-entry pre code {
@@ -5631,7 +5644,7 @@ pre .id {
     position: relative;
     border-radius: 0 5px 5px 0;
     margin: 5px 9px 5px 8px;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
+    font-family: KaiTi
 }
 
 .tagcloud a:hover {
@@ -6666,17 +6679,21 @@ pre .id {
     margin: 0 3px;
     background: 	#778899;
     border: 1px solid #ccc;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    font-family: KaiTi;
     word-wrap: break-word;
     font-size: 18px
 }
 
 .article-entry blockquote {
-    background: #ddd;
-    border-left: 5px solid  	#000000;
+    border-style:solid; 
+    border-width:1px; 
+    border-left-width:5px; 
+    border-color: 	 	#C0C0C0;
+    border-left-color:#666666;
+
     padding: 15px 20px;
     margin-top: 10px;
-    border-left: 5px solid #657b83;
+    /* border-left: 5px solid #657b83; */
     background:  	#797979
 }
 
@@ -6777,7 +6794,7 @@ pre .id {
     color: #657b83;
     border: 1px solid #ccc;
     text-shadow: 0 1px #444;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
+    font-family: KaiTi
 }
 
 .article-entry pre code {
@@ -6807,7 +6824,8 @@ pre .id {
 .article-entry table td,
 .article-entry table th {
     border: 1px solid #dedede;
-    padding: 0 10px
+    padding: 0 10px;
+    background-color: 	#696969
 }
 
 .article-entry figure table {
@@ -7344,7 +7362,7 @@ pre .id {
     margin: 0 0 -10px -185px;
     cursor: default;
     pointer-events: none;
-    font-family: Satisfy, cursive;
+    font-family: KaiTi;
     -webkit-font-smoothing: antialiased;
     transition: opacity .3s .3s;
     padding-bottom: 80px
@@ -7409,7 +7427,7 @@ pre .id {
 
 #footer {
     font-size: 12px;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    font-family: KaiTi;
     text-shadow: 0 1px grey;
     color:#FFFFFF;
     position: absolute;
