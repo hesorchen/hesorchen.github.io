@@ -2289,46 +2289,46 @@ pre .id {
 }
 
 .article-inner h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 32px;
+    font-size: 1.8rem;
     line-height: 1.25;
     margin-top: 2em;
-    margin-bottom: 1em
+    margin-bottom: 1em;
+    text-transform: uppercase;
 }
 
 .article-inner h2 {
-    font-size: 23px;
-    font-size: 1.4375rem;
+    font-size: 26px;
+    font-size: 1.5rem;
     line-height: 1.2173913043;
     margin-top: 2.4347826087em;
-    margin-bottom: 1.2173913043em
+    margin-bottom: 1.2173913043em;
+    text-transform: uppercase;
 }
 
 .article-inner h3 {
-    font-size: 19px;
-    font-size: 1.1875rem;
+    font-size: 21px;
+    font-size: 1.4rem;
     line-height: 1.1052631579;
     margin-top: 2.9473684211em;
-    margin-bottom: 1.4736842105em
+    margin-bottom: 1.4736842105em;;
+    text-transform: uppercase;
 }
 
 .article-inner h4,
 .article-inner h5,
 .article-inner h6 {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 17px;
+    font-size: 1.3rem;
     line-height: 1.3125;
     margin-top: 3.5em;
-    margin-bottom: 1.75em
-}
-
-.article-inner h4 {
-    letter-spacing: .140625em;
-    text-transform: uppercase
+    margin-bottom: 1.75em;
+    text-transform: uppercase;
 }
 
 .article-inner h6 {
-    font-style: italic
+    font-style: KaiTi;
+    text-transform: uppercase;
 }
 
 .article-inner h1,
@@ -6598,46 +6598,46 @@ pre .id {
 }
 
 .article-inner h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 32px;
+    font-size: 1.8rem;
     line-height: 1.25;
     margin-top: 2em;
-    margin-bottom: 1em
+    margin-bottom: 1em;;
+    text-transform: uppercase;
 }
 
 .article-inner h2 {
-    font-size: 23px;
-    font-size: 1.4375rem;
+    font-size: 26px;
+    font-size: 1.5rem;
     line-height: 1.2173913043;
     margin-top: 2.4347826087em;
-    margin-bottom: 1.2173913043em
+    margin-bottom: 1.2173913043em;
+    text-transform: uppercase;
 }
 
 .article-inner h3 {
-    font-size: 19px;
-    font-size: 1.1875rem;
+    font-size: 21px;
+    font-size: 1.4rem;
     line-height: 1.1052631579;
     margin-top: 2.9473684211em;
-    margin-bottom: 1.4736842105em
+    margin-bottom: 1.4736842105em;
+    text-transform: uppercase;
 }
 
 .article-inner h4,
 .article-inner h5,
 .article-inner h6 {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 17px;
+    font-size: 1.3rem;
     line-height: 1.3125;
     margin-top: 3.5em;
-    margin-bottom: 1.75em
-}
-
-.article-inner h4 {
-    letter-spacing: .140625em;
-    text-transform: uppercase
+    margin-bottom: 1.75em;
+    text-transform: uppercase;
 }
 
 .article-inner h6 {
-    font-style: italic
+    font-style: KaiTi;
+    text-transform: uppercase;
 }
 
 .article-inner h1,
