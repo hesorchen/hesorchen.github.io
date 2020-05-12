@@ -37,6 +37,7 @@
 }
 .hbe-input-container input,
 .hbe-input-container label {
+  background-color: #787878;
   transition: all 0.3s;
 }
 .hbe-input-container label {
@@ -67,6 +68,7 @@
 .hbe-input-container input:focus + label,
 .hbe-input-container input:not(:placeholder-shown) + label {
   color: #FFFFFF;
+  background-color: #323232;
   -webkit-transform: translate(10px) scale(0.9);
   transform: translate(10px) scale(0.9);
 }
