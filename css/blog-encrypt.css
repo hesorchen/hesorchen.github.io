@@ -23,7 +23,7 @@
   width: 100%;
   padding: 15px 0;
   font-size: 20px;
-  border-bottom: 1px solid #000003;
+  border-bottom: 1px solid #d5d5d5;
   text-indent: 10px;
 }
 .hbe-input-container input::-moz-placeholder {
@@ -58,7 +58,7 @@
   transition: all 0.3s;
 }
 .hbe-input-container input:focus {
-  border-bottom-color: #000002;
+  border-bottom-color: #fff;
 }
 .hbe-input-container input:focus ~ div,
 .hbe-input-container input:not(:placeholder-shown) ~ div {
@@ -66,7 +66,7 @@
 }
 .hbe-input-container input:focus + label,
 .hbe-input-container input:not(:placeholder-shown) + label {
-  color: #000000;
+  color: #52616c;
   -webkit-transform: translate(10px) scale(0.9);
   transform: translate(10px) scale(0.9);
 }
@@ -78,15 +78,15 @@
   border: none;
   border-radius: 5px;
   position: relative;
-  border-bottom: 4px solid #2b8bc6;
-  color: #000001;
+  border-bottom: 4px solid red;
+  color: #fbfbfb;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+  text-shadow: 1px 1px 1px #FFFFFF;
   font-size: 15px;
   text-align: left;
   text-indent: 5px;
-  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 3px 0px 0px #FFFFFF;
   cursor: pointer;
 
   display: block;
@@ -95,7 +95,7 @@
 }
 
 .hbe-button:active {
-  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 2px 0px 0px #FFFFFF;
   top: 1px;
 }
 
@@ -104,10 +104,10 @@
   width: 0;
   height: 0;
   display: block;
-  border-top: 20px solid #000000;
-  border-bottom: 20px solid #000000;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
   border-left: 16px solid transparent;
-  border-right: 20px solid #000000;
+  border-right: 20px solid #187dbc;
   position: absolute;
   opacity: 0.6;
   right: 0;
