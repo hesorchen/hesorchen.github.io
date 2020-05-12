@@ -5177,10 +5177,10 @@ button,
 input,
 select,
 textarea {
-    color: #FFFFFF;
-    font-family: 
+    color: #000000;
+    font-family: KaiTi;
     font-size: 18px;
-    font-size: 1.06rem;
+    font-size: 1.8rem;
     line-height: 1.75
 }
 
