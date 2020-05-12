@@ -66,7 +66,7 @@
 }
 .hbe-input-container input:focus + label,
 .hbe-input-container input:not(:placeholder-shown) + label {
-  color: #FFFFFE;
+  color: #000000;
   -webkit-transform: translate(10px) scale(0.9);
   transform: translate(10px) scale(0.9);
 }
@@ -104,14 +104,13 @@
   width: 0;
   height: 0;
   display: block;
-  border-top: 20px solid #FFFFFE;
-  border-bottom: 20px solid #FFFFFE;
+  border-top: 20px solid #000000;
+  border-bottom: 20px solid #000000;
   border-left: 16px solid transparent;
-  border-right: 20px solid #FFFFFE;
+  border-right: 20px solid #000000;
   position: absolute;
   opacity: 0.6;
   right: 0;
   top: 0;
   border-radius: 0 5px 5px 0;
 }
-/* #FFFFFE */#52616c
