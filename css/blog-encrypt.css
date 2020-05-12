@@ -66,7 +66,7 @@
 }
 .hbe-input-container input:focus + label,
 .hbe-input-container input:not(:placeholder-shown) + label {
-  color: #52616c;
+  color: #FFFFFF;
   -webkit-transform: translate(10px) scale(0.9);
   transform: translate(10px) scale(0.9);
 }
