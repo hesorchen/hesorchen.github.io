@@ -23,7 +23,7 @@
   width: 100%;
   padding: 15px 0;
   font-size: 20px;
-  border-bottom: 1px solid #d5d5d5;
+  border-bottom: 1px solid #000003;
   text-indent: 10px;
 }
 .hbe-input-container input::-moz-placeholder {
@@ -58,7 +58,7 @@
   transition: all 0.3s;
 }
 .hbe-input-container input:focus {
-  border-bottom-color: #fff;
+  border-bottom-color: #000002;
 }
 .hbe-input-container input:focus ~ div,
 .hbe-input-container input:not(:placeholder-shown) ~ div {
@@ -79,7 +79,7 @@
   border-radius: 5px;
   position: relative;
   border-bottom: 4px solid #2b8bc6;
-  color: #fbfbfb;
+  color: #000001;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   text-shadow: 1px 1px 1px rgba(0,0,0,.4);
