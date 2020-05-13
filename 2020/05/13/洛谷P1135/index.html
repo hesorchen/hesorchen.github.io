@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: C++ | hesorchen</title>
+  <title>洛谷P1135 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/categories/C/index.html">
+  <meta name="description" content="题目链接：传送门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷P1135">
+<meta property="og:url" content="http://yoursite.com/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="题目链接：传送门">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200513201727263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200513201744672.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-05-13T12:16:19.000Z">
+<meta property="article:modified_time" content="2020-05-13T12:26:04.353Z">
 <meta property="article:author" content="hesorchen">
+<meta property="article:tag" content="題解，">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200513201727263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -207,77 +215,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-洛谷P1135" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-	<time datetime="2020-04-28T10:00:29.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">C++程序设计课程笔记</a>
+    <h1 class="article-title" itemprop="name">
+      洛谷P1135
     </h1>
   
+ -->
+  
+  <a href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/" class="archive-article-date">
+	<time datetime="2020-05-13T12:16:19.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-13</time>
+</a>
 
-        <div class="article-info info-on-right">
-          
+  
+
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      洛谷P1135
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>题目链接：<a href="https://www.luogu.com.cn/problem/P1135" target="_blank" rel="noopener">传送门</a><a id="more"></a><br><img src="https://img-blog.csdnimg.cn/20200513201727263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200513201744672.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>一个水题，不过我dfs还是不太行，wa了两次</p>
+<p>这题可以用DFS和BFS写，另外也可以建图跑最短路。下面放双搜代码：</p>
+<p>BFS：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> A, B;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> ff = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> now, ans;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">queue</span>&lt;node&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (q.size())</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        node temp = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[temp.now] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (temp.now == B)</span><br><span class="line">        &#123;</span><br><span class="line">            ff = temp.ans;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (temp.now + a[temp.now] &lt;= n &amp;&amp; vis[temp.now + a[temp.now]] == <span class="number">0</span>)</span><br><span class="line">            q.push(node&#123;temp.now + a[temp.now], temp.ans + <span class="number">1</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span> (temp.now - a[temp.now] &gt;= <span class="number">1</span> &amp;&amp; vis[temp.now - a[temp.now]] == <span class="number">0</span>)</span><br><span class="line">            q.push(node&#123;temp.now - a[temp.now], temp.ans + <span class="number">1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    q.push(node&#123;A, <span class="number">0</span>&#125;);</span><br><span class="line">    bfs();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ff &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DFS</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> A, B;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> ff = INF;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> ans)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; ff) <span class="comment">//剪枝</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    vis[now] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (now == B)</span><br><span class="line">    &#123;</span><br><span class="line">        ff = min(ff, ans);</span><br><span class="line">        vis[now] = <span class="number">0</span>; <span class="comment">//回溯记得解标</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> x = now + a[now];</span><br><span class="line">    <span class="keyword">int</span> y = now - a[now];</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= n &amp;&amp; !vis[x])</span><br><span class="line">        dfs(x, ans + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (y &gt;= <span class="number">1</span> &amp;&amp; !vis[y])</span><br><span class="line">        dfs(y, ans + <span class="number">1</span>);</span><br><span class="line">    vis[now] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// fre;</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    dfs(A, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (ff == INF)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ff &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C++基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">題解，</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C/课程//" class="article-tag-list-link color3">课程</a>
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/13/%E6%B4%9B%E8%B0%B7P2392/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">洛谷P2392</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Wed May 13 2020 20:16:19 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -337,10 +508,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
 		root: "/",
