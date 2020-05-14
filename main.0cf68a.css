@@ -6070,11 +6070,15 @@ pre .id {
 }
 
 .archives-wrap:first-child {
-    margin-top: 30px
+    margin-top: 30px;
+    border-style:solid;
+    border-color:white;
 }
 
 .archives-wrap:last-child {
-    margin-bottom: 80px
+    margin-bottom: 80px;
+    border-style:solid;
+    border-color:white;
 }
 
 .archives-wrap .archive-year-wrap {
@@ -7459,7 +7463,8 @@ pre .id {
     html {
         height: auto;
         overflow-x: hidden;
-        overflow-y: auto
+        overflow-y: auto;
+        
     }
 
     #mobile-nav {
