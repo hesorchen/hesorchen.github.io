@@ -5227,7 +5227,8 @@ html {
     min-height: 100%;
     background:  	#787878;
     left: 300px;
-    width: auto
+    width: auto;
+    background-image: url(/img/33333.jpg);
 }
 
 .mid-col.show {
@@ -5240,7 +5241,7 @@ html {
 }
 
 .left-col {
-    background-image: url("/img/22222.png");
+    background-image: url("/img/222222.png");
     width: 300px;
     position: fixed;
     opacity: 1;
@@ -6504,7 +6505,7 @@ pre .id {
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-    background: #787878;
+    background: #333;
     transition: all .2s ease-in
 }
 
@@ -7628,9 +7629,10 @@ pre .id {
     .article {
         padding: 10px;
         margin: 10px 0;
-        border: 0;
         font-size: 16px;
-        color: #555
+        color: #555;
+        border-style:solid;
+    border-color:#FFFFFF;
     }
 
     .article .article-more-link {
