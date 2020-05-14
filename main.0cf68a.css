@@ -6832,7 +6832,7 @@ pre .id {
     color: #657b83;
     border: 1px solid #ccc;
     text-shadow: 0 1px #444;
-    font-family: KaiTi
+    font-family: 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif
 }
 
 .article-entry pre code {
@@ -8666,3 +8666,5 @@ a.pswp__share--download:hover {
 	font-size: 34px;
 	transition: color .3s
 }
+
+body, button, input, select, textarea
