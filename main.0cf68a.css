@@ -795,7 +795,7 @@ i {
     content: "\E6F9"
 }
 
-.icon-quo-left:before {
+/* .icon-quo-left:before {
     content: "\E7F5";
     color:	#00FFFF;
 }
@@ -803,7 +803,7 @@ i {
 .icon-quo-right:before {
     content: "\E7F6";
     color:	#00FFFF;
-}
+} */
 
 .icon-back1:before {
     content: "\E64E"
@@ -5106,13 +5106,13 @@ i {
     content: "\E6F9"
 }
 
-.icon-quo-left:before {
+/* .icon-quo-left:before {
     content: "\E7F5"
 }
 
 .icon-quo-right:before {
     content: "\E7F6"
-}
+} */
 
 .icon-back1:before {
     content: "\E64E"
@@ -7633,7 +7633,7 @@ pre .id {
 
     .article {
         padding: 10px;
-        margin: 10px 0;
+        margin: 20px 0;
         font-size: 16px;
         color: #555;
         border-style:solid;
@@ -7939,7 +7939,7 @@ pre .id {
 
     .header-subtitle {
         text-align: center;
-        color: 	#00FFFF;
+        color: 	#FFFFFF;
         font-size: 14px;
         line-height: 25px;
         overflow: hidden;
