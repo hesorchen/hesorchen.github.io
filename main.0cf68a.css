@@ -2487,7 +2487,7 @@ pre .id {
     color: #657b83;
     border: 1px solid #ccc;
     text-shadow: 0 1px #444;
-    font-family: KaiTi
+    font-family:consolas, "Source Code Pro", monaco, monospace !important
 }
 
 .article-entry pre code {
