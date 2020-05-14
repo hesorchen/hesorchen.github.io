@@ -7479,7 +7479,8 @@ pre .id {
 
     #header .header-nav,
     .mid-col {
-        position: relative
+        position: relative;
+        background-image: url(/img/22222.png);
     }
 
     .wrap-side-operation {
