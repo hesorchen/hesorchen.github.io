@@ -796,11 +796,13 @@ i {
 }
 
 .icon-quo-left:before {
-    content: "\E7F5"
+    content: "\E7F5";
+    color:	#00FFFF;
 }
 
 .icon-quo-right:before {
-    content: "\E7F6"
+    content: "\E7F6";
+    color:	#00FFFF;
 }
 
 .icon-back1:before {
@@ -7803,7 +7805,7 @@ pre .id {
         margin: 0;
         position: relative;
         z-index: 2;
-        color: #424242
+        color: #FFFFFF
     }
 
      {
@@ -7815,7 +7817,8 @@ pre .id {
     }
 
     #mobile-nav #header {
-        padding: 10px 0 0
+        padding: 10px 0 0;
+        background-image: url(/img/22222.png);
     }
 
     #mobile-nav #header .profilepic {
@@ -7892,11 +7895,11 @@ pre .id {
         text-overflow: ellipsis;
         white-space: nowrap;
         display: block;
-        color: #a0a0a0
+        color: #FFFFFF
     }
 
     .header-menu li a.active {
-        color: #eaeaea;
+        color: #FFFFFF;
         background: #a0a0a0
     }
 
@@ -7928,7 +7931,7 @@ pre .id {
 
     .header-subtitle {
         text-align: center;
-        color: #999;
+        color: 	#00FFFF;
         font-size: 14px;
         line-height: 25px;
         overflow: hidden;
