@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Hexo语法 | hesorchen</title>
+  <title>CF 643 div.2 ABDE | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/tags/Hexo%E8%AF%AD%E6%B3%95/index.html">
+  <meta name="description" content="一个月没打cf了，难得打一次，结果D被fst了，又掉分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF 643 div.2 ABDE">
+<meta property="og:url" content="http://yoursite.com/2020/05/17/codeforces643/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="一个月没打cf了，难得打一次，结果D被fst了，又掉分">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-17T00:51:26.000Z">
+<meta property="article:modified_time" content="2020-05-18T03:35:15.369Z">
 <meta property="article:author" content="hesorchen">
+<meta property="article:tag" content="codeforces">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -207,73 +213,236 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-codeforces643" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/23/hexo%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-	<time datetime="2020-04-23T12:26:24.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-23</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/23/hexo%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">hexo基本语法</a>
+    <h1 class="article-title" itemprop="name">
+      CF 643 div.2 ABDE
     </h1>
   
+ -->
+  
+  <a href="/2020/05/17/codeforces643/" class="archive-article-date">
+	<time datetime="2020-05-17T00:51:26.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-17</time>
+</a>
 
-        <div class="article-info info-on-right">
-          
+  
+
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      CF 643 div.2 ABDE
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>一个月没打cf了，难得打一次，结果D被fst了，又掉分<a id="more"></a><br><code>cf太卡了不想进，因此以下代码仅供参考，不保证ac</code></p>
+<h4 id="A题-Sequence-with-Digits"><a href="#A题-Sequence-with-Digits" class="headerlink" title="A题   Sequence with Digits"></a>A题   Sequence with Digits</h4><p>就是给你一个数n,问你执行k-1次操作后变成多少。<br>操作：找到n中最大的数和最小的数，n加上这个数。<br>例如$487$，第一次操作：$487+(4\times8)=519$，第二次操作：$519+(1\times9)=528$<br>这题给的数据是$k&lt;1e16$，一时间无从下手，我先写了BD才回过头来看A，先写了一个暴力模拟的代码，跑了一会发现，k大了之后n就不会变了，因为很快，n中就会出现0，当n中有0时，可以直接break输出</p>
+<p>代码：略</p>
+<h4 id="B题-Young-Explorers"><a href="#B题-Young-Explorers" class="headerlink" title="B题   Young Explorers"></a>B题   Young Explorers</h4><p>题意：给出n个人的价值，每个人有价值ki，价值为k的人所在的队伍中至少有k个人，问你这些人最多能组成多少队伍。<br>其实仔细一想，要使队伍数量最大。价值为1的人必然自成一队，价值为2两人一队，以此类推。<br>然后第一次我用map记录一下每种价值的人数，然后除一下相加。wa了。<br>然后想到了1 2 2 2 3 3 这组数据，这样的答案应该是3：<code>1</code>、<code>22</code>、<code>233</code>。<br>因此只要把前面余下的人加到后面即可。<br>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span> (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        mp[temp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = mp.begin(); it != mp.end(); it++)</span><br><span class="line">    &#123;</span><br><span class="line">        it-&gt;second += temp;</span><br><span class="line">        temp = it-&gt;second % it-&gt;first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = mp.begin(); it != mp.end(); it++)</span><br><span class="line">        ans += it-&gt;second / it-&gt;first;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="D题-Game-With-Array"><a href="#D题-Game-With-Array" class="headerlink" title="D题  Game With Array"></a>D题  Game With Array</h4><p>构造题<br>给出一个$N$和$S$，问你能不能给出一个$N$长度的序列，和为$S$，并且求出一个$K(0\le K\le M)$，使得序列中的某些元素和不为$K$<br>例如，$N=5$ $K=10$<br>那么可以给出序列$1$ $1$  $1$ $1$ $6$，$K=5$，这样在序列中找不到和为$5$的子序列。<br>但是如果$N=5$ $K=9$<br>不论如何构造序列，都可以找到和为$K(0\le K\le 9)$的子序列<br>有两种构造方式：<br>第一种，序列的前$N-1$项都为1，第$N$项只要$\ge N+1$即可，这样是找不到和为$N$的子序列的。<strong>构造条件：</strong>$S-(N-1)\ge (N-1)+2$<br>第二种，序列的前$N-1$项都为2，第$N$项只要$\ge 2$即可，这样是找不到和为$1$的子序列的。<strong>构造条件：</strong>$S-2\times (N-1)\ge 2$<br>可以发现，经过移项，两种构造方式的构造条件都是一样的</p>
+<p>第一种构造方式代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; s;</span><br><span class="line">    <span class="keyword">if</span> (s &gt;= n * <span class="number">2</span>) <span class="comment">//s - n + 1 &gt;= n - 1 + 2</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES\n"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s - n + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO\n"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="E题-Restorer-Distance"><a href="#E题-Restorer-Distance" class="headerlink" title="E题 Restorer Distance"></a>E题 Restorer Distance</h4><p>给你$n$个用$ai$个相同的砖块垒成的柱子，可以选择三种操作：<br><code>add</code>：给一个柱子加一块砖块，代价为a<br><code>remove</code>：给一个柱子减一块砖块，代价为r<br><code>move</code>：将一个柱子的砖块移到另一个柱子上，代价为m<br>问你要使n个柱子高度相同，最少代价是多少<br>显然，<code>move</code>操作是可以用<code>a</code>+<code>r</code>取代的。<br>三分高度mid。<br>关于三分，还是不太理解三分区间，有空再看看</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">ll p[<span class="number">100010</span>];</span><br><span class="line">ll n, a, r, m;</span><br><span class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ct1, ct2; <span class="comment">//add和remove的数量</span></span><br><span class="line">    ct1 = ct2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span> (p[i] &lt; mid)</span><br><span class="line">            ct1 += mid - p[i];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ct2 += p[i] - mid;</span><br><span class="line">    ll ct3 = min(ct1, ct2); <span class="comment">//需要move的数量</span></span><br><span class="line">    ct1 -= ct3, ct2 -= ct3;</span><br><span class="line">    <span class="keyword">return</span> ct1 * a + ct2 * r + ct3 * m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; a &gt;&gt; r &gt;&gt; m;</span><br><span class="line">    m = min(a + r, m);</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; p[i];</span><br><span class="line">    sort(p + <span class="number">1</span>, p + <span class="number">1</span> + n);</span><br><span class="line"></span><br><span class="line">    ll l = <span class="number">0</span>, r = <span class="number">1000000000</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ll mid = l + r &gt;&gt; 1;</span></span><br><span class="line">        <span class="comment">// ll midr = mid + r &gt;&gt; 1;</span></span><br><span class="line">        ll mid = l + (r - l) / <span class="number">3</span>; <span class="comment">//不太懂</span></span><br><span class="line">        ll midr = l + (<span class="number">2</span> * r - <span class="number">2</span> * l + <span class="number">2</span>) / <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">if</span> (f(mid) &gt; f(midr))</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = midr - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f(l) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo语法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo//" class="article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
         		</li>
       		
 		</ul>
 	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
+
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/17/codeforces643/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/15/%E6%91%98%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">摘录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#A题-Sequence-with-Digits"><span class="toc-number">1.</span> <span class="toc-text">A题   Sequence with Digits</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B题-Young-Explorers"><span class="toc-number">2.</span> <span class="toc-text">B题   Young Explorers</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D题-Game-With-Array"><span class="toc-number">3.</span> <span class="toc-text">D题  Game With Array</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#E题-Restorer-Distance"><span class="toc-number">4.</span> <span class="toc-text">E题 Restorer Distance</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Sun May 17 2020 08:51:26 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -333,9 +502,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
