@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hihocoder-1478 陆地到水域的最短距离 | hesorchen</title>
+  <title>python_test | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。   矩阵中每个位置与它上下左右相邻的格子距离为1。Input 第一行包含两个整数">
+  <meta name="description" content="这是一篇加密文章。如果你想查看其中内容，请与我联系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hihocoder-1478 陆地到水域的最短距离">
-<meta property="og:url" content="http://yoursite.com/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/index.html">
+<meta property="og:title" content="python_test">
+<meta property="og:url" content="http://yoursite.com/2020/05/19/python-test/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。   矩阵中每个位置与它上下左右相邻的格子距离为1。Input 第一行包含两个整数">
+<meta property="og:description" content="这是一篇加密文章。如果你想查看其中内容，请与我联系。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T14:20:58.000Z">
-<meta property="article:modified_time" content="2020-05-01T02:08:27.529Z">
+<meta property="article:published_time" content="2020-05-19T08:45:17.000Z">
+<meta property="article:modified_time" content="2020-05-19T08:45:42.676Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="BFS">
-<meta property="article:tag" content="DP">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -219,21 +218,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-陆地到水域的最短距离" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-test" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      hihocoder-1478 陆地到水域的最短距离
+      python_test
     </h1>
   
  -->
   
-  <a href="/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
-	<time datetime="2020-04-24T14:20:58.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-24</time>
+  <a href="/2020/05/19/python-test/" class="archive-article-date">
+	<time datetime="2020-05-19T08:45:17.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-19</time>
 </a>
 
   
@@ -252,40 +251,21 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      hihocoder-1478 陆地到水域的最短距离
+      python_test
     </h1>
   
 </p>
     </center>
     
-    <p>给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。  </p>
-<p>矩阵中每个位置与它上下左右相邻的格子距离为1。<br>Input</p>
-<p>第一行包含两个整数<a id="more"></a>，N和M。</p>
-<p>以下N行每行M个0或者1，代表地图。</p>
-<p>数据保证至少有1块水域。</p>
-<p>对于30%的数据，1 &lt;= N, M &lt;= 100  </p>
-<p>对于100%的数据，1 &lt;= N, M &lt;= 800<br>Output</p>
-<p>输出N行，每行M个空格分隔的整数。每个整数表示该位置距离最近的水域的距离。</p>
-<p>Sample Input</p>
-<pre><code>4 4  
-0110  
-1111  
-1111  
-0110</code></pre><p>Sample Output</p>
-<pre><code>0 1 1 0  
-1 2 2 1  
-1 2 2 1  
-0 1 1 0</code></pre><hr>
-<p> 显然是BFS裸题了，不过注意一点，一次性把所有起点压入队列，不然会<code>tle</code>。</p>
-<p>  我记得上次出过原题，我就是BFS<code>tle</code>了无数发，然后用DP写了，DP的话也很简单，从两个对个角遍历一遍即可。</p>
-<hr>
-<p> AC代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI cos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> mp[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line">ll ans[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; mp[i] + <span class="number">1</span>;</span><br><span class="line">    fill(ans[<span class="number">0</span>], ans[<span class="number">0</span>] + <span class="number">999995</span>, INF);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] == <span class="string">'0'</span>)</span><br><span class="line">                ans[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans[i][j] = min(ans[i][j - <span class="number">1</span>] + <span class="number">1</span>, min(ans[i][j], ans[i - <span class="number">1</span>][j] + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = m; j &gt;= <span class="number">1</span>; j--)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] == <span class="string">'0'</span>)</span><br><span class="line">                ans[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans[i][j] = min(ans[i][j + <span class="number">1</span>] + <span class="number">1</span>, min(ans[i][j], ans[i + <span class="number">1</span>][j] + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; m; j++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans[i][j] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans[i][m];</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+    <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">输入密码，查看文章。</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="fea65f79483e7b07f3775696e3c94d32aaf1132e8413ebb5f1dae20da7f95351">1c0c3201b30ea5b4d09c56b6b17a3dc4462711b2972b368307782fc7fe9cd958</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     
 
     
@@ -330,11 +310,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -346,7 +322,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        			<a href="/categories/Python//" class="article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -400,7 +376,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/19/python-test/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -414,18 +390,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/26/NYIST%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E7%A7%AF%E5%88%86%E8%B5%9B%E7%AD%BE%E5%88%B0%E9%A2%98%E9%A2%98%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          NYIST第十一次积分赛签到题题解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/23/hexo%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo基本语法</div>
+    <a href="/2020/05/17/codeforces643/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CF 643 div.2 ABDE</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -475,7 +442,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Fri Apr 24 2020 22:20:58 GMT+0800',
+  	id: 'Tue May 19 2020 16:45:17 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
