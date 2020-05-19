@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>POJ3660传递闭包 | hesorchen</title>
+  <title>test | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="貌似以后数学里会学到，不过还是先水一篇博客吧 传递闭包传递闭包一般用来解决一类具有传递性的问题。">
+  <meta name="description" content="这是一篇加密文章。如果你想查看其中内容，请与我联系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ3660传递闭包">
-<meta property="og:url" content="http://yoursite.com/2020/05/06/%E4%BC%A0%E9%80%92%E9%97%AD%E5%8C%85POj3660/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://yoursite.com/2020/05/19/test/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="貌似以后数学里会学到，不过还是先水一篇博客吧 传递闭包传递闭包一般用来解决一类具有传递性的问题。">
+<meta property="og:description" content="这是一篇加密文章。如果你想查看其中内容，请与我联系。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-06T02:22:37.000Z">
-<meta property="article:modified_time" content="2020-05-06T02:36:56.780Z">
+<meta property="article:published_time" content="2020-05-19T09:09:32.000Z">
+<meta property="article:modified_time" content="2020-05-19T09:10:21.242Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="传递闭包">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -218,21 +217,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-传递闭包POj3660" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      POJ3660传递闭包
+      test
     </h1>
   
  -->
   
-  <a href="/2020/05/06/%E4%BC%A0%E9%80%92%E9%97%AD%E5%8C%85POj3660/" class="archive-article-date">
-	<time datetime="2020-05-06T02:22:37.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-06</time>
+  <a href="/2020/05/19/test/" class="archive-article-date">
+	<time datetime="2020-05-19T09:09:32.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-19</time>
 </a>
 
   
@@ -251,23 +250,21 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      POJ3660传递闭包
+      test
     </h1>
   
 </p>
     </center>
     
-    <p><del>貌似以后数学里会学到，不过还是先水一篇博客吧</del></p>
-<h3 id="传递闭包"><a href="#传递闭包" class="headerlink" title="传递闭包"></a>传递闭包</h3><p>传递闭包一般用来解决一类具有传递性的问题。<a id="more"></a></p>
-<p>定义：在交际网络中，给定若干个元素和若干对二元关系，且这些关系具有传递性，通过这些传递性推导出尽量多的元素之间的关系的问题叫做传递闭包。</p>
-<p>也就是用已知条件来推出其他所有的可知条件。数独应该就是使用了传递闭包的一个例子。再比如，<code>A&gt;B</code>，<code>B&gt;C</code>，通过传递闭包，我们就可以得到<code>A&gt;C</code>。</p>
-<h3 id="将传递闭包问题转化为图论问题。"><a href="#将传递闭包问题转化为图论问题。" class="headerlink" title="将传递闭包问题转化为图论问题。"></a>将传递闭包问题转化为图论问题。</h3><p>把元素变成一个点，有关系就连一条边。<br>最后用<code>Floyd</code>算法解决两点之间的联通关系。</p>
-<hr>
-<p>题目大意：已知一些人的绝对实力关系，让你推出，最后有多少人的绝对实力排名是已知的。<br>这就是经典的<code>Floyd</code>传递闭包。</p>
-<p>不多说了 看题目和代码:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-04-14 10:33:26</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2020-05-06 10:21:30</span></span><br><span class="line"><span class="comment"> * @Link: https://hesorchen.github.io/</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI cos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fre                              \</span></span><br><span class="line">    &#123;                                    \</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);   \</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); \</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u, v;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        mp[u][v] = <span class="number">1</span>;  <span class="comment">//1代表u&gt;v</span></span><br><span class="line">        mp[v][u] = <span class="number">-1</span>; <span class="comment">//-1代表u&lt;v</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="comment">//传递闭包</span></span><br><span class="line">                <span class="keyword">if</span> (mp[i][k] == <span class="number">1</span> &amp;&amp; mp[k][j] == <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    mp[i][j] = mp[i][k];</span><br><span class="line">                    mp[j][i] = -mp[i][k];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (mp[j][k] == <span class="number">-1</span> &amp;&amp; mp[k][i] == <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    mp[i][j] = mp[k][i];</span><br><span class="line">                    mp[j][i] = -mp[k][i];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j])</span><br><span class="line">                sum++;</span><br><span class="line">        <span class="keyword">if</span> (sum == n - <span class="number">1</span>)</span><br><span class="line">            ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+    <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">输入密码，查看文章。</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="736c072b72c60245955b18e3b88de6d60182cc36904efca5b15ce307374dcd57">93d121a5b9b0fc905fd9cff94d7c8a9d71a6b8bdc015c6c324f06d582272b867cc6e7443c268dd832f88e30c3ae0c655</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     
 
     
@@ -307,29 +304,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">传递闭包</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -378,7 +353,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/06/%E4%BC%A0%E9%80%92%E9%97%AD%E5%8C%85POj3660/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/19/test/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -392,18 +367,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/06/spfa%E5%88%A4%E8%B4%9F%E7%8E%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SPFA判负环
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/06/POJ2253/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POJ2253</div>
+    <a href="/2020/05/17/codeforces643/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CF 643 div.2 ABDE</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -421,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#传递闭包"><span class="toc-number">1.</span> <span class="toc-text">传递闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将传递闭包问题转化为图论问题。"><span class="toc-number">2.</span> <span class="toc-text">将传递闭包问题转化为图论问题。</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -453,7 +419,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Wed May 06 2020 10:22:37 GMT+0800',
+  	id: 'Tue May 19 2020 17:09:32 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
