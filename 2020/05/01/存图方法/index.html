@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020050115502786.png">
 <meta property="article:published_time" content="2020-05-01T01:43:55.000Z">
-<meta property="article:modified_time" content="2020-05-19T09:52:40.787Z">
+<meta property="article:modified_time" content="2020-05-19T09:58:21.007Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="图论基础">
 <meta name="twitter:card" content="summary">
@@ -271,7 +271,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 2 5</span><br><span class="line">1 3 6</span><br><span class="line">1 6 3</span><br></pre></td></tr></table></figure>
 <p>按照代码，模拟之后，我们可以得到下图：</p>
 <p><img src="https://img-blog.csdnimg.cn/2020050115502786.png" alt="在这里插入图片描述"></p>
-<p>这样建立好关系之后，怎么快速遍历所有以1为起点的边呢？上面已经提到<font color=black><code>head[i]</code>记录的是以i为起点的最后一条边的编号</font>，因此，我们显然可以从<code>head[1]</code>开始遍历，那么以1为起点的倒数第二条边的编号是多少呢？这就要用到<code>next</code>了，是edge[head[1]].next。当edge[i].next为0的时候，那么就遍历完了所有起点为1的边。所以我们遍历的for循环就可以写成下面这种形式：</p>
+<p>这样建立好关系之后，怎么快速遍历所有以1为起点的边呢？上面已经提到<font color=blue><code>head[i]</code>记录的是以i为起点的最后一条边的编号</font>，因此，我们显然可以从<code>head[1]</code>开始遍历，那么以1为起点的倒数第二条边的编号是多少呢？这就要用到<code>next</code>了，是edge[head[1]].next。当edge[i].next为0的时候，那么就遍历完了所有起点为1的边。所以我们遍历的for循环就可以写成下面这种形式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(int i&#x3D;head[1];i!&#x3D;0;i&#x3D;edge[i].next)</span><br></pre></td></tr></table></figure>
 <p><font color=red>可以发现，我们遍历时访问的顺序和输入的顺序是刚好相反的</font></p>
 <hr>
