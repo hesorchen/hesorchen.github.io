@@ -983,7 +983,7 @@ html {
 .left-col #header .header-menu {
     font-weight: 300;
     line-height: 41px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     float: none;
     min-height: 0px;
     margin-left: -12px;
@@ -5324,7 +5324,7 @@ html {
 .left-col #header .header-menu {
     font-weight: 300;
     line-height: 16px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     float: none;
     min-height: 0px;
     margin-left: -12px;
