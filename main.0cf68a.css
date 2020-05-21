@@ -6713,13 +6713,11 @@ pre .id {
 
 
 .article-entry p code {
-    padding: 1px 3px;
-    margin: 0 3px;
-    background: 	#778899;
-    border: 1px solid #ccc;
+    background: #778899;
+    border: 0.1px solid #ccc;
     font-family: KaiTi;
     word-wrap: break-word;
-    font-size: 18px
+    font-size: 17.28px;
 }
 
 .article-entry blockquote {
@@ -6727,7 +6725,7 @@ pre .id {
     border-width:1px; 
     border-left-width:5px; 
     border-color: 	 	#C0C0C0;
-    border-left-color:#666666;
+    border-left-color:#DDDDDD;
 
     padding: 15px 20px;
     margin-top: 10px;
@@ -6805,7 +6803,8 @@ pre .id {
 }
 
 .article-entry strong {
-    font-weight: 700
+    font-weight: 700;
+    color: #00FFFE;
 }
 
 .article-entry .caption {
@@ -6821,7 +6820,7 @@ pre .id {
     border-left: 0;
     border-right: 0;
     border-top: 1px solid #ddd;
-    border-bottom: 1px solid #fff
+    border-bottom: 0.6px solid #ddd
 }
 
 .article-entry pre {
@@ -7618,7 +7617,7 @@ pre .id {
     .article-header {
         border-left: none;
         padding: 0;
-        border-bottom: 1px dotted #ddd
+        border-bottom: 1px solid #ddd
     }
 
     .article-header h1 {
