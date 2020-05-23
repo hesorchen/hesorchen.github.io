@@ -2363,7 +2363,8 @@ pre .id {
 }
 
 .article-entry p {
-    margin-top: 10px
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .article-entry li code,
@@ -2471,7 +2472,7 @@ pre .id {
 
 .article-entry hr {
     height: 0;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     border-left: 0;
     border-right: 0;
@@ -6707,7 +6708,8 @@ pre .id {
 }
 
 .article-entry p {
-    margin-top: 10px
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 
@@ -6791,10 +6793,11 @@ pre .id {
 .article-entry h5,
 .article-entry h6 {
     margin-top: 20px;
+    margin-bottom: 0px;
     font-weight: 700;
     color: #F5F5F5;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd
+    border-bottom: 0px solid #ddd
 }
 
 .article-entry video {
@@ -6814,7 +6817,7 @@ pre .id {
 
 .article-entry hr {
     height: 0;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     border-left: 0;
     border-right: 0;
