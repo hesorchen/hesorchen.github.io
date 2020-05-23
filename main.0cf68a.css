@@ -4724,7 +4724,7 @@ template {
 .article-entry a{
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: 	#1E90FF;
     font-family: KaiTi;/* 这种字体的英文比较好看（像代码样式） */
 }
 /* 鼠标悬浮时，变色 */
