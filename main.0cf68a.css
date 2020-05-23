@@ -2364,7 +2364,9 @@ pre .id {
 
 .article-entry p {
     margin-top: 0px;
+    font-size: 17px;
     margin-bottom: 0px;
+    color:#FFFFFF;
 }
 
 .article-entry li code,
@@ -6709,7 +6711,9 @@ pre .id {
 
 .article-entry p {
     margin-top: 0px;
+    font-size: 17px;
     margin-bottom: 0px;
+    color:#FFFFFF;
 }
 
 
