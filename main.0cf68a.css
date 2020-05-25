@@ -1005,7 +1005,7 @@ html {
 
 .left-col #header .header-smart-menu {
     font-size: 12px;
-    margin-bottom: 20px
+    margin-bottom: 0px
 }
 
 .left-col #header .header-smart-menu a:after {
@@ -5336,7 +5336,7 @@ html {
     -webkit-box-pack: center;
     -webkit-box-align: center;
     /* margin-top: 50px; */
-    margin-top: 65px;
+    margin-top: 55px;
 }
 
 .left-col #header .header-menu li {
@@ -5350,7 +5350,7 @@ html {
 
 .left-col #header .header-smart-menu {
     font-size: 12px;
-    margin-bottom: 20px
+    margin-bottom: 0px
 }
 
 .left-col #header .header-smart-menu a:after {

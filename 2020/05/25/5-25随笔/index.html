@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>5.25随笔（关于py变量的看法） | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="早上吃早饭的时候看了点python基础，好像python中没有变量，如果用c语言的知识解释的话，更准确的说应该是定义了一个指针变量指向了存放5的那片内存。例如，比较下面两份代码： C++： 123456789101112int main()&amp;#123;    int a &#x3D; 5;    int b &#x3D; 5;    printf(&quot;%d\n%d\n&quot;, &amp;a, &amp;b);    ret">
+  <meta name="description" content="早上吃早饭的时候看了点python基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.25随笔（关于py变量的看法）">
 <meta property="og:url" content="http://yoursite.com/2020/05/25/5-25%E9%9A%8F%E7%AC%94/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="早上吃早饭的时候看了点python基础，好像python中没有变量，如果用c语言的知识解释的话，更准确的说应该是定义了一个指针变量指向了存放5的那片内存。例如，比较下面两份代码： C++： 123456789101112int main()&amp;#123;    int a &#x3D; 5;    int b &#x3D; 5;    printf(&quot;%d\n%d\n&quot;, &amp;a, &amp;b);    ret">
+<meta property="og:description" content="早上吃早饭的时候看了点python基础">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-25T01:50:14.000Z">
-<meta property="article:modified_time" content="2020-05-25T02:42:46.854Z">
+<meta property="article:modified_time" content="2020-05-25T02:50:53.995Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -262,7 +262,7 @@
 </p>
     </center>
     
-    <p>早上吃早饭的时候看了点python基础，好像python中没有变量，如果用c语言的知识解释的话，更准确的说应该是定义了一个指针变量指向了存放5的那片内存。例如，比较下面两份代码：</p>
+    <p>早上吃早饭的时候看了点python基础<a id="more"></a>，好像python中没有变量，如果用c语言的知识解释的话，更准确的说应该是定义了一个指针变量指向了存放5的那片内存。例如，比较下面两份代码的输出：</p>
 <p><code>C++</code>：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n%d\n"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">7274012</span></span><br><span class="line"><span class="comment">7274008</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p><code>Python</code>:</p>
