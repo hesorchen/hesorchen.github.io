@@ -60,6 +60,8 @@
 		
 		<li><a href="/categories/%E7%9B%B8%E5%86%8C/">相册</a></li>
 		
+		<li><a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		
 		<li><a href="/categories/ACM/">A C M</a></li>
 		
 		<li><a href="/categories/Python/">Python</a></li>
@@ -68,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 41
+			总文章数 42
 			</nav>
 		<nav class="header-smart-menu">
     		
@@ -160,6 +162,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -192,13 +196,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/%E7%9B%B8%E5%86%8C/">相册</a></li>
+					<li style="width: 20%"><a href="/categories/%E7%9B%B8%E5%86%8C/">相册</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/ACM/">A C M</a></li>
+					<li style="width: 20%"><a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/Python/">Python</a></li>
+					<li style="width: 20%"><a href="/categories/ACM/">A C M</a></li>
+		        
+					<li style="width: 20%"><a href="/categories/Python/">Python</a></li>
 		        
 				</ul>
 			</nav>
@@ -214,6 +220,105 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-5-25随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">5.25随笔（关于py变量的看法）</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+	<time datetime="2020-05-25T01:50:14.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-25</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">5.25随笔（关于py变量的看法）</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>早上吃早饭的时候看了点python基础，好像python中没有变量，如果用c语言的知识解释的话，更准确的说应该是定义了一个指针变量指向了存放5的那片内存。例如，比较下面两份代码：</p>
+<p><code>C++</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n%d\n"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">7274012</span></span><br><span class="line"><span class="comment">7274008</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><code>Python</code>:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">b = <span class="number">5</span></span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line"><span class="comment"># Output:</span></span><br><span class="line"><span class="comment"># 140706977339168</span></span><br><span class="line"><span class="comment"># 140706977339168</span></span><br></pre></td></tr></table></figure>
+<p>我们将<code>C++</code>的代码稍作改变:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> *a = &amp;temp;</span><br><span class="line">    <span class="keyword">int</span> *b = &amp;temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n%d\n"</span>, a, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">7273996</span></span><br><span class="line"><span class="comment">7273996</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>虽说这样也不很很准确，但是比最开始的那份代码更接近了<code>python</code>中变量的本质</p>
+<hr>
+<p>研究上面的东西的时候，又去看了一下C++的new的应用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *a, *b, *c;</span><br><span class="line"></span><br><span class="line">    a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">    a[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line">    a[<span class="number">1</span>] = <span class="number">20</span>;</span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">30</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, *a, *(a + <span class="number">1</span>), a[<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">22</span>;</span><br><span class="line">    b = &amp;temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *b);</span><br><span class="line"></span><br><span class="line">    c = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *c);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">10 20 30</span></span><br><span class="line"><span class="comment">22</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>python中一些需要注意的点</p>
+<ul>
+<li>可以使用诸如 3 &lt; 4 &lt; 6这样的不等式</li>
+<li>类似于C语言中的<code>?:</code>三目运算符：<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">b = <span class="number">6</span></span><br><span class="line">c = <span class="number">1</span> <span class="keyword">if</span> (a &gt; b) <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">print(c)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></li>
+<li>type()与isinstance()<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">print(type(a))</span><br><span class="line"><span class="keyword">if</span>(isinstance(a, int)):</span><br><span class="line">    print(<span class="string">'a是整形'</span>)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">&lt;class 'int'&gt;</span></span><br><span class="line"><span class="string">a是整形</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-牛客西邮校赛补题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1026,109 +1131,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/05/14/%E6%B4%9B%E8%B0%B7P2895/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-洛谷P1135" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/">洛谷P1135</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/" class="archive-article-date">
-	<time datetime="2020-05-13T12:16:19.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/">洛谷P1135</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>题目链接：<a href="https://www.luogu.com.cn/problem/P1135" target="_blank" rel="noopener">传送门</a>
-    
-    <a class="article-more-a" href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">搜索</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/">展开全文 >></a>
     </p>
     
     
