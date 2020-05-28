@@ -2455,7 +2455,7 @@ pre .id {
     font-weight: 700;
     color: #F5F5F5;
     padding-bottom: 5px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .article-entry video {
@@ -6800,7 +6800,7 @@ pre .id {
     font-weight: 700;
     color: #F5F5F5;
     padding-bottom: 5px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .article-entry video {
