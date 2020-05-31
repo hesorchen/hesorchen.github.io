@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: VScode配置环境 | hesorchen</title>
+  <title>5.31随笔（水） | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/tags/VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/index.html">
+  <meta name="description" content="又水了一天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5.31随笔（水）">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/5-31%E9%9A%8F%E7%AC%94%EF%BC%88%E6%B0%B4%EF%BC%89/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="又水了一天">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-31T13:57:21.000Z">
+<meta property="article:modified_time" content="2020-05-31T14:27:45.803Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -219,124 +223,229 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-5-31随笔（水）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-23</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEC++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">vscode配置C++开发环境</a>
+    <h1 class="article-title" itemprop="name">
+      5.31随笔（水）
     </h1>
   
+ -->
+  
+  <a href="/2020/05/31/5-31%E9%9A%8F%E7%AC%94%EF%BC%88%E6%B0%B4%EF%BC%89/" class="archive-article-date">
+	<time datetime="2020-05-31T13:57:21.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-05-31</time>
+</a>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VScode配置环境</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
 
-          
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      5.31随笔（水）
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>又水了一天<a id="more"></a><br>感觉学的东西忘得很快。前几天看的Python基础又忘得差不多了。。</p>
+<h3 id="构造函数复习"><a href="#构造函数复习" class="headerlink" title="构造函数复习"></a>构造函数复习</h3><h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>通俗的说就是创建对象的时候自动调用的函数，不定义构造函数并不是不存在构造函数，而是默认的一个什么都不执行的构造函数</p>
+<h4 id="重载构造函数"><a href="#重载构造函数" class="headerlink" title="重载构造函数"></a>重载构造函数</h4><p>和普通函数一样，构造函数也可以重载</p>
+<p>在C语言中不可以函数重载，很多时候还会导致很多不必要的麻烦，例如swap函数，需要交换各种类型的两个变量，这时候利用C++中的函数重载，就可以实现’一个函数’实现多个功能。<br><strong>函数重载</strong>：函数列表（形参个数，形参类型，形参顺序）不同，可以共用一个函数名，根据函数列表来选择执行相应的函数<br>那重载构造函数自然明白了。</p>
+<h4 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h4><p><font color=deeppink>就类对象而言，相同类型的类对象是通过拷贝构造函数来完成整个复制过程的。</font></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person A;</span><br><span class="line">person B=A;<span class="comment">//调用拷贝构造函数</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Python中字符串的format方法"><a href="#Python中字符串的format方法" class="headerlink" title="Python中字符串的format方法"></a>Python中字符串的format方法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'&#123;1&#125;&#123;2&#125;&#123;0&#125;'</span>.format(<span class="string">"chen"</span>, <span class="string">'hello! '</span>, <span class="string">'hesor'</span>))</span><br><span class="line">print(<span class="string">'&#123;1&#125;&#123;0:.2f&#125;'</span>.format(<span class="number">3.1415</span>, <span class="string">'PI='</span>))</span><br><span class="line">print(<span class="string">'%c=%.2f'</span> % (<span class="number">97</span>, <span class="number">3.14</span>))</span><br><span class="line">print(<span class="string">'%-5d#%d'</span> % (<span class="number">35</span>, <span class="number">53</span>))</span><br><span class="line">print(<span class="string">'%5d#%d'</span> % (<span class="number">35</span>, <span class="number">53</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hello! hesorchen</span></span><br><span class="line"><span class="string">PI=3.14</span></span><br><span class="line"><span class="string">a=3.14</span></span><br><span class="line"><span class="string">35   #53</span></span><br><span class="line"><span class="string">   35#53</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/VScode//" class="article-tag-list-link color2">VScode</a>
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/31/5-31%E9%9A%8F%E7%AC%94%EF%BC%88%E6%B0%B4%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEPython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-	<time datetime="2020-04-23T11:20:08.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-23</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/30/chrome-%E7%99%BE%E5%BA%A6%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chrome浏览器+百度搜索引擎安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数复习"><span class="toc-number">1.</span> <span class="toc-text">构造函数复习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#构造函数"><span class="toc-number">1.1.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重载构造函数"><span class="toc-number">1.2.</span> <span class="toc-text">重载构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拷贝构造函数"><span class="toc-number">1.3.</span> <span class="toc-text">拷贝构造函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python中字符串的format方法"><span class="toc-number">2.</span> <span class="toc-text">Python中字符串的format方法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/23/vscode%E9%85%8D%E7%BD%AEPython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">vscode配置Python开发环境</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VScode配置环境</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/VScode//" class="article-tag-list-link color2">VScode</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Sun May 31 2020 21:57:21 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -396,9 +505,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
