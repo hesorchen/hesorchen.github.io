@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>存图方法 | hesorchen</title>
+  <title>6.1随笔（pr） | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="几种ACM常见的存图方式：">
+  <meta name="description" content="今天下载了一个pr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="存图方法">
-<meta property="og:url" content="http://yoursite.com/2020/05/01/%E5%AD%98%E5%9B%BE%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="6.1随笔（pr）">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/6-1%E9%9A%8F%E7%AC%94%EF%BC%88pr%EF%BC%89/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="几种ACM常见的存图方式：">
+<meta property="og:description" content="今天下载了一个pr">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020050115502786.png">
-<meta property="article:published_time" content="2020-05-01T01:43:55.000Z">
-<meta property="article:modified_time" content="2020-05-19T09:58:21.007Z">
+<meta property="article:published_time" content="2020-06-01T13:46:13.000Z">
+<meta property="article:modified_time" content="2020-06-01T13:53:56.177Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="图论基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020050115502786.png">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -226,21 +223,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-存图方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-6-1随笔（pr）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      存图方法
+      6.1随笔（pr）
     </h1>
   
  -->
   
-  <a href="/2020/05/01/%E5%AD%98%E5%9B%BE%E6%96%B9%E6%B3%95/" class="archive-article-date">
-	<time datetime="2020-05-01T01:43:55.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-01</time>
+  <a href="/2020/06/01/6-1%E9%9A%8F%E7%AC%94%EF%BC%88pr%EF%BC%89/" class="archive-article-date">
+	<time datetime="2020-06-01T13:46:13.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-06-01</time>
 </a>
 
   
@@ -259,38 +256,15 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      存图方法
+      6.1随笔（pr）
     </h1>
   
 </p>
     </center>
     
-    <h3 id="几种ACM常见的存图方式："><a href="#几种ACM常见的存图方式：" class="headerlink" title="几种ACM常见的存图方式："></a>几种ACM常见的存图方式：<a id="more"></a></h3><h4 id="1-邻接矩阵："><a href="#1-邻接矩阵：" class="headerlink" title="1.邻接矩阵："></a>1.邻接矩阵：</h4><p>我之前一直在用的就是邻接矩阵，非常简单，不过占用空间比较多，另外遍历时间比较长，因此不推荐。</p>
-<h4 id="2-vector实现邻接表："><a href="#2-vector实现邻接表：" class="headerlink" title="2.vector实现邻接表："></a>2.vector实现邻接表：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int end, w;</span><br><span class="line">&#125; temp;</span><br><span class="line">vector&lt;node&gt; start[10010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int u, v, w;</span><br><span class="line">    while (cin &gt;&gt; u &gt;&gt; v &gt;&gt; w) &#x2F;&#x2F;存图</span><br><span class="line">    &#123;</span><br><span class="line">        temp.end &#x3D; v;</span><br><span class="line">        temp.w &#x3D; w;</span><br><span class="line">        start[u].push_back(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。"><a href="#3-链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。" class="headerlink" title="3.链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。"></a>3.链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。</h3><p>首先，链式前向星由一个结构体<code>edge[]</code>、<code>数组head[]</code>组成</p>
-<ul>
-<li><code>edge[]数组</code>：首先是记录u，v，w这三个基本信息，还有链式前向星的灵魂之一：<code>next</code><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u, v, w, next; </span><br><span class="line">    <span class="comment">//起点，终点，边权，next为要遍历的下一条边的编号</span></span><br><span class="line">&#125; edge[M];</span><br></pre></td></tr></table></figure></li>
-<li><code>head[]数组</code>：head[i]记录输入的以i为起点的最后一条边的编号</li>
-</ul>
+    <p>今天下载了一个pr<a id="more"></a>，想裁剪一下体育测试视频的画布大小，居然花了我一个小时。真的是菜的可以… …<br>以后也不知道会不会用到pr了。另外还下载了ps，也不知道会不会用到。总之，这些软件要想真正的发挥出功能，还是要花很多时间学习的。</p>
 <hr>
-<p>我们先模拟一遍最简单的情况，看看链式前向星是如何做到快速访问所有同一起点的所有边的。假设输入三条边，这三条边的信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 2 5</span><br><span class="line">1 3 6</span><br><span class="line">1 6 3</span><br></pre></td></tr></table></figure>
-<p>按照代码，模拟之后，我们可以得到下图：</p>
-<p><img src="https://img-blog.csdnimg.cn/2020050115502786.png" alt="在这里插入图片描述"></p>
-<p>这样建立好关系之后，怎么快速遍历所有以1为起点的边呢？上面已经提到<font color=blue><code>head[i]</code>记录的是以i为起点的最后一条边的编号</font>，因此，我们显然可以从<code>head[1]</code>开始遍历，那么以1为起点的倒数第二条边的编号是多少呢？这就要用到<code>next</code>了，是edge[head[1]].next。当edge[i].next为0的时候，那么就遍历完了所有起点为1的边。所以我们遍历的for循环就可以写成下面这种形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(int i&#x3D;head[1];i!&#x3D;0;i&#x3D;edge[i].next)</span><br></pre></td></tr></table></figure>
-<p><font color=red>可以发现，我们遍历时访问的顺序和输入的顺序是刚好相反的</font></p>
-<hr>
-<p>链式前向星代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10 <span class="comment">//N个点</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 10 <span class="comment">//M条边</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u, v, w, next; <span class="comment">//起点，终点，边权，next为要遍历的下一条边的编号</span></span><br><span class="line">&#125; edge[M];</span><br><span class="line"><span class="keyword">int</span> head[N]; <span class="comment">//head[i]表示输入的以i为起点的最后一条边的编号</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    fill(head, head + <span class="number">10000</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> ct = <span class="number">1</span>; <span class="comment">//边的编号</span></span><br><span class="line">    <span class="keyword">int</span> u, v, w;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        edge[ct].u = u;</span><br><span class="line">        edge[ct].v = v;</span><br><span class="line">        edge[ct].w = w;</span><br><span class="line">        edge[ct].next = head[u]; <span class="comment">//连接当前这条边与上一条，形成链表</span></span><br><span class="line">        head[u] = ct++;          <span class="comment">//更新以u为起点的最后一条边的编号</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    k = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head[k]; i != <span class="number">0</span>; i = edge[i].next)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; edge[i].u &lt;&lt; <span class="string">' '</span> &lt;&lt; edge[i].v &lt;&lt; <span class="string">' '</span> &lt;&lt; edge[i].w &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>最后要讲的东西可有可无，那就是，<font color=blue>结构体中的u是可以省略的</font>，为什么呢？我们可以把所有和结构体的u有关的代码其全部删去看看。其实以head[i]为源点，我们已经可以遍历所有以i为起点的边了，因此结构体中的u可以删去。</p>
-<p>最终代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10 <span class="comment">//N个点</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 10 <span class="comment">//M条边</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v, w, next;</span><br><span class="line">&#125; edge[M];</span><br><span class="line"><span class="keyword">int</span> head[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    fill(head, head + <span class="number">10000</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> ct = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> u, v, w;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        edge[ct].v = v;</span><br><span class="line">        edge[ct].w = w;</span><br><span class="line">        edge[ct].next = head[u];</span><br><span class="line">        head[u] = ct++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    k = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head[k]; i != <span class="number">0</span>; i = edge[i].next)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; k &lt;&lt; <span class="string">' '</span> &lt;&lt; edge[i].v &lt;&lt; <span class="string">' '</span> &lt;&lt; edge[i].w &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<p>另外，以后<del>一定</del>尽量十点前睡觉，这两天凌晨睡，每天白天昏昏沉沉，下午开始慢慢清醒… …<br><del>可是我写这篇博客的时候又已经21:52了…</del></p>
 
     
 
@@ -331,28 +305,13 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图论基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/图论//" class="article-tag-list-link color3">图论</a>
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -406,7 +365,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/01/%E5%AD%98%E5%9B%BE%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/01/6-1%E9%9A%8F%E7%AC%94%EF%BC%88pr%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -420,18 +379,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/01/Dijkstra-%E5%A0%86%E4%BC%98%E5%8C%96-%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Dijkstra+堆优化+链式前向星
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/29/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">程序设计结课作业</div>
+    <a href="/2020/05/31/5-31%E9%9A%8F%E7%AC%94%EF%BC%88%E6%B0%B4%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">5.31随笔（水）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -449,7 +399,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#几种ACM常见的存图方式："><span class="toc-number">1.</span> <span class="toc-text">几种ACM常见的存图方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-邻接矩阵："><span class="toc-number">1.1.</span> <span class="toc-text">1.邻接矩阵：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-vector实现邻接表："><span class="toc-number">1.2.</span> <span class="toc-text">2.vector实现邻接表：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。"><span class="toc-number">2.</span> <span class="toc-text">3.链式前向星，这也是最重要、最高效的存图方式。稍微有点难理解。</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -481,7 +431,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Fri May 01 2020 09:43:55 GMT+0800',
+  	id: 'Mon Jun 01 2020 21:46:13 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
