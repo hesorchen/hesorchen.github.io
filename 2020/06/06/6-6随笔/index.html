@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: C语言基础 | hesorchen</title>
+  <title>6.6随笔（水） | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.html">
+  <meta name="description" content="C++引用可以结合函数直接使用，作为实参，可以直接改变参数的值 1234567891011void f(int &amp;n)&amp;#123;    n *&#x3D; n;&amp;#125;int main()&amp;#123;    int n &#x3D; 5;    f(n);    cout &lt;&lt; n &lt;&lt; endl;    return 0;&amp;#125; DP问题感觉DP写得越多越有感觉。一个问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.6随笔（水）">
+<meta property="og:url" content="http://yoursite.com/2020/06/06/6-6%E9%9A%8F%E7%AC%94/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="C++引用可以结合函数直接使用，作为实参，可以直接改变参数的值 1234567891011void f(int &amp;n)&amp;#123;    n *&#x3D; n;&amp;#125;int main()&amp;#123;    int n &#x3D; 5;    f(n);    cout &lt;&lt; n &lt;&lt; endl;    return 0;&amp;#125; DP问题感觉DP写得越多越有感觉。一个问题">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-06T01:56:12.000Z">
+<meta property="article:modified_time" content="2020-06-06T13:26:47.137Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -219,77 +223,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-6-6随笔" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" class="archive-article-date">
-	<time datetime="2020-04-28T01:45:46.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/">C语言文件读写</a>
+    <h1 class="article-title" itemprop="name">
+      6.6随笔（水）
     </h1>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C语言/课程//" class="article-tag-list-link color3">课程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+ -->
   
+  <a href="/2020/06/06/6-6%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+	<time datetime="2020-06-06T01:56:12.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-06-06</time>
+</a>
+
   
-    </div></section>
+
   
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      6.6随笔（水）
+    </h1>
+  
+</p>
+    </center>
+    
+    <h4 id="C-引用"><a href="#C-引用" class="headerlink" title="C++引用"></a>C++引用</h4><p>可以结合函数直接使用，作为实参，可以直接改变参数的值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> &amp;n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n *= n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;</span><br><span class="line">    f(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="DP问题"><a href="#DP问题" class="headerlink" title="DP问题"></a>DP问题</h4><p><del>感觉DP写得越多越有感觉。</del><br>一个问题能不能DP解决，主要看两点<br>1.每个子区间是否都有最优解<br>2.大区间是否可以由子区间递推得到<br>如何解决DP问题则看两点：<strong>状态表示</strong>和<strong>状态转移</strong></p>
 
     
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/06/6-6%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/06/06/%E7%BB%84%E5%90%88%E6%95%B0%E5%8F%96%E6%A8%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          组合数取模
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/03/6.3%E9%9A%8F%E7%AC%94%EF%BC%88%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%8F%8B%E5%85%83%E4%BB%A5%E5%8F%8A%E9%9D%99%E6%80%81%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">6.3随笔（类中的友元以及静态）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-引用"><span class="toc-number">1.</span> <span class="toc-text">C++引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DP问题"><span class="toc-number">2.</span> <span class="toc-text">DP问题</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Sat Jun 06 2020 09:56:12 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -349,9 +499,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
