@@ -2300,8 +2300,8 @@ pre .id {
 }
 
 .article-inner h2 {
-    font-size: 26px;
-    font-size: 1.5rem;
+    /* font-size: 26px; */
+    font-size: 1.8rem;
     line-height: 1.2173913043;
     margin-top: 2.4347826087em;
     margin-bottom: 1.2173913043em;
@@ -2309,7 +2309,7 @@ pre .id {
 }
 
 .article-inner h3 {
-    font-size: 21px;
+    /* font-size: 21px; */
     font-size: 1.4rem;
     line-height: 1.1052631579;
     margin-top: 2.9473684211em;
@@ -6647,8 +6647,8 @@ pre .id {
 }
 
 .article-inner h2 {
-    font-size: 26px;
-    font-size: 1.5rem;
+    /* font-size: 26px; */
+    font-size: 1.8rem;
     line-height: 1.2173913043;
     margin-top: 2.4347826087em;
     margin-bottom: 1.2173913043em;
@@ -6656,8 +6656,8 @@ pre .id {
 }
 
 .article-inner h3 {
-    font-size: 21px;
-    font-size: 1.4rem;
+    /* font-size: 21px; */
+    font-size: 1.6rem;
     line-height: 1.1052631579;
     margin-top: 2.9473684211em;
     margin-bottom: 1.4736842105em;

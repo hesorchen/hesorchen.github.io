@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hihocoder-1478 陆地到水域的最短距离 | hesorchen</title>
+  <title>python函数 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。   矩阵中每个位置与它上下左右相邻的格子距离为1。Input 第一行包含两个整数">
+  <meta name="description" content="python函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hihocoder-1478 陆地到水域的最短距离">
-<meta property="og:url" content="http://yoursite.com/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/index.html">
+<meta property="og:title" content="python函数">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/python%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。   矩阵中每个位置与它上下左右相邻的格子距离为1。Input 第一行包含两个整数">
+<meta property="og:description" content="python函数">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T14:20:58.000Z">
-<meta property="article:modified_time" content="2020-05-01T02:08:27.529Z">
+<meta property="article:published_time" content="2020-06-07T04:44:25.000Z">
+<meta property="article:modified_time" content="2020-06-07T13:17:50.556Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="BFS">
-<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -225,21 +223,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-陆地到水域的最短距离" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      hihocoder-1478 陆地到水域的最短距离
+      python函数
     </h1>
   
  -->
   
-  <a href="/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
-	<time datetime="2020-04-24T14:20:58.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-24</time>
+  <a href="/2020/06/07/python%E5%87%BD%E6%95%B0/" class="archive-article-date">
+	<time datetime="2020-06-07T04:44:25.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-06-07</time>
 </a>
 
   
@@ -258,40 +256,73 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      hihocoder-1478 陆地到水域的最短距离
+      python函数
     </h1>
   
 </p>
     </center>
     
-    <p>给定一个N x M的01矩阵，其中1表示陆地，0表示水域。对于每一个位置，求出它距离最近的水域的距离是多少。  </p>
-<p>矩阵中每个位置与它上下左右相邻的格子距离为1。<br>Input</p>
-<p>第一行包含两个整数<a id="more"></a>，N和M。</p>
-<p>以下N行每行M个0或者1，代表地图。</p>
-<p>数据保证至少有1块水域。</p>
-<p>对于30%的数据，1 &lt;= N, M &lt;= 100  </p>
-<p>对于100%的数据，1 &lt;= N, M &lt;= 800<br>Output</p>
-<p>输出N行，每行M个空格分隔的整数。每个整数表示该位置距离最近的水域的距离。</p>
-<p>Sample Input</p>
-<pre><code>4 4  
-0110  
-1111  
-1111  
-0110</code></pre><p>Sample Output</p>
-<pre><code>0 1 1 0  
-1 2 2 1  
-1 2 2 1  
-0 1 1 0</code></pre><hr>
-<p> 显然是BFS裸题了，不过注意一点，一次性把所有起点压入队列，不然会<code>tle</code>。</p>
-<p>  我记得上次出过原题，我就是BFS<code>tle</code>了无数发，然后用DP写了，DP的话也很简单，从两个对个角遍历一遍即可。</p>
-<hr>
-<p> AC代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI cos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> mp[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line">ll ans[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; mp[i] + <span class="number">1</span>;</span><br><span class="line">    fill(ans[<span class="number">0</span>], ans[<span class="number">0</span>] + <span class="number">999995</span>, INF);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] == <span class="string">'0'</span>)</span><br><span class="line">                ans[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans[i][j] = min(ans[i][j - <span class="number">1</span>] + <span class="number">1</span>, min(ans[i][j], ans[i - <span class="number">1</span>][j] + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = m; j &gt;= <span class="number">1</span>; j--)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] == <span class="string">'0'</span>)</span><br><span class="line">                ans[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans[i][j] = min(ans[i][j + <span class="number">1</span>] + <span class="number">1</span>, min(ans[i][j], ans[i + <span class="number">1</span>][j] + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; m; j++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans[i][j] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans[i][m];</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="python函数"><a href="#python函数" class="headerlink" title="python函数 "></a>python函数 <a id="more"></a></h2><h4 id="函数定义与调用"><a href="#函数定义与调用" class="headerlink" title="函数定义与调用"></a>函数定义与调用</h4><p>定义：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接函数标识符名称和圆括号()。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。</li>
+<li>函数的第一行语句可以选择性地使用文档字符串，用于存放函数说明。</li>
+<li>函数内容以冒号起始，并且缩进。</li>
+<li>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name, word)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say(a, b)</span><br><span class="line">print(say.__doc__)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">My first function</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例1</center>
+
+<h4 id="形参与实参"><a href="#形参与实参" class="headerlink" title="形参与实参"></a>形参与实参</h4><p>形参；函数定义时括号中的内容，例如示例1中的name和word<br>实参：函数调用时传入函数的内容，例如示例1中的字符串a和字符串b</p>
+<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>防止参数调用的时候顺序混淆，具体使用如下；</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name, word)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say(a, b)</span><br><span class="line">say(name=a, word=b)  <span class="comment"># 关键字参数</span></span><br><span class="line">say(word=b, name=a)  <span class="comment"># 关键字参数</span></span><br><span class="line">print(say.__doc__)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">My first function</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例2</center>
+
+<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>和C++中的默认参数使用方法相似，如果不传入参数，那么使用默认参数值</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name=<span class="string">'zhangsan'</span>, word=<span class="string">'hello'</span>)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say()</span><br><span class="line">say(word=b)</span><br><span class="line">say(name=a)</span><br><span class="line">say(a, b)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">zhangsan : hello</span></span><br><span class="line"><span class="string">zhangsan : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : hello</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例3</center>
+
+<h4 id="收集参数"><a href="#收集参数" class="headerlink" title="收集参数"></a>收集参数</h4><p>不确定函数会使用多少个参数，在参数名前面加上<code>*</code>表示默认参数<br>默认参数可以看成是元组<br>最好结合关键字参数和默认参数使用</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(*word, name=<span class="string">'zhangsan'</span>)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(len(word))</span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line">c = <span class="string">'hello world !'</span></span><br><span class="line"></span><br><span class="line">say(b, c, name=a)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">hesor : ('write the code ,change the world !', 'hello world !')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数与过程"><a href="#函数与过程" class="headerlink" title="函数与过程"></a>函数与过程</h4><p>过程可以理解为没有返回值的函数<br>函数的一大特点就是可以有返回值<br>python中的函数没有像C语言中的函数类型，但是可以返回任何类型的值，甚至可以返回多个类型、多个值（打包成元组、列表返回）</p>
+<h4 id="局部变量与全局变量"><a href="#局部变量与全局变量" class="headerlink" title="局部变量与全局变量"></a>局部变量与全局变量</h4><p>不要试图在函数中改变全局变量的值，那样只会新创建一个局部变量，如果真的要这么做，现在函数体内使用global关键字</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a  <span class="comment"># 声明a为全局变量</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">print(a)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">10</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例4</center>
+
+<h4 id="内嵌函数"><a href="#内嵌函数" class="headerlink" title="内嵌函数"></a>内嵌函数</h4><p>即函数嵌套函数</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        x *= x</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    f2()</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(f1())</span><br></pre></td></tr></table></figure>
+<center>示例5</center>
 
 
+<p>与全局变量和局部变量相类似的，可以得到上述示例中的f1() f2()中的x作用域，为了能在f2()中调用x的值，我们可以使用<code>nonlocal</code>关键字，方法同<code>global</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> x</span><br><span class="line">        x *= x</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    f2()</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(f1())</span><br></pre></td></tr></table></figure>
+<center>示例6</center>
 
+<p>区分<code>global</code>与<code>nonlocal</code>：<br>1、局部作用域改变全局变量用<code>global</code><br>2、内层函数改变外层函数变量用<code>nonlocal</code>， <code>nonlocal</code>不能定义新的外层函数变量，只能改变已有的外层函数变量<br>经过测试，<code>nonlocal</code>可以调用多层嵌套的外部函数</p>
+<h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><p>格式:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lambda 参数a,参数b : 表达式</span><br></pre></td></tr></table></figure>
+<p>等价于一个 有两个参数<code>a</code>、<code>b</code>的，return<code>表达式</code>的函数</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">2</span> + <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span> <span class="keyword">return</span> x * <span class="number">2</span> + <span class="number">3</span></span><br><span class="line"></span><br><span class="line">print(f1(<span class="number">5</span>))</span><br><span class="line">print(f2(<span class="number">5</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">f1 f2 等价</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例7</center>
 
+<h4 id="filter-与map"><a href="#filter-与map" class="headerlink" title="filter()与map()"></a>filter()与map()</h4><p><code>filter()</code>：意即过滤器，顾名思义过滤掉不需要的东西<br>格式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter(function,可迭代对象)</span><br></pre></td></tr></table></figure>
+<p>其中function为lambda表达式或者是函数，也就是过滤条件<br>第二个参数为可迭代对象<br>filter函数返回的是对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x % <span class="number">2</span></span><br><span class="line"></span><br><span class="line">list1 = range(<span class="number">10</span>)</span><br><span class="line">print(list(filter(is_odd, list1)))</span><br><span class="line">print(list(filter(<span class="keyword">lambda</span> x: x % <span class="number">2</span>, list1)))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">[1, 3, 5, 7, 9]</span></span><br><span class="line"><span class="string">[1, 3, 5, 7, 9]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例8</center>
 
+<p><code>map()</code>：映射，对迭代对象进行处理</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(function,可迭代对象)</span><br></pre></td></tr></table></figure>
+<p>其中function为lambda表达式或者是函数，作为处理方式</p>
+<p>第二个参数为可迭代对象</p>
+<p>map函数返回的是对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">2</span>+<span class="number">3</span></span><br><span class="line"></span><br><span class="line">list1 = range(<span class="number">10</span>)</span><br><span class="line">print(list(map(f, list1)))</span><br><span class="line">print(list(map(<span class="keyword">lambda</span> x: x * <span class="number">2</span>+<span class="number">3</span>, list1)))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">[3, 5, 7, 9, 11, 13, 15, 17, 19, 21]</span></span><br><span class="line"><span class="string">[3, 5, 7, 9, 11, 13, 15, 17, 19, 21]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例9</center>
+以及前几天我遇到过的一行多个整数的输入问题：
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = list(map(int, list(input().split())))</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<center>示例10</center>
+
+<center><font color=deeppink>以上差不多就是Python函数基础的全部内容了^_^</font></center>
     
 
     
@@ -331,28 +362,13 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -406,7 +422,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/24/%E9%99%86%E5%9C%B0%E5%88%B0%E6%B0%B4%E5%9F%9F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/07/python%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -420,18 +436,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/26/NYIST%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E7%A7%AF%E5%88%86%E8%B5%9B%E7%AD%BE%E5%88%B0%E9%A2%98%E9%A2%98%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          NYIST第十一次积分赛签到题题解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/23/hexo%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo基本语法</div>
+    <a href="/2020/06/07/python%E5%BA%8F%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python序列</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -449,7 +456,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python函数"><span class="toc-number">1.</span> <span class="toc-text">python函数 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数定义与调用"><span class="toc-number">1.0.1.</span> <span class="toc-text">函数定义与调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#形参与实参"><span class="toc-number">1.0.2.</span> <span class="toc-text">形参与实参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键字参数"><span class="toc-number">1.0.3.</span> <span class="toc-text">关键字参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#默认参数"><span class="toc-number">1.0.4.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#收集参数"><span class="toc-number">1.0.5.</span> <span class="toc-text">收集参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数与过程"><span class="toc-number">1.0.6.</span> <span class="toc-text">函数与过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部变量与全局变量"><span class="toc-number">1.0.7.</span> <span class="toc-text">局部变量与全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内嵌函数"><span class="toc-number">1.0.8.</span> <span class="toc-text">内嵌函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lambda表达式"><span class="toc-number">1.0.9.</span> <span class="toc-text">lambda表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#filter-与map"><span class="toc-number">1.0.10.</span> <span class="toc-text">filter()与map()</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -481,7 +488,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Fri Apr 24 2020 22:20:58 GMT+0800',
+  	id: 'Sun Jun 07 2020 12:44:25 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
