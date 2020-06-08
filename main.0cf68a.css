@@ -2380,16 +2380,16 @@ pre .id {
 }
 
 .article-entry blockquote {
-    border-style:solid; 
-    border-width:1px; 
-    border-left-width:5px; 
-    border-color:  	#C0C0C0;
-    border-left-color:#666666;
-
-    padding: 15px 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-color: #C0C0C0;
+    border-left-color: #DDDDDD;
+    padding: 5px 10px;
     margin-top: 10px;
+    margin-bottom: 20px;
     /* border-left: 5px solid #657b83; */
-    background:  	#797979
+    background: #797979;
 }
 
 .article-entry blockquote p {
@@ -6725,16 +6725,16 @@ pre .id {
 }
 
 .article-entry blockquote {
-    border-style:solid; 
-    border-width:1px; 
-    border-left-width:5px; 
-    border-color: 	 	#C0C0C0;
-    border-left-color:#DDDDDD;
-
-    padding: 15px 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-color: #C0C0C0;
+    border-left-color: #DDDDDD;
+    padding: 5px 10px;
     margin-top: 10px;
+    margin-bottom: 20px;
     /* border-left: 5px solid #657b83; */
-    background:  	#797979
+    background: #797979;
 }
 
 .article-entry blockquote p {
