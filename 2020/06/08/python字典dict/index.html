@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hesorchen</title>
+  <title>python字典dict | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="字典是另一种可变容器模型，且可存储任意类型对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python字典dict">
+<meta property="og:url" content="http://yoursite.com/2020/06/08/python%E5%AD%97%E5%85%B8dict/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="字典是另一种可变容器模型，且可存储任意类型对象。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-08T13:42:57.000Z">
+<meta property="article:modified_time" content="2020-06-08T14:18:36.745Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -219,27 +223,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-洛谷P2404" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-python字典dict" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/%E6%B4%9B%E8%B0%B7P2404/">洛谷P2404</a>
+    <h1 class="article-title" itemprop="name">
+      python字典dict
     </h1>
   
  -->
   
-  <a href="/2020/05/30/%E6%B4%9B%E8%B0%B7P2404/" class="archive-article-date">
-	<time datetime="2020-05-30T10:50:26.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-30</time>
+  <a href="/2020/06/08/python%E5%AD%97%E5%85%B8dict/" class="archive-article-date">
+	<time datetime="2020-06-08T13:42:57.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-06-08</time>
 </a>
 
   
 
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
   
   </header>
 
@@ -249,118 +255,95 @@
     <center>
       <p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/30/%E6%B4%9B%E8%B0%B7P2404/">洛谷P2404</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      python字典dict
     </h1>
   
 </p>
     </center>
     
-    <p><a href="https://www.luogu.com.cn/problem/P2404" target="_blank" rel="noopener">洛谷P2404</a>
-    
-    <a class="article-more-a" href="/2020/05/30/%E6%B4%9B%E8%B0%B7P2404/#more">... ... >></a>
-    
+    <p>字典是另一种可变容器模型，且可存储任意类型对象。<a id="more"></a><br>字典的每个键值(key-&gt;value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中 ,格式如下所示：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;key1 : value1, key2 : value2 &#125;</span><br></pre></td></tr></table></figure>
+<center>示例1</center>
+#### 通过键访问值
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'hesor'</span>: <span class="number">10</span>, <span class="number">20</span>: <span class="string">'chen'</span>&#125;</span><br><span class="line">print(a[<span class="string">'hesor'</span>], a[<span class="number">20</span>])</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">10 chen</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例2</center>
+####  修改字典
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'hesor'</span>: <span class="number">10</span>, <span class="number">20</span>: <span class="string">'chen'</span>&#125;</span><br><span class="line">a[<span class="string">'hesorchen'</span>] = <span class="number">30</span>  <span class="comment"># 新增键值</span></span><br><span class="line">a[<span class="string">'hesor'</span>] = <span class="number">40</span>  <span class="comment"># 修改值</span></span><br><span class="line">print(a[<span class="string">'hesor'</span>], a[<span class="number">20</span>], a[<span class="string">'hesorchen'</span>])</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">40 chen 30</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例3</center>
+####  删除与清空
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'hesor'</span>: <span class="number">10</span>, <span class="number">20</span>: <span class="string">'chen'</span>&#125;</span><br><span class="line"><span class="keyword">del</span> a[<span class="string">'hesor'</span>]  <span class="comment"># 删除键</span></span><br><span class="line"><span class="keyword">del</span> a  <span class="comment"># 删除字典</span></span><br><span class="line">a.clear()  <span class="comment"># 清空字典</span></span><br></pre></td></tr></table></figure>
+<center>示例4</center>
+#### 内置函数与方法
+`len(dict)`：返回键的数量
+`len(dict)`：返回键的数量
+`dict.clear()`：清空字典
+`dict.copy()`：返回字典的浅复制字典
+`dict.fromkeys(seq,val)`：创建一个新字典,以序列seq中元素做字典的键，val为字典所有键对应的初始值，见示例5
+`dict.get(key)`：如果key是字典中的键，返回值，否则返回None，见示例6
+`key in dict`：返回True或False
+`dict.kyes()`：返回一个迭代器，可以用list()转化为列表，见示例7
+`dict.items()`：返回一个迭代器，可以用list()转化为列表，见示例8
+`dict.values()`：返回一个迭代器，可以用list()转化为列表，见示例9
+`dict1.update(dict2)`：以dict2更新dict1，遵循字典的修改规则，见示例10
+`dict.pop(key)`：删除字典中的键key，并且返回这个键对应的值
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">10</span>: <span class="string">'chen'</span>&#125;</span><br><span class="line">b = a.fromkeys((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">9</span>), <span class="string">'like'</span>)</span><br><span class="line">print(a, <span class="string">'\n'</span>, b)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">&#123;10: 'chen'&#125;</span></span><br><span class="line"><span class="string"> &#123;1: 'like', 2: 'like', 3: 'like', 4: 'like', 9: 'like'&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例5</center>
+
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">10</span>: <span class="string">'chen'</span>&#125;</span><br><span class="line">print(a.get(<span class="number">10</span>))</span><br><span class="line">print(a[<span class="number">10</span>])</span><br><span class="line">print(a.get(<span class="number">11</span>))  <span class="comment"># 输出None</span></span><br><span class="line">print(a[<span class="number">11</span>])  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+<center>示例6</center>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: <span class="string">'hesorchen'</span>, <span class="number">2</span>: <span class="string">'qwq'</span>, <span class="number">3</span>: <span class="string">'T_T'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> a.keys():</span><br><span class="line">    print(k, a[k])</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">1 hesorchen</span></span><br><span class="line"><span class="string">2 qwq</span></span><br><span class="line"><span class="string">3 T_T</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例7</center>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: <span class="string">'hesorchen'</span>, <span class="number">2</span>: <span class="string">'qwq'</span>, <span class="number">3</span>: <span class="string">'T_T'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> Item <span class="keyword">in</span> a.items():</span><br><span class="line">    print(Item)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">(1, 'hesorchen')</span></span><br><span class="line"><span class="string">(2, 'qwq')</span></span><br><span class="line"><span class="string">(3, 'T_T')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例8</center>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: <span class="string">'hesorchen'</span>, <span class="number">2</span>: <span class="string">'qwq'</span>, <span class="number">3</span>: <span class="string">'T_T'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> a.values():</span><br><span class="line">    print(val)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesorchen</span></span><br><span class="line"><span class="string">qwq</span></span><br><span class="line"><span class="string">T_T</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例9</center>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: <span class="string">'hesorchen'</span>, <span class="number">2</span>: <span class="string">'qwq'</span>, <span class="number">3</span>: <span class="string">'T_T'</span>&#125;</span><br><span class="line">b = &#123;<span class="number">1</span>: <span class="string">'orz'</span>, <span class="number">4</span>: <span class="string">'O.O'</span>, <span class="number">5</span>: <span class="string">'qaq'</span>&#125;</span><br><span class="line"></span><br><span class="line">a.update(b)</span><br><span class="line">print(a)  <span class="comment"># a原来的键1的值被覆盖</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">&#123;1: 'orz', 2: 'qwq', 3: 'T_T', 4: 'O.O', 5: 'qaq'&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例10</center>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: <span class="string">'hesorchen'</span>, <span class="number">2</span>: <span class="string">'qwq'</span>, <span class="number">3</span>: <span class="string">'T_T'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a.pop(<span class="number">1</span>))  <span class="comment"># a原来的键1的值被覆盖</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesorchen</span></span><br><span class="line"><span class="string">&#123;2: 'qwq', 3: 'T_T'&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例11</center>
+
+<center><font color =deeppink>奥利给，Python冲冲冲</center></font>
     
 
     
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">回溯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/30/%E6%B4%9B%E8%B0%B7P2404/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
     </div>
-</aside>
-
-
-
-  
-    <article id="post-5-30随笔（虚拟机）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/5-30%E9%9A%8F%E7%AC%94%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/">5.30随笔（虚拟机）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/30/5-30%E9%9A%8F%E7%AC%94%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-05-30T06:51:06.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/30/5-30%E9%9A%8F%E7%AC%94%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/">5.30随笔（虚拟机）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    这是一篇加密文章。如果你想查看其中内容，请与我联系。
-    
-    <a class="article-more-a" href="/2020/05/30/5-30%E9%9A%8F%E7%AC%94%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/#more">... ... >></a>
-    
-    
-
     
   </div>
   <div class="article-info article-info-index">
@@ -372,7 +355,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -380,742 +363,128 @@
 
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/30/5-30%E9%9A%8F%E7%AC%94%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/">展开全文 >></a>
-    </p>
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/08/python%E5%AD%97%E5%85%B8dict/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/07/python%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
 
 
 
-  
-    <article id="post-5-28随笔（2048小游戏）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/28/5-28%E9%9A%8F%E7%AC%94%EF%BC%882048%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%89/">5.28随笔（2048小游戏）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/28/5-28%E9%9A%8F%E7%AC%94%EF%BC%882048%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-05-28T14:37:59.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-28</time>
-</a>
 
-  
 
-  
-  </header>
 
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/28/5-28%E9%9A%8F%E7%AC%94%EF%BC%882048%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%89/">5.28随笔（2048小游戏）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>下午写实验报告的时候学了几个C++知识点
-    
-    <a class="article-more-a" href="/2020/05/28/5-28%E9%9A%8F%E7%AC%94%EF%BC%882048%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%89/#more">... ... >></a>
-    
-    
 
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/28/5-28%E9%9A%8F%E7%AC%94%EF%BC%882048%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%89/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
 
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
 
-  
-    <article id="post-5-27随笔（电影怦然心动）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/27/5-27%E9%9A%8F%E7%AC%94%EF%BC%88%E7%94%B5%E5%BD%B1%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8%EF%BC%89/">5.27随笔（电影怦然心动）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/27/5-27%E9%9A%8F%E7%AC%94%EF%BC%88%E7%94%B5%E5%BD%B1%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-05-27T13:20:05.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-27</time>
-</a>
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Mon Jun 08 2020 21:42:57 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
 
-  
 
-  
-  </header>
 
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/27/5-27%E9%9A%8F%E7%AC%94%EF%BC%88%E7%94%B5%E5%BD%B1%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8%EF%BC%89/">5.27随笔（电影怦然心动）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    这是一篇加密文章。如果你想查看其中内容，请与我联系。
-    
-    <a class="article-more-a" href="/2020/05/27/5-27%E9%9A%8F%E7%AC%94%EF%BC%88%E7%94%B5%E5%BD%B1%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8%EF%BC%89/#more">... ... >></a>
-    
-    
 
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/27/5-27%E9%9A%8F%E7%AC%94%EF%BC%88%E7%94%B5%E5%BD%B1%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8%EF%BC%89/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-牛客周周练8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/">牛客周周练8</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/" class="archive-article-date">
-	<time datetime="2020-05-27T01:51:23.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/">牛客周周练8</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://ac.nowcoder.com/acm/contest/5803/A" target="_blank" rel="noopener">A.买彩票</a>
-    
-    <a class="article-more-a" href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-STL数组第k小数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/">STL数组第k小数函数</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/" class="archive-article-date">
-	<time datetime="2020-05-26T01:29:06.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/">STL数组第k小数函数</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>在一个数组中，要找第k小数
-    
-    <a class="article-more-a" href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-C++整数快读" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/">C++整数快读</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/" class="archive-article-date">
-	<time datetime="2020-05-26T01:28:32.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/">C++整数快读</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>原理就是<code>getchar()</code>比scanf快，所以先以字符读入，再转换为整数
-    
-    <a class="article-more-a" href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-5-25随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">5.25随笔（关于py变量的看法）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-	<time datetime="2020-05-25T01:50:14.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-25</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">5.25随笔（关于py变量的看法）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>早上吃早饭的时候看了点python基础
-    
-    <a class="article-more-a" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/25/5-25%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-牛客西邮校赛补题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/">牛客西邮校赛补题</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-05-23T12:08:01.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/">牛客西邮校赛补题</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://ac.nowcoder.com/acm/contest/5678/G" target="_blank" rel="noopener">传送门</a>
-    
-    <a class="article-more-a" href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-5-23补题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/">5.23补题</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-05-23T00:49:17.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/">5.23补题</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>这几天好多不会的简单题都没补，抽空补几题
-    
-    <a class="article-more-a" href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">补题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1175,8 +544,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
