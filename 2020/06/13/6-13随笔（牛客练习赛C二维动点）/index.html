@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | hesorchen</title>
+  <title>6.13随笔（牛客练习赛C二维动点） | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="好好打比赛每场都或多或少有些收获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.13随笔（牛客练习赛C二维动点）">
+<meta property="og:url" content="http://yoursite.com/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="好好打比赛每场都或多或少有些收获">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200613131316907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-06-13T02:59:56.000Z">
+<meta property="article:modified_time" content="2020-06-13T05:21:07.824Z">
 <meta property="article:author" content="hesorchen">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200613131316907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -219,38 +226,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-6-13随笔（牛客练习赛C二维动点）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
   
+    <h1 class="article-title" itemprop="name">
+      6.13随笔（牛客练习赛C二维动点）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/" class="archive-article-date">
+ -->
+  
+  <a href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/" class="archive-article-date">
 	<time datetime="2020-06-13T02:59:56.000Z" itemprop="datePublished"><i
 			class="icon-calendar icon"></i>2020-06-13</time>
 </a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/">6.13随笔（牛客练习赛C二维动点）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      6.13随笔（牛客练习赛C二维动点）
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>好好打比赛每场都或多或少有些收获<a id="more"></a>，昨天被牛客的C卡死，细节满满，今天早上又写了很久，收获还是蛮大的</p>
+<h4 id="辗转相除法求最大公约数"><a href="#辗转相除法求最大公约数" class="headerlink" title="辗转相除法求最大公约数"></a>辗转相除法求最大公约数</h4><p>原理什么的就不说了，我之前的写法都是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (x % y == <span class="number">0</span>) ? y : gcd(y, x % y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>写法1</center>
+
+<p>这种写法挺常见的，不过有一个弊端，就是如果y为0的时候会出现<code>%0</code>的RE</p>
+<p>稍微改一下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (y == <span class="number">0</span>) ? x : (gcd(y, x % y));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>写法2</center>
+
+<p>这样的话如果y为0，会输出x</p>
+<p><font color =red>另外一点题外话：</font>关于0和一个数a的最大公约数，我百度到有两种说法，一种说是数a，另一种说是不存在。</p>
+<p><strong>用上面的写法2默认最大公约数是数a</strong>，但是最主要的是规避的RE问题</p>
+<h4 id="存储斜率"><a href="#存储斜率" class="headerlink" title="存储斜率"></a>存储斜率</h4><p>斜率问题也是经常遇到的，不过我之前都是直接存成浮点，昨天才意识到最正确的方式应该是存成<strong>pair</strong>，毕竟之前也提到了浮点数是有精度问题的。（虽然现在还没被卡过，不过以后要注意了）</p>
+<hr>
+<p>题目：<a href="https://ac.nowcoder.com/acm/contest/5961/C" target="_blank" rel="noopener">传送门</a></p>
+<p>题目大意不说了，直接说思路<br>比较简单的两种情况：<br>直接到达（0）：需要到达的点就是原点<br>一次到达：需要到达的点与原点练成的直线经过一个存在的点</p>
+<p>两次到达情况比较复杂，但是三次才能到达只有一种情况，就是之前只存在两个点，并且与要到达的点 形成平行四边形的时候，如下图：<br><img src="https://img-blog.csdnimg.cn/20200613131316907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>证明略（不会）</p>
+<h4 id="AC代码："><a href="#AC代码：" class="headerlink" title="AC代码："></a>AC代码：</h4><p>浮点解法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt; mp1;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">&#125; nd[<span class="number">100010</span>];</span><br><span class="line">ll ct = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;</span><br><span class="line">    <span class="keyword">double</span> mod = <span class="number">123412117</span>;</span><br><span class="line">    ll n, q;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    mp1.clear();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            n--;</span><br><span class="line">            i--;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!mp1[mod] &amp;&amp; ct &lt;= <span class="number">3</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                nd[ct].x = x;</span><br><span class="line">                nd[ct++].y = y;</span><br><span class="line">            &#125;</span><br><span class="line">            mp1[mod]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!mp1[y / x] &amp;&amp; ct &lt;= <span class="number">3</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                nd[ct].x = x;</span><br><span class="line">                nd[ct++].y = y;</span><br><span class="line">            &#125;</span><br><span class="line">            mp1[y / x]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> x1, y1;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x1 &gt;&gt; y1;</span><br><span class="line">        <span class="keyword">if</span> (x1 == <span class="number">0</span> &amp;&amp; y1 == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> temp = (x1 == <span class="number">0</span>) ? mod : (y1 / x1);</span><br><span class="line">        <span class="keyword">if</span> (mp1.count(temp))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mp1.size() &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (mp1.size() == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (n == <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">double</span> dis1n = (nd[<span class="number">1</span>].x - x1) * (nd[<span class="number">1</span>].x - x1) + (nd[<span class="number">1</span>].y - y1) * (nd[<span class="number">1</span>].y - y1);</span><br><span class="line">                <span class="keyword">double</span> dis2n = (nd[<span class="number">2</span>].x - x1) * (nd[<span class="number">2</span>].x - x1) + (nd[<span class="number">2</span>].y - y1) * (nd[<span class="number">2</span>].y - y1);</span><br><span class="line">                <span class="keyword">double</span> dis01 = (nd[<span class="number">1</span>].x) * (nd[<span class="number">1</span>].x) + (nd[<span class="number">1</span>].y) * (nd[<span class="number">1</span>].y);</span><br><span class="line">                <span class="keyword">double</span> dis02 = (nd[<span class="number">2</span>].x) * (nd[<span class="number">2</span>].x) + (nd[<span class="number">2</span>].y) * (nd[<span class="number">2</span>].y);</span><br><span class="line">                <span class="keyword">if</span> (dis1n == dis02 &amp;&amp; dis2n == dis01)</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="number">3</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>pair解法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;pair&lt;ll, ll&gt;, ll&gt; mp;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (y == <span class="number">0</span>) ? x : (gcd(y, x % y));</span><br><span class="line">&#125;</span><br><span class="line">ll xx[<span class="number">100010</span>];</span><br><span class="line">ll yy[<span class="number">100010</span>];</span><br><span class="line">ll ct = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll n, q, temp_gcd;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            i--;</span><br><span class="line">            n--;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        xx[ct] = x;</span><br><span class="line">        yy[ct++] = y;</span><br><span class="line">        temp_gcd = gcd(x, y);</span><br><span class="line">        mp[make_pair(x / temp_gcd, y / temp_gcd)] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (q--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        temp_gcd = gcd(x, y);</span><br><span class="line">        <span class="keyword">if</span> (mp.count(make_pair(x / temp_gcd, y / temp_gcd)))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mp.size() &lt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mp.size() &gt; <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (xx[<span class="number">1</span>] + xx[<span class="number">2</span>] == x &amp;&amp; yy[<span class="number">1</span>] + yy[<span class="number">2</span>] == y)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="number">3</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -262,7 +343,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -279,437 +360,130 @@
 	</div>
 
 
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-	<time datetime="2020-06-12T02:08:53.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-12</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">6.12随笔(dp问题)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#辗转相除法求最大公约数"><span class="toc-number">1.</span> <span class="toc-text">辗转相除法求最大公约数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#存储斜率"><span class="toc-number">2.</span> <span class="toc-text">存储斜率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AC代码："><span class="toc-number">3.</span> <span class="toc-text">AC代码：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/">6.12随笔(dp问题)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/10/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80float%E5%92%8Cdouble%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-06-10T12:21:13.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/10/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80float%E5%92%8Cdouble%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">6.10随笔（关于C语言float和double类型的精度问题）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/%E8%B7%B3%E7%9F%B3%E5%A4%B4%E2%80%94%E2%80%94%E2%80%94%E7%BB%8F%E5%85%B8%E4%BA%8C%E5%88%86/" class="archive-article-date">
-	<time datetime="2020-06-09T12:15:57.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/%E8%B7%B3%E7%9F%B3%E5%A4%B4%E2%80%94%E2%80%94%E2%80%94%E7%BB%8F%E5%85%B8%E4%BA%8C%E5%88%86/">跳石头———经典二分</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/python%E5%AD%97%E5%85%B8dict/" class="archive-article-date">
-	<time datetime="2020-06-08T13:42:57.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/python%E5%AD%97%E5%85%B8dict/">python字典dict</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/python%E5%87%BD%E6%95%B0/" class="archive-article-date">
-	<time datetime="2020-06-07T04:44:25.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/python%E5%87%BD%E6%95%B0/">python函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/python%E5%BA%8F%E5%88%97/" class="archive-article-date">
-	<time datetime="2020-06-07T02:12:07.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-07</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/python%E5%BA%8F%E5%88%97/">python序列</a>
-    </h1>
-  
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Sat Jun 13 2020 10:59:56 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/6-6%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-	<time datetime="2020-06-06T01:56:12.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/6-6%E9%9A%8F%E7%AC%94/">6.6随笔（水）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/03/6-3%E9%9A%8F%E7%AC%94%EF%BC%88%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%8F%8B%E5%85%83%E4%BB%A5%E5%8F%8A%E9%9D%99%E6%80%81%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-06-03T12:57:27.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-03</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/03/6-3%E9%9A%8F%E7%AC%94%EF%BC%88%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%8F%8B%E5%85%83%E4%BB%A5%E5%8F%8A%E9%9D%99%E6%80%81%EF%BC%89/">6.3随笔（类中的友元以及静态）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/03/51nod2657%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/" class="archive-article-date">
-	<time datetime="2020-06-03T02:53:43.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/03/51nod2657%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/">51nod2657二进制数字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/DP//" class="article-tag-list-link color3">DP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/DP/规律//" class="article-tag-list-link color3">规律</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2020/page/6/">6</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
           </div>
         </div>
@@ -769,8 +543,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
