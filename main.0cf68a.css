@@ -993,9 +993,9 @@ html {
     -webkit-box-pack: center;
     -webkit-box-align: center
 }
-
 .left-col #header .header-menu li {
-    cursor: default
+margin-top: 8px;
+cursor: default
 }
 
 .left-col #header .header-menu li a {
@@ -5336,11 +5336,12 @@ html {
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .left-col #header .header-menu li {
-    cursor: default
+margin-top: 8px;
+cursor: default
 }
 
 .left-col #header .header-menu li a {
