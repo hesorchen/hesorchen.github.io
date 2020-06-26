@@ -15,11 +15,14 @@
 <meta property="og:site_name" content="hesorchen">
 <meta property="og:description" content="常用的求逆元的方法有扩展欧几里得和费马小定理， 因为扩展欧几里得我还不会， 这里介绍一下费马小定理。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200626134723988.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200626134715291.png">
 <meta property="article:published_time" content="2020-06-25T15:04:29.000Z">
-<meta property="article:modified_time" content="2020-06-26T05:39:48.511Z">
+<meta property="article:modified_time" content="2020-06-26T05:48:07.931Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="逆元">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200626134723988.png">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -258,7 +261,9 @@
     
     <p>常用的求逆元的方法有扩展欧几里得和费马小定理， <del>因为扩展欧几里得我还不会，</del> 这里介绍一下费马小定理。 <a id="more"></a></p>
 <h4 id="逆元的定义"><a href="#逆元的定义" class="headerlink" title="逆元的定义"></a>逆元的定义</h4><p>有正整数$a$和质数$p$，满足$ax%p=1$的最小正整数$x$就称为是$a$的逆元</p>
-<h4 id="逆元的作用"><a href="#逆元的作用" class="headerlink" title="逆元的作用"></a>逆元的作用</h4><p>为什么要用到逆元呢？<br>在加、减、乘法中，都有如下等式：<br>$(a+b)%p=(a%p+b%p)%p$<br>$(a-b)%p=(a%p-b%p)%p$<br>$(a\times b)%p=(a%p\times b%p)%p$<br>但是除法例外，有了逆元之后，就有以下等式<br>$$\frac{a}{b}%p=(a%p\times x)%p$$</p>
+<h4 id="逆元的作用"><a href="#逆元的作用" class="headerlink" title="逆元的作用"></a>逆元的作用</h4><p>为什么要用到逆元呢？<br>在加、减、乘法中，都有如下等式：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200626134723988.png" alt="在这里插入图片描述"></p>
+<p>除法例外，但是有了逆元之后，就有以下等式<br><img src="https://img-blog.csdnimg.cn/20200626134715291.png" alt="在这里插入图片描述"></p>
 <p>其中 <strong>$x$</strong> 就称为 <strong>$a$模$b$的逆元</strong></p>
 <h4 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h4><p><a href="https://baike.baidu.com/item/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">费马小定理 百度百科</a></p>
 <p>可以简单的理解成：如果$p$是一个质数，而整数$a$不是$p$的倍数，则有$a ^ {p-1}%p=1$</p>
