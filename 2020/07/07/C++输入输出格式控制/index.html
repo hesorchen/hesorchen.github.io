@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++程序设计课程笔记 | hesorchen</title>
+  <title>C++输入输出格式控制 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 面向对象程序设计概述">
+  <meta name="description" content="输入格式控制：C++的cin自动忽略换行、空格、回车。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++程序设计课程笔记">
-<meta property="og:url" content="http://yoursite.com/2020/04/28/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="C++输入输出格式控制">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/C++%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="第一章 面向对象程序设计概述">
+<meta property="og:description" content="输入格式控制：C++的cin自动忽略换行、空格、回车。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318174839730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318174800503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-04-28T10:00:29.000Z">
-<meta property="article:modified_time" content="2020-05-19T10:00:38.609Z">
+<meta property="article:published_time" content="2020-07-07T08:38:28.000Z">
+<meta property="article:modified_time" content="2020-07-07T08:50:09.710Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="C++基础">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200318174839730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -220,21 +217,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C++程序设计笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C++输入输出格式控制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      C++程序设计课程笔记
+      C++输入输出格式控制
     </h1>
   
  -->
   
-  <a href="/2020/04/28/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-	<time datetime="2020-04-28T10:00:29.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-04-28</time>
+  <a href="/2020/07/07/C++%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/" class="archive-article-date">
+	<time datetime="2020-07-07T08:38:28.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
   
@@ -253,91 +250,30 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      C++程序设计课程笔记
+      C++输入输出格式控制
     </h1>
   
 </p>
     </center>
     
-    <h2 id="第一章-面向对象程序设计概述"><a href="#第一章-面向对象程序设计概述" class="headerlink" title="第一章 面向对象程序设计概述"></a>第一章 面向对象程序设计概述<a id="more"></a></h2><p> <code>面向对象的语言</code>：</p>
-<ul>
-<li>是高级语言。</li>
-<li>将客观事物看做具有属性和行为的对象。</li>
-<li>通过抽象找出同一类对象的共同属性和行为，形成类。</li>
-<li>通过类的继承和多态实现代码的重用</li>
-<li>使得代码具有独立性、模块性。利于维护和修改。</li>
-</ul>
-<p> <code>类</code>：钟表。（本质特征：都是看时间）<br> <code>对象（类的实例）</code>：某块特定的钟表。（颜色、形状等可能不一样）<br> <code>类</code>：分类的主要依据：抽象。例如：石头、汽车、树木等都是人们长期的生产生活中抽象出来的概念。<br> <code>类与对象的关系</code>：犹如模具与铸件的关系，一个属于某类的对象称为该类的一个示例。<br> <code>封装</code>：尽可能简化内部细节。对外形成一个边界，只保留有限的对外接口使之可以与外部发生反应。例如：sort函数就是一个封装好的函数，直接输入地址就可以对数组进行排序。<br> <code>继承</code>：特殊类拥有一般类的全部属性与服务，我们称为特殊类对一般类的继承。例如：轮船是一般类，客船是特殊类。（a是一般类，如果b有a全部属性特点，在此基础上，b还有特殊的属性，那么b就是特殊类。）<br> <code>源程序</code>：还没翻译的代码。（机器无法识别）<br> <code>目标程序</code>：源程序经过翻译生成的程序，可以直接执行。<br> <code>翻译程序</code>：</p>
-<ul>
-<li><code>汇编程序</code>：将汇编语言写的源程序翻译成目标程序。（高级语言用不到）</li>
-<li><code>编译程序</code>：将高级语言写的源程序翻译成目标程序。（C、C++）</li>
-<li><code>解释程序</code>：与编译程序的不同点：编译程序一次性将汇编程序翻译完，解释程序翻译一句、执行一句，反复进行。（JAVA、BASIC）</li>
-<li><code>程序的开发过程</code>：（C++为例）<ul>
-<li><code>1.编辑</code>：将源程序输入到计算机中，生成后缀为cpp的磁盘文件。</li>
-<li><code>2.编译</code>：将程序的源代码转换为机器语言代码。</li>
-<li><code>3.连接</code>：将多个源程序文件以及库中的某些文件连接在一起，生成一个后缀为exe的可执行文件。</li>
-<li><code>4.运行调试</code>。</li>
-</ul>
+    <p>输入格式控制：C++的cin自动忽略换行、空格、回车。<a id="more"></a></p>
+<p>输出格式控制：利用cout的输出控制符</p>
+<p>例如：<code>setprecision(n)tmep</code>保留n位有效数字</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">123.4444555666</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setprecision(<span class="number">7</span>); <span class="comment">//保留7位有效数字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">Output：</span></span><br><span class="line"><span class="comment">123.4445</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>示例1</center>
+
+<p>配合<code>setiosflags(ios::fixed)</code>使用，小数点后保留n位小数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">123.4444555666</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setprecision(<span class="number">7</span>) &lt;&lt; setiosflags(ios::fixed); <span class="comment">//小数点后保留7位小数</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">Output：</span></span><br><span class="line"><span class="comment">123.4444556</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>示例2</center>
+
+
+<p><font color =deeppink>需要注意的是，设置了一次操作符，对后面的输出默认生效，除非取消或者更改</font>，其他的一些操作符详见参考资料。</p>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ol>
+<li><p><a href="https://blog.csdn.net/weixin_38481963/article/details/79645469" target="_blank" rel="noopener">C/C++标准输入输出格式控制</a></p>
 </li>
-</ul>
-<h2 id="第二章-面向对象程序设计基础"><a href="#第二章-面向对象程序设计基础" class="headerlink" title="第二章 面向对象程序设计基础"></a>第二章 面向对象程序设计基础</h2><p> <code>cin和cout基本输入和输出</code>：getline(cin，str)：输入带空格字符串。<br> <code>常变量的定义</code>：const 变量类型 变量名=x（所定义的变量为常量）<br> <code>引用与常引用</code>：（对一块地址重复命名）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;a = n;       <span class="comment">//引用</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;b = n; <span class="comment">//常引用</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">' '</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-
-<p>  <code>内联函数</code>：系统直接将调用内联函数的地方用等价的语句替换，减少运行环境的保存和恢复时间。（在函数名前面加上inline即是内联函数，但是内联函数只适合小功能的函数，例如一个计算公式等）</p>
-<p>  <code>带缺省值的函数</code>：预先给定形参值，如果不给定实参值，则采用形参值。</p>
-<p> <img src="https://img-blog.csdnimg.cn/20200318174839730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20200318174800503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>  <code>函数重载</code>：多个 参数数量 或参数类型 不同的函数 函数名相同</p>
-<p>  <code>动态内存分配</code>（注意：返回的是分配的空间的首地址）</p>
-<ul>
-<li>单个元素的内存分配：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p, *q;</span><br><span class="line">p = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">3</span>);<span class="comment">//初始化该空间的值为3</span></span><br><span class="line">q = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br><span class="line"><span class="keyword">delete</span>[] q;</span><br></pre></td></tr></table></figure></li>
-<li>多个元素的内存分配：</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p, *q;</span><br><span class="line">p = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]; <span class="comment">//分配10个int型的元素，把该内存的首地址给p</span></span><br><span class="line">q = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br><span class="line"><span class="keyword">delete</span>[] q;</span><br></pre></td></tr></table></figure>
-<p>  <code>动态内存的释放</code>：delete</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p, *q;</span><br><span class="line">p = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">q = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="keyword">delete</span>[] p; <span class="comment">//多个元素的动态内存释放</span></span><br><span class="line"><span class="keyword">delete</span> q;   <span class="comment">//单个元素的动态内存释放</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="第三章-类和对象（一）"><a href="#第三章-类和对象（一）" class="headerlink" title="第三章 类和对象（一）"></a>第三章 类和对象（一）</h2><blockquote>
-<p><strong>c++面对对象程序设计，也使用了类和对象的概念，并通过下面的方法来模拟对象的状态和行为：</strong></p>
-<ul>
-<li><strong>1.对象的状态通过对象的属性数据来描述。</strong></li>
-<li><strong>2.对象的行为：定义一个函数集，通过调用对应函数表示对象完成一个行为。</strong><br><code>类</code>：由成员变量（数据成员）和成员函数组成<br><code>对象的定义</code>:类名 对象名（形如int a、double a）。<br><code>对象的访问</code>:</li>
-</ul>
-</blockquote>
-<ul>
-<li>对象名.成员变量名</li>
-<li>指向对象的指针名-&gt;成员变量名</li>
-<li>对象名.成员函数名</li>
-<li>指向对象的指针名-&gt;成员函数名<br>代码示例：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">	    <span class="keyword">int</span> score;</span><br><span class="line">	    <span class="built_in">string</span> name;</span><br><span class="line">	    <span class="function"><span class="keyword">void</span> <span class="title">change_score</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">	    </span>&#123;</span><br><span class="line">	        score = a;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="function"><span class="keyword">void</span> <span class="title">change_name</span><span class="params">(<span class="built_in">string</span> a)</span></span></span><br><span class="line"><span class="function">	    </span>&#123;</span><br><span class="line">	        name = a;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">	    student a;</span><br><span class="line">	    a.change_score(<span class="number">100</span>);</span><br><span class="line">	    a.change_name(<span class="string">"hesor"</span>);</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; a.name &lt;&lt; <span class="string">' '</span> &lt;&lt; a.score &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">hesor 100</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<code>构造函数</code>：主要用来初始化对象的数据成员，构造函数可以重载。构造函数没有函数返回类型，且函数名与类名相同。<br><code>代码示例</code>：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> score;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">    student()</span><br><span class="line">    &#123;</span><br><span class="line">        score = <span class="number">10</span>;</span><br><span class="line">        name = <span class="string">"orz"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    student(<span class="keyword">int</span> s, <span class="built_in">string</span> n)</span><br><span class="line">    &#123;</span><br><span class="line">        score = s;</span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">change_score</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        score = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">change_name</span><span class="params">(<span class="built_in">string</span> a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        name = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//调用无参构造函数 注意:不是student a()</span></span><br><span class="line">    student a;</span><br><span class="line">    <span class="function">student <span class="title">b</span><span class="params">(<span class="number">100</span>, <span class="string">"hesor"</span>)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.name &lt;&lt; <span class="string">' '</span> &lt;&lt; a.score &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; b.name &lt;&lt; <span class="string">' '</span> &lt;&lt; b.score &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">orz 10</span></span><br><span class="line"><span class="comment">hesor 100</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<code>类的访问控制</code>：</li>
-<li><code>public</code>：公有成员，在程序的任何地方都可以访问。一般作为类与外界的接口。</li>
-<li><code>private</code>：私有成员，只能被该类的成员函数或该类的友元访问。</li>
-<li><code>protect</code>：保护成员，与私有成员差不多，主要在继承方面有区别，（派生类可以访问基类的保护成员，但是不能访问基类的私有成员）。<br><code>析构函数</code>：析构函数和构造函数类似，不过构造函数是在创建对象的时候自动调用，而析构函数是在销毁对象的时候程序自动调用。但是析构函数需在函数名前加上~，并且析构函数没有参数（因此析构函数不能重载）。<br><code>拷贝构造函数</code>：一种特殊的构造函数，用一个已存在对象来初始化正在创建的新对象。<br><code>类的继承</code>：A类继承B类，B叫做基类，A叫做派生类（也叫做父类与子类）。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-上面就是以persoon类为基类，student为派生类的公有继承方式，student类自动继承person类中的所有属性和方法（可以根据需要在派生类中添加属性和方法）。<br><code>派生类构造函数</code>：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">int</span> high;</span><br><span class="line">    person(<span class="built_in">string</span> a, <span class="keyword">int</span> h)</span><br><span class="line">    &#123;</span><br><span class="line">        name = a;</span><br><span class="line">        high = h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> score;</span><br><span class="line">    <span class="comment">// student(int a)  //1</span></span><br><span class="line">    <span class="comment">// 如果采用 1 这种派生类的构造函数，那么基类默认使用无参构造函数初始化从基类继承的成员</span></span><br><span class="line">    student(<span class="keyword">int</span> a) : person(<span class="string">"hesor"</span>, <span class="number">170</span>) <span class="comment">//派生类构造函数</span></span><br><span class="line">    &#123;</span><br><span class="line">        score = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">student <span class="title">a</span><span class="params">(<span class="number">100</span>)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.name &lt;&lt; <span class="string">' '</span> &lt;&lt; a.score &lt;&lt; <span class="string">' '</span> &lt;&lt; a.high &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">hesor 100 170</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<code>派生类构造函数</code>：与基类构造函数一样，但是需要注意一点：派生类析构函数调用的时候基类中的析构函数也会调用！<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">int</span> high;</span><br><span class="line">    person(<span class="built_in">string</span> a, <span class="keyword">int</span> h)</span><br><span class="line">    &#123;</span><br><span class="line">        name = a;</span><br><span class="line">        high = h;</span><br><span class="line">    &#125;</span><br><span class="line">    ~person()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"基类 end... ..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> score;</span><br><span class="line">    <span class="comment">// student(int a)  //1</span></span><br><span class="line">    <span class="comment">// 如果采用 1 这种派生类的构造函数，那么基类默认使用无参构造函数初始化基类成员变量</span></span><br><span class="line">    student(<span class="keyword">int</span> a) : person(<span class="string">"hesor"</span>, <span class="number">170</span>) <span class="comment">//派生类构造函数</span></span><br><span class="line">    &#123;</span><br><span class="line">        score = a;</span><br><span class="line">    &#125;</span><br><span class="line">    ~student()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"派生类 end... ..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">student <span class="title">a</span><span class="params">(<span class="number">100</span>)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.name &lt;&lt; <span class="string">' '</span> &lt;&lt; a.score &lt;&lt; <span class="string">' '</span> &lt;&lt; a.high &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">hesor 100 170</span></span><br><span class="line"><span class="comment">派生类 end... ...</span></span><br><span class="line"><span class="comment">基类 end... ...</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<code>函数重定义</code>：派生类对基类中继承过来的函数进行重新定义（要求函数返回值、参数个数、参数类型完全一致）。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"基类"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"派生类"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    student a;</span><br><span class="line">    person b;</span><br><span class="line">    a.f();</span><br><span class="line">    b.f();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">派生类</span></span><br><span class="line"><span class="comment">基类</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<code>多重继承下的派生类的定义</code>：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f_student</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"我是学生"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f_teacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"我是老师"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student_teacher</span> :</span> <span class="keyword">public</span> student, <span class="keyword">public</span> teacher</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    student_teacher a;</span><br><span class="line">    a.f_student();</span><br><span class="line">    a.f_teacher();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">我是学生</span></span><br><span class="line"><span class="comment">我是老师</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<font color=red>注意，在继承时，总是先调用基类的构造函数再调用派生类的构造函数，多重继承时，按照继承基类的顺序调用构造函数。析构函数的调用顺序恰好与构造函数的调用规律相反。</font><br><code>多重继承中的二义性问题</code>：由于多重继承有多个基类，基类的属性名和方法名可能重复，所以派生类中会产生二义性问题。例如下图，若A有成员变量name，BC继承了A之后 都会有变量 name，然后 D又多重继承了BC，那么D就会有两个name变量，调用的时候就会产生二义性。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[A]  --&gt; B(B)</span><br><span class="line">A --&gt; C(C)</span><br><span class="line">B --&gt; D(D)</span><br><span class="line">C --&gt; D(D)</span><br></pre></td></tr></table></figure>
-
-
-<p> <code>解决方法</code>：</p>
-<ul>
-<li>通过作用域运算符指定要调用哪个基类的属性和方法：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> NUM = <span class="number">123456</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">teacher</span> :</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student_teacher</span> :</span> <span class="keyword">public</span> student, <span class="keyword">public</span> teacher</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    student_teacher a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.teacher::NUM;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">123456</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
-<li><code>虚拟继承</code>：加入virtual关键字，将图中的A类定义为虚基类，虚基类的成员在类的继承关系中只会被继承一次。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> NUM = <span class="number">123456</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> :</span> <span class="keyword">virtual</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">teacher</span> :</span> <span class="keyword">virtual</span> <span class="keyword">public</span> person</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student_teacher</span> :</span> <span class="keyword">public</span> student, <span class="keyword">public</span> teacher</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    student_teacher a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.NUM;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">123456</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<li><p><a href="https://blog.csdn.net/qq_28234213/article/details/72802661" target="_blank" rel="noopener">c++标准输入输出流的控制符</a></p>
 </li>
-</ul>
- <center> <font color=red> In the update... ...</font>
-
-
-
-
+</ol>
 
     
 
@@ -383,28 +319,13 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C++基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C/课程//" class="article-tag-list-link color3">课程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -453,7 +374,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/28/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/07/C++%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -467,18 +388,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/29/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          程序设计结课作业
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/28/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C语言文件读写</div>
+    <a href="/2020/07/07/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%93%E6%A8%A1%E6%8B%9F%E8%B5%9BB%E5%85%AC%E4%BA%A4%E6%8D%A2%E4%B9%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">智算之道模拟赛B公交换乘</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -496,7 +408,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-面向对象程序设计概述"><span class="toc-number">1.</span> <span class="toc-text">第一章 面向对象程序设计概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-面向对象程序设计基础"><span class="toc-number">2.</span> <span class="toc-text">第二章 面向对象程序设计基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章-类和对象（一）"><span class="toc-number">3.</span> <span class="toc-text">第三章 类和对象（一）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料："><span class="toc-number">1.</span> <span class="toc-text">参考资料：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -528,7 +440,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Tue Apr 28 2020 18:00:29 GMT+0800',
+  	id: 'Tue Jul 07 2020 16:38:28 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
