@@ -16,7 +16,7 @@
 <meta property="og:description" content="之前写的是什么玩意——7.8回炉重造更">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-27T11:48:25.000Z">
-<meta property="article:modified_time" content="2020-07-08T03:21:01.578Z">
+<meta property="article:modified_time" content="2020-07-08T03:23:05.467Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="C++基础">
 <meta name="twitter:card" content="summary">
@@ -272,6 +272,12 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *name = <span class="string">"chen"</span>;</span><br><span class="line"><span class="comment">//定义一个常cahr型数组name[5]，但是name作为数组首地址，本身是指针常量</span></span><br><span class="line"><span class="comment">// name[0] = 'w'; //错误，name[0]是常量，不可改变</span></span><br><span class="line">name = <span class="string">"zhao"</span>;        <span class="comment">//正确，name本身是指针常量，可以指向别的空间。</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出"zhao"</span></span><br></pre></td></tr></table></figure>
 
 
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ol>
+<li><a href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F/5333107?fr=aladdin" target="_blank" rel="noopener">百度百科——指针常量</a></li>
+<li><a href="https://blog.csdn.net/daiyutage/article/details/8604720?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">深入 char * ,char ** ,char a[ ] ,char *a[] 内核</a></li>
+<li><a href="https://blog.csdn.net/wangrunmin/article/details/7816705?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">C语言字符数组的初始化</a></li>
+</ol>
+
     
 
     
@@ -429,7 +435,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，常量与变量的概念很容易区分，在c-中，常量常用const修饰，即不可变的量。"><span class="toc-number">1.</span> <span class="toc-text">首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-变量与指针"><span class="toc-number">2.</span> <span class="toc-text">1.变量与指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常量与常量指针"><span class="toc-number">3.</span> <span class="toc-text">2.常量与常量指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-变量与指针常量"><span class="toc-number">4.</span> <span class="toc-text">3.变量与指针常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常量与指针常量"><span class="toc-number">5.</span> <span class="toc-text">4.常量与指针常量</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，常量与变量的概念很容易区分，在c-中，常量常用const修饰，即不可变的量。"><span class="toc-number">1.</span> <span class="toc-text">首先，常量与变量的概念很容易区分，在c++中，常量常用const修饰，即不可变的量。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-变量与指针"><span class="toc-number">2.</span> <span class="toc-text">1.变量与指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常量与常量指针"><span class="toc-number">3.</span> <span class="toc-text">2.常量与常量指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-变量与指针常量"><span class="toc-number">4.</span> <span class="toc-text">3.变量与指针常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常量与指针常量"><span class="toc-number">5.</span> <span class="toc-text">4.常量与指针常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料："><span class="toc-number">5.1.</span> <span class="toc-text">参考资料：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
