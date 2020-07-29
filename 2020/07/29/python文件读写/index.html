@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/5 | hesorchen</title>
+  <title>python文件读写 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/archives/2020/05/page/2/index.html">
+  <meta name="description" content="摸了一个星期鱼，博客也断更很久了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python文件读写">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="摸了一个星期鱼，博客也断更很久了">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-29T08:19:17.000Z">
+<meta property="article:modified_time" content="2020-07-29T14:06:32.876Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -212,164 +216,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python文件读写" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-05-23T12:08:01.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/%E7%89%9B%E5%AE%A2%E8%A5%BF%E9%82%AE%E6%A0%A1%E8%B5%9B%E8%A1%A5%E9%A2%98/">牛客西邮校赛补题</a>
+    <h1 class="article-title" itemprop="name">
+      python文件读写
     </h1>
   
+ -->
+  
+  <a href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" class="archive-article-date">
+	<time datetime="2020-07-29T08:19:17.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-07-29</time>
+</a>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      python文件读写
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>摸了一个星期鱼，博客也断更很久了<a id="more"></a>，今天看了一点python文件读写，记录一下。</p>
+<h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p>使用open函数打开文件，函数的两个主要参数为<strong>文件名</strong>和<strong>打开模式</strong>，默认的打开模式为r(read读文件)<br>还有一种较为常用的打开模式为w(write写文件)，注意使用w模式打开文件，如果文件不存在，会自动生成一个文件，如果已经存在，那么会删除文件中的所有内容，从头开始写入。还有很多打开模式，详见文字最底下的参考资料1。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)  <span class="comment"># 打开了同目录下的test.txt文件</span></span><br><span class="line">file.close()  <span class="comment"># 关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<center>示例</center>
+
+<p>使用完文件之后记得关闭文件，这是一个好习惯。</p>
+<h4 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h4><p>假设已经有文件D:\Python_workspace\test.txt且文件中已经有如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello hesorchen !</span><br><span class="line">hello python !</span><br></pre></td></tr></table></figure>
+
+<p>通过以下程序，可以读取文件中的所有内容，其中，read方法可以增加参数，表示读取的字符数/字节数（按照打开模式区分）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">print(file.read())  <span class="comment"># 读取所有的文件内容</span></span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hello hesorchen !</span></span><br><span class="line"><span class="string">hello python !</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<center>示例</center>
+
+<p>当然，我们还有其他的方式读取文件，例如readline()和readlines()。其中，readline()是读取一行，readlines()是读取整个文件，并且将文件内容一行一行的分开存储在list中。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">print(file.readline())  <span class="comment"># 读取一行</span></span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hello hesorchen !</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<center>readline()示例</center>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">print(file.readlines())  <span class="comment"># 读取全部</span></span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">['hello hesorchen !\n', 'hello python !']</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<center>readlines()示例</center>
+
+<p>另外，不得不提一个十分重要的seek()方法，他的作用是将文件指针移动到指定位置，该方法包含两个参数，第一个参数表示偏移量，第二个参数可以选择0/1/2，分别表示从文件头/当前位置/文件尾偏移</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'rb'</span>)</span><br><span class="line">file.seek(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">print(file.read(<span class="number">1</span>))</span><br><span class="line">file.seek(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">print(file.read(<span class="number">1</span>))</span><br><span class="line">file.seek(<span class="number">-1</span>, <span class="number">2</span>)</span><br><span class="line">print(file.read(<span class="number">1</span>))</span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">b'h'</span></span><br><span class="line"><span class="string">b'h'</span></span><br><span class="line"><span class="string">b'!'</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<center>示例</center>
+
+<h4 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h4><p>写文件主要提两个方法：<br>write()：向文件写入字符串<br>writellines()：向文件写入字符串序列</p>
+<p>另外注意w模式写文件会删除文件原有内容</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">str1 = <span class="string">'qwq'</span></span><br><span class="line">file.write(str1)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<center>read()示例</center>
 
 
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">'D:\\Python_workspace\\test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">str1 = [<span class="string">'abc\n'</span>,<span class="string">'1234\n'</span>,<span class="string">'cdef\n'</span>]</span><br><span class="line">file.writelines(str1)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+
+<center>readllines()示例</center>
+
+
+
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li><a href="https://www.runoob.com/python/python-files-io.html" target="_blank" rel="noopener">Python 文件I/O</a></li>
+<li><a href="https://blog.csdn.net/werm520/article/details/6898473" target="_blank" rel="noopener">python中的三个读read(),readline()和readlines()</a></li>
+</ol>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </a>
+    </div>
+    
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-05-23T00:49:17.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/5-23%E8%A1%A5%E9%A2%98/">5.23补题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">补题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/21/python%E6%B0%B4%E9%A2%98%E2%80%94-%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-	<time datetime="2020-05-21T13:03:24.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/21/python%E6%B0%B4%E9%A2%98%E2%80%94-%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/">python水题-语法练习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -382,388 +352,130 @@
 	</div>
 
 
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/20/Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-	<time datetime="2020-05-20T13:41:44.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-20</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/21/HDU4825_01%E5%AD%97%E5%85%B8%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU4825_01字典树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#打开文件"><span class="toc-number">1.</span> <span class="toc-text">打开文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#读文件"><span class="toc-number">2.</span> <span class="toc-text">读文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#写文件"><span class="toc-number">3.</span> <span class="toc-text">写文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/">Python语法基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/17/codeforces643/" class="archive-article-date">
-	<time datetime="2020-05-17T00:51:26.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/17/codeforces643/">CF 643 div.2 ABDE</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/15/%E6%91%98%E5%BD%95/" class="archive-article-date">
-	<time datetime="2020-05-15T08:25:59.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/15/%E6%91%98%E5%BD%95/">摘录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/15/%E6%B4%9B%E8%B0%B7P1019/" class="archive-article-date">
-	<time datetime="2020-05-15T08:14:05.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/15/%E6%B4%9B%E8%B0%B7P1019/">洛谷P1019</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/15/%E6%B4%9B%E8%B0%B7P2036/" class="archive-article-date">
-	<time datetime="2020-05-15T07:20:30.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/15/%E6%B4%9B%E8%B0%B7P2036/">洛谷P2036</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二进制枚举子集</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/%E6%B4%9B%E8%B0%B7P2895/" class="archive-article-date">
-	<time datetime="2020-05-14T08:23:32.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/%E6%B4%9B%E8%B0%B7P2895/">洛谷P2895</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/" class="archive-article-date">
-	<time datetime="2020-05-13T12:16:19.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/%E6%B4%9B%E8%B0%B7P1135/">洛谷P1135</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">搜索</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/05/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/05/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2020/05/page/3/">3</a><a class="page-number" href="/archives/2020/05/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/05/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Wed Jul 29 2020 16:19:17 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -823,8 +535,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
