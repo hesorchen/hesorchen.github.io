@@ -16,7 +16,7 @@
 <meta property="og:description" content="python的文件读写都是以字符串形式进行处理的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-01T01:30:12.000Z">
-<meta property="article:modified_time" content="2020-08-01T01:40:33.654Z">
+<meta property="article:modified_time" content="2020-08-01T01:42:47.008Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -260,7 +260,7 @@
 <ul>
 <li><p>dump()：dump有倾倒之意，pickle.dump()有两个必要参数，第一个是要序列化的对象，第二个是文件对象。<font color=red>注意，文件对象必须是以’wb’模式打开的。</font></p>
 </li>
-<li><p>load()：load有加载、装载之意，pickle.load()有一个必要参数，为文件对象。该方法返回的是序列化前的数据类型对象。<font color=red>注意，文件对象必须是以’wr’模式打开的。</font></p>
+<li><p>load()：load有加载、装载之意，pickle.load()有一个必要参数，为文件对象。该方法返回的是序列化前的数据类型对象。<font color=red>注意，文件对象必须是以’rb’模式打开的。</font></p>
 </li>
 </ul>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">my_list = [<span class="string">'person'</span>, <span class="string">'123'</span>]</span><br><span class="line">file1 = open(<span class="string">'test.txt'</span>, <span class="string">'wb'</span>)</span><br><span class="line">pickle.dump(my_list, file1)</span><br><span class="line">file1.close()</span><br><span class="line"></span><br><span class="line">file1 = open(<span class="string">'test.txt'</span>, <span class="string">'rb'</span>)</span><br><span class="line">my_list = pickle.load(file1)</span><br><span class="line">print(my_list, type(my_list))</span><br><span class="line">file1.close()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">['person', '123'] &lt;class 'list'&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
