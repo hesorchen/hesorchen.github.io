@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hesorchen</title>
+  <title>python_try/except/else/finally语句以及循环语句搭配else使用 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+  <meta name="description" content="try&#x2F;except语句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_try&#x2F;except&#x2F;else&#x2F;finally语句以及循环语句搭配else使用">
+<meta property="og:url" content="http://yoursite.com/2020/08/01/python-try-except-else-finally%E8%AF%AD%E5%8F%A5%E4%BB%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E6%90%AD%E9%85%8Delse%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="try&#x2F;except语句">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-01T08:14:54.000Z">
+<meta property="article:modified_time" content="2020-08-01T09:49:32.854Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -212,27 +216,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Lacus定理—-求较大组合数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-python-try-except-else-finally语句以及循环语句搭配else使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/Lacus%E5%AE%9A%E7%90%86%E2%80%94-%E6%B1%82%E8%BE%83%E5%A4%A7%E7%BB%84%E5%90%88%E6%95%B0/">Lacus定理—-求较大组合数</a>
+    <h1 class="article-title" itemprop="name">
+      python_try/except/else/finally语句以及循环语句搭配else使用
     </h1>
   
  -->
   
-  <a href="/2020/06/26/Lacus%E5%AE%9A%E7%90%86%E2%80%94-%E6%B1%82%E8%BE%83%E5%A4%A7%E7%BB%84%E5%90%88%E6%95%B0/" class="archive-article-date">
-	<time datetime="2020-06-26T15:56:28.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-26</time>
+  <a href="/2020/08/01/python-try-except-else-finally%E8%AF%AD%E5%8F%A5%E4%BB%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E6%90%AD%E9%85%8Delse%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+	<time datetime="2020-08-01T08:14:54.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-08-01</time>
 </a>
 
   
 
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
   
   </header>
 
@@ -242,496 +248,76 @@
     <center>
       <p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/26/Lacus%E5%AE%9A%E7%90%86%E2%80%94-%E6%B1%82%E8%BE%83%E5%A4%A7%E7%BB%84%E5%90%88%E6%95%B0/">Lacus定理—-求较大组合数</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      python_try/except/else/finally语句以及循环语句搭配else使用
     </h1>
   
 </p>
     </center>
     
-    <p>之前介绍的费马小定理
-    
-    <a class="article-more-a" href="/2020/06/26/Lacus%E5%AE%9A%E7%90%86%E2%80%94-%E6%B1%82%E8%BE%83%E5%A4%A7%E7%BB%84%E5%90%88%E6%95%B0/#more">... ... >></a>
-    
+    <h4 id="try-except语句"><a href="#try-except语句" class="headerlink" title="try/except语句"></a>try/except语句<a id="more"></a></h4><p>try/except语句主要用来处理程序运行时遇到的一些异常情况（exception），例如除0（ZeroDivisionError）、类型错误（TypeError）、索引异常（IndexError）、键错误（KeyError）、导入模块错误（ImportError）等等</p>
+<p>在try语句块中如果发现exception，那么中断接下来try块中的语句，进入<code>exceptX</code>语句块，找到第一个匹配的异常处理块执行，否则进入最终的<code>except</code>语句。由此可以，<font color =red>比较规范的try/except语句最底下无论如何应该有一个except语句，因为我们无法穷举所有exceptX的异常情况</font></p>
+<p>我们也可以在<code>except AError</code>后边加上<code>as B</code>，来打印错误参数，详见下面的示例。</p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 取消注释查看具体效果</span></span><br><span class="line">    <span class="comment"># import a_error_module</span></span><br><span class="line">    <span class="comment"># a = 1+'1'</span></span><br><span class="line">    <span class="comment"># b = [0]*10;print(b[12])</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    print(<span class="string">'导入模块错误'</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    print(<span class="string">'类型错误'</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> error1:</span><br><span class="line">    print(<span class="string">'索引错误，错误是:'</span>, error1)</span><br><span class="line"><span class="keyword">except</span> :</span><br><span class="line">    print(<span class="string">'其他错误!'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="try-except-finally语句"><a href="#try-except-finally语句" class="headerlink" title="try/except/finally语句"></a>try/except/finally语句</h4><p>try/except/finally语句，无论有没有excetion都会执行finally语句块，finally语句一定要放在最底下，详见示例。</p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">    <span class="comment"># b = 1+'1'  # 无论注不注释都会执行finally语句</span></span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    print(<span class="string">'Type error!'</span>)</span><br><span class="line"><span class="keyword">except</span> :</span><br><span class="line">    print(<span class="string">'其他错误!'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'hello'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在一些时候finally语句可以发挥很大的作用，例如在try语句块中成功打开文件之后，下面出现了异常，那么会直接跳出try语句块，这样文件可能无法关闭，有了finally语句，无论是否出现了异常，都可以正常关闭文件。</p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    my_file = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">    a = <span class="number">5</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    print(<span class="string">'导入模块错误'</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    print(<span class="string">'类型错误'</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> error1:</span><br><span class="line">    print(<span class="string">'索引错误，错误是:'</span>, error1)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'其他错误!'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    my_file.close()</span><br><span class="line">    print(<span class="string">'文件成功关闭！'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="try-except-else-finally语句"><a href="#try-except-else-finally语句" class="headerlink" title="try/except/else/finally语句"></a>try/except/else/finally语句</h4><p>在C语言和C++中，else总是配合if使用，但是python中则可能搭配很多关键字使用。其中就包含try语句，也就是无exception时执行else语句。<font color =red>注意：如果要使用else的话，必须在expect和finally之间</font></p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    my_file = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">    <span class="comment"># a = 5/0</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    print(<span class="string">'导入模块错误'</span>)</span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    print(<span class="string">'类型错误'</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> error1:</span><br><span class="line">    print(<span class="string">'索引错误，错误是:'</span>, error1)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">'其他错误!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'没有错误!'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    my_file.close()</span><br><span class="line">    print(<span class="string">'文件成功关闭！'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="循环语句配合else使用"><a href="#循环语句配合else使用" class="headerlink" title="循环语句配合else使用"></a>循环语句配合else使用</h4><p>在python中，else还可以配合循环语句使用，如果循环能够执行完，那么不执行else语句，否则执行else语句</p>
+<p>示例1：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">def <span class="title">judge</span><span class="params">(n)</span>:</span></span><br><span class="line">    '判断素数'</span><br><span class="line">    <span class="function"><span class="keyword">for</span> i in <span class="title">range</span><span class="params">(<span class="number">2</span>, n)</span>:</span></span><br><span class="line"><span class="function">        <span class="title">if</span><span class="params">(n % i == <span class="number">0</span>)</span>:</span></span><br><span class="line">            print(n, 'is not prime')</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(n, 'is prime')</span><br><span class="line"></span><br><span class="line">a = <span class="keyword">int</span>(input())</span><br><span class="line">judge(a)</span><br></pre></td></tr></table></figure>
+
+<p>示例2:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">judge</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">'判断素数'</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</span><br><span class="line">        <span class="keyword">if</span>(n % i == <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> int(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> int(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt; <span class="number">3</span>:</span><br><span class="line">    a = int(input())</span><br><span class="line">    count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(judge(a)):</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'你输入的3个数都是素数！'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li><a href="https://blog.csdn.net/f156207495/article/details/78387617" target="_blank" rel="noopener">python基础知识三——try与except处理异常语句</a></li>
+</ol>
+
     
 
     
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">组合数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/26/Lacus%E5%AE%9A%E7%90%86%E2%80%94-%E6%B1%82%E8%BE%83%E5%A4%A7%E7%BB%84%E5%90%88%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
     </div>
-</aside>
-
-
-
-  
-    <article id="post-逆元" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/25/%E9%80%86%E5%85%83/">逆元</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/25/%E9%80%86%E5%85%83/" class="archive-article-date">
-	<time datetime="2020-06-25T15:04:29.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-25</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/25/%E9%80%86%E5%85%83/">逆元</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <blockquote>
-<p>更新 ：发现有些数学公式显示不全，可能是markdown版本问题，可以去<a href="https://blog.csdn.net/hesorchen/article/details/106969080" target="_blank" rel="noopener">csdn</a>看
-    
-    <a class="article-more-a" href="/2020/06/25/%E9%80%86%E5%85%83/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逆元</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/25/%E9%80%86%E5%85%83/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-牛客组合数问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/25/%E7%89%9B%E5%AE%A2%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/">牛客组合数问题</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/25/%E7%89%9B%E5%AE%A2%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-06-25T13:35:34.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-25</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/25/%E7%89%9B%E5%AE%A2%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/">牛客组合数问题</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://ac.nowcoder.com/acm/problem/16429" target="_blank" rel="noopener">题目链接</a>
-    
-    <a class="article-more-a" href="/2020/06/25/%E7%89%9B%E5%AE%A2%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">组合数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/25/%E7%89%9B%E5%AE%A2%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-洛谷P1825" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/">洛谷P1825</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/" class="archive-article-date">
-	<time datetime="2020-06-24T15:36:39.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-24</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/">洛谷P1825</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://www.luogu.com.cn/problem/P1825" target="_blank" rel="noopener">题目链接</a>
-    
-    <a class="article-more-a" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-洛谷P1032" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/">洛谷P1032</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/" class="archive-article-date">
-	<time datetime="2020-06-24T14:48:52.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-24</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/">洛谷P1032</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://www.luogu.com.cn/problem/P1032" target="_blank" rel="noopener">题目链接</a>
-    
-    <a class="article-more-a" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-6-22随笔（数学建模）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/">6.22随笔（数学建模）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-06-22T15:35:22.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/">6.22随笔（数学建模）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    这是一篇加密文章。如果你想查看其中内容，请与我联系。
-    
-    <a class="article-more-a" href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/#more">... ... >></a>
-    
-    
-
     
   </div>
   <div class="article-info article-info-index">
@@ -743,7 +329,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -751,378 +337,128 @@
 
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/">展开全文 >></a>
-    </p>
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/01/python-try-except-else-finally%E8%AF%AD%E5%8F%A5%E4%BB%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E6%90%AD%E9%85%8Delse%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/01/python%E6%A8%A1-pickle%E6%A8%A1%E5%9D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python模_pickle模块</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#try-except语句"><span class="toc-number">1.</span> <span class="toc-text">try&#x2F;except语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#try-except-finally语句"><span class="toc-number">2.</span> <span class="toc-text">try&#x2F;except&#x2F;finally语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#try-except-else-finally语句"><span class="toc-number">3.</span> <span class="toc-text">try&#x2F;except&#x2F;else&#x2F;finally语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环语句配合else使用"><span class="toc-number">4.</span> <span class="toc-text">循环语句配合else使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
 
 
 
-  
-    <article id="post-分组背包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/21/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85/">分组背包</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/21/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85/" class="archive-article-date">
-	<time datetime="2020-06-21T04:10:54.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/21/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85/">分组背包</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>昨天牛客遇到一个多重背包问题，没想到二进制优化。于是补了一下题，发现了很多漏洞
-    
-    <a class="article-more-a" href="/2020/06/21/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/21/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
 
 
 
-  
-    <article id="post-6-20随笔（chrome-谷歌上网助手科学上网）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/20/6-20%E9%9A%8F%E7%AC%94%EF%BC%88chrome-%E8%B0%B7%E6%AD%8C%E4%B8%8A%E7%BD%91%E5%8A%A9%E6%89%8B%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89/">6.20随笔（chrome+谷歌上网助手科学上网）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/20/6-20%E9%9A%8F%E7%AC%94%EF%BC%88chrome-%E8%B0%B7%E6%AD%8C%E4%B8%8A%E7%BD%91%E5%8A%A9%E6%89%8B%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-06-20T14:55:21.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/20/6-20%E9%9A%8F%E7%AC%94%EF%BC%88chrome-%E8%B0%B7%E6%AD%8C%E4%B8%8A%E7%BD%91%E5%8A%A9%E6%89%8B%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89/">6.20随笔（chrome+谷歌上网助手科学上网）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <blockquote>
-<p>好久没写博客了，今天挺充实的，记录一下。
-    
-    <a class="article-more-a" href="/2020/06/20/6-20%E9%9A%8F%E7%AC%94%EF%BC%88chrome-%E8%B0%B7%E6%AD%8C%E4%B8%8A%E7%BD%91%E5%8A%A9%E6%89%8B%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/20/6-20%E9%9A%8F%E7%AC%94%EF%BC%88chrome-%E8%B0%B7%E6%AD%8C%E4%B8%8A%E7%BD%91%E5%8A%A9%E6%89%8B%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
 
 
 
-  
-    <article id="post-6-13随笔（牛客练习赛C二维动点）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/">6.13随笔（牛客练习赛C二维动点）</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/" class="archive-article-date">
-	<time datetime="2020-06-13T02:59:56.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-13</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/">6.13随笔（牛客练习赛C二维动点）</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>好好打比赛每场都或多或少有些收获
-    
-    <a class="article-more-a" href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/13/6-13%E9%9A%8F%E7%AC%94%EF%BC%88%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9BC%E4%BA%8C%E7%BB%B4%E5%8A%A8%E7%82%B9%EF%BC%89/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Sat Aug 01 2020 16:14:54 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
 
 
 
-  
-    <article id="post-6-12随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/">6.12随笔(dp问题)</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-	<time datetime="2020-06-12T02:08:53.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-12</time>
-</a>
 
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/">6.12随笔(dp问题)</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>又被一个dp锤爆了
-    
-    <a class="article-more-a" href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/12/6-12%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1182,8 +518,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
