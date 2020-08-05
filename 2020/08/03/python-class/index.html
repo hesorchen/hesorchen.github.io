@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>洛谷P1032 | hesorchen</title>
+  <title>python_class | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目链接">
+  <meta name="description" content="类的定义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="洛谷P1032">
-<meta property="og:url" content="http://yoursite.com/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/index.html">
+<meta property="og:title" content="python_class">
+<meta property="og:url" content="http://yoursite.com/2020/08/03/python-class/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="题目链接">
+<meta property="og:description" content="类的定义">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-24T14:48:52.000Z">
-<meta property="article:modified_time" content="2020-07-03T12:37:59.638Z">
+<meta property="article:published_time" content="2020-08-03T14:03:30.000Z">
+<meta property="article:modified_time" content="2020-08-05T03:56:13.620Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="DFS">
-<meta property="article:tag" content="暑假集训打卡">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -218,21 +216,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-洛谷P1032" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-class" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      洛谷P1032
+      python_class
     </h1>
   
  -->
   
-  <a href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/" class="archive-article-date">
-	<time datetime="2020-06-24T14:48:52.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-24</time>
+  <a href="/2020/08/03/python-class/" class="archive-article-date">
+	<time datetime="2020-08-03T14:03:30.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-08-03</time>
 </a>
 
   
@@ -251,18 +249,27 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      洛谷P1032
+      python_class
     </h1>
   
 </p>
     </center>
     
-    <p><a href="https://www.luogu.com.cn/problem/P1032" target="_blank" rel="noopener">题目链接</a><a id="more"></a></p>
-<p>一个比较简单的DFS题，数据范围很小，直接暴力即可。</p>
-<p><font color =red>DFS问题关键的一点是剪枝，写搜索问题的时候应该自然而然地想到剪枝，并且尽可能的降低时间复杂度</font></p>
-<p>几个比较常见的剪枝技巧：<br>1.已经超过之前的最优解，可以直接return<br>2.已经出现过之前的情况，可以直接return</p>
-<p><strong>AC代码：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-04-14 10:33:26</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2020-06-20 21:24:46</span></span><br><span class="line"><span class="comment"> * @Link: https://hesorchen.github.io/</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI acos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 3123456777</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pll pair<span class="meta-string">&lt;ll, ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(a, b) ((a &gt; b) ? (a) : (b))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a, b) ((a &lt; b) ? (a) : (b))</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS                      \</span></span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>); \</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);                  \</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FRE                              \</span></span><br><span class="line">    &#123;                                    \</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);   \</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); \</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//==============================================================================</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, ll&gt; mp;</span><br><span class="line"><span class="built_in">string</span> A, B;</span><br><span class="line"><span class="built_in">string</span> a[<span class="number">10</span>], b[<span class="number">10</span>];</span><br><span class="line">ll ct = <span class="number">1</span>, ans = INF;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> now, ll step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mp[now]) <span class="comment">//map剪枝</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    mp[now] = <span class="number">1</span>;a</span><br><span class="line">    <span class="keyword">if</span> (now == B)</span><br><span class="line">    &#123;</span><br><span class="line">        ans = min(step, ans);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (step &gt;= <span class="number">10</span> || now.size() &gt; <span class="number">20</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; ct; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll len = a[i].size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j + len &lt;= now.size(); j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> tempp = now.substr(j, len);</span><br><span class="line">            <span class="keyword">if</span> (tempp == a[i])</span><br><span class="line">                dfs(now.substr(<span class="number">0</span>, j) + b[i] + now.substr(j + len), step + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    <span class="built_in">string</span> tempa, tempb;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; tempa &gt;&gt; tempb)</span><br><span class="line">    &#123;</span><br><span class="line">        a[ct] = tempa;</span><br><span class="line">        b[ct++] = tempb;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(A, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (ans != INF)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO ANSWER!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义<a id="more"></a></h4><p>python类主要包含类变量、类方法、实例变量，定义格式如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span>:</span>  <span class="comment"># 定义一个demo类</span></span><br><span class="line">    name = <span class="string">'default_name'</span>  <span class="comment"># name为类变量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_name</span><span class="params">(self)</span>:</span>  <span class="comment"># 类方法</span></span><br><span class="line">    print(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_age</span><span class="params">(self, age)</span>:</span>  <span class="comment"># 类方法</span></span><br><span class="line">        self.age = age  <span class="comment"># age为实例变量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_age</span><span class="params">(self)</span>:</span>  <span class="comment"># 类方法</span></span><br><span class="line">        print(self.age)</span><br></pre></td></tr></table></figure>
+<p><strong>类变量</strong>：在类中定义好的变量，例如上面的name<br><strong>类方法</strong>：在类中定义的方法，例如上面的print_name()、set_age()、print_age()<br><strong>实例变量</strong>：对实例对象的变量赋值就会创建一个新的实例变量，例如上面的age</p>
+<p>注意示例代码中的self，类似于C++的类的this指针，类中的函数称为<strong>实例方法</strong>，所有实例方法的第一个参数都会被绑定到方法的调用者（该类的实例对象），因此所有实例方法第一个参数必须有self，当然，第一个参数不一定要是self，可以改成任何你想要的变量名，不过self是约定俗成的习惯。</p>
+<p>self指向实例对象本身，如果不用self.name的形式，只会新建一个name变量。</p>
+<p><strong>构造方法</strong><br>特殊的一种方法，类似于C++的构造函数，<strong>init</strong>（init前后分别两个下划线），用于初始化新创建的类实例。</p>
+<h4 id="私有变量和方法"><a href="#私有变量和方法" class="headerlink" title="私有变量和方法"></a>私有变量和方法</h4><p>私有变量（方法）只需要在类名（方法名）前面加上双下划线即可。但是，python中的私有变量并非一定不可在外部访问，只需要用对象名._类名私有变量名的形式访问即可。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span>:</span>  <span class="comment"># 定义一个demo类</span></span><br><span class="line">    __name = <span class="string">'default_name'</span>  <span class="comment"># name为私有变量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">temp = demo()</span><br><span class="line"><span class="comment"># print(temp.__name)  # 此处打印报错</span></span><br><span class="line">print(temp._demo__name)  <span class="comment"># 此处可以打印</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li><a href="http://c.biancheng.net/view/2263.html" target="_blank" rel="noopener">Python class定义类，Python类的定义（入门必读）</a></li>
+<li><a href="https://blog.csdn.net/weixin_41765578/article/details/81533063" target="_blank" rel="noopener">Python：为什么类中的私有属性可以在外部赋值并访问？</a></li>
+</ol>
 
     
 
@@ -303,33 +310,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -378,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/24/%E6%B4%9B%E8%B0%B7P1032/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/03/python-class/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -392,18 +373,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/06/24/%E6%B4%9B%E8%B0%B7P1825/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          洛谷P1825
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/22/6-22%E9%9A%8F%E7%AC%94%EF%BC%88%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">6.22随笔（数学建模）</div>
+    <a href="/2020/08/02/KMP%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">KMP代码详解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -421,7 +393,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#类的定义"><span class="toc-number">1.</span> <span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#私有变量和方法"><span class="toc-number">2.</span> <span class="toc-text">私有变量和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -453,7 +425,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Wed Jun 24 2020 22:48:52 GMT+0800',
+  	id: 'Mon Aug 03 2020 22:03:30 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
