@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 106
+			总文章数 107
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -214,6 +214,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-牛客算法周周练E地、颜色、魔法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%83E%E5%9C%B0%E3%80%81%E9%A2%9C%E8%89%B2%E3%80%81%E9%AD%94%E6%B3%95/">牛客算法周周练E地、颜色、魔法</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/08/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%83E%E5%9C%B0%E3%80%81%E9%A2%9C%E8%89%B2%E3%80%81%E9%AD%94%E6%B3%95/" class="archive-article-date">
+	<time datetime="2020-08-11T11:55:18.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-08-11</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/08/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%83E%E5%9C%B0%E3%80%81%E9%A2%9C%E8%89%B2%E3%80%81%E9%AD%94%E6%B3%95/">牛客算法周周练E地、颜色、魔法</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p><a href="https://ac.nowcoder.com/acm/contest/6889/Ehttps://ac.nowcoder.com/acm/contest/6889/E" target="_blank" rel="noopener">题目链接</a></p>
+<p>一个不难的BFS染色题，难点在于开空间。</p>
+<p>题目给的范围是n*m&lt;=1e6</p>
+<p>如果直接在堆里开空间必须开到1e6*1e6，显然爆了，如果在栈里边开就不能再全局跑BFS，于是就用vector动态开空间。</p>
+<p>AC代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-07-03 17:05:01</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2020-08-11 19:34:13</span></span><br><span class="line"><span class="comment"> * @Description: https://hesorchen.github.io/</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI acos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pll pair<span class="meta-string">&lt;ll, ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(a, b) ((a &gt; b) ? (a) : (b))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a, b) ((a &lt; b) ? (a) : (b))</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS                      \</span></span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>); \</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);                  \</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FRE                              \</span></span><br><span class="line">    &#123;                                    \</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);   \</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); \</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//head==============================================================================</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;mp[<span class="number">1000010</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis[<span class="number">1000010</span>];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ll x, y;</span><br><span class="line">&#125;temp1;</span><br><span class="line"><span class="built_in">queue</span>&lt;node&gt;q;</span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">4</span>][<span class="number">2</span>]=&#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span> &#125;;</span><br><span class="line">ll n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    q.push(node&#123; x, y &#125;);</span><br><span class="line">    vis[x][y]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (q.size())</span><br><span class="line">    &#123;</span><br><span class="line">        temp1=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        ll x=temp1.x;</span><br><span class="line">        ll y=temp1.y;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            ll xx= x+mov[i][<span class="number">0</span>];</span><br><span class="line">            ll yy= y+mov[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (xx&gt;=<span class="number">1</span>&amp;&amp;xx&lt;=n&amp;&amp;yy&gt;=<span class="number">1</span>&amp;&amp;yy&lt;=m&amp;&amp;!vis[xx][yy]&amp;&amp;mp[xx][yy]==<span class="string">'.'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                vis[xx][yy]=<span class="number">1</span>;</span><br><span class="line">                q.push(node&#123; xx, yy &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">char</span> temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        mp[i].push_back(<span class="string">'?'</span>);</span><br><span class="line">        vis[i].push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;temp);</span><br><span class="line">            mp[i].push_back(temp);</span><br><span class="line">            vis[i].push_back(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (mp[i][<span class="number">1</span>]==<span class="string">'.'</span>&amp;&amp;!vis[i][<span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            bfs(i, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mp[i][m]==<span class="string">'.'</span>&amp;&amp;!vis[i][m])</span><br><span class="line">        &#123;</span><br><span class="line">            bfs(i, m);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (mp[<span class="number">1</span>][j]==<span class="string">'.'</span>&amp;&amp;!vis[<span class="number">1</span>][j])</span><br><span class="line">        &#123;</span><br><span class="line">            bfs(<span class="number">1</span>, j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mp[n][j]==<span class="string">'.'</span>&amp;&amp;!vis[n][j])</span><br><span class="line">        &#123;</span><br><span class="line">            bfs(n, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">            ans+=(vis[i][j]^<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">5 5</span></span><br><span class="line"><span class="comment">...#.</span></span><br><span class="line"><span class="comment">.##..</span></span><br><span class="line"><span class="comment">.#.#.</span></span><br><span class="line"><span class="comment">.###.</span></span><br><span class="line"><span class="comment">.....</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%83E%E5%9C%B0%E3%80%81%E9%A2%9C%E8%89%B2%E3%80%81%E9%AD%94%E6%B3%95/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Python爬虫实战之获得CSDN访客量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,7 +332,7 @@
 </p>
     </center>
     
-    <h4 id="Python爬虫刷取CSDN访客"><a href="#Python爬虫刷取CSDN访客" class="headerlink" title="Python爬虫刷取CSDN访客"></a>Python爬虫刷取CSDN访客
+    <p>1.学习Python爬虫第二天
     
     <a class="article-more-a" href="/2020/08/11/Python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%8E%B7%E5%BE%97CSDN%E8%AE%BF%E5%AE%A2%E9%87%8F/#more">... ... >></a>
     
@@ -927,86 +1010,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/07/31/python%E6%A8%A1%E5%9D%97-os/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-python文件读写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/">python文件读写</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" class="archive-article-date">
-	<time datetime="2020-07-29T08:19:17.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-07-29</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/">python文件读写</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>摸了一个星期鱼，博客也断更很久了
-    
-    <a class="article-more-a" href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/29/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/">展开全文 >></a>
     </p>
     
     
