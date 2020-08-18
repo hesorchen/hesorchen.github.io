@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>STL数组第k小数函数 | hesorchen</title>
+  <title>牛客蕊蕊乘车去上学 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在一个数组中，要找第k小数">
+  <meta name="description" content="很早之前没ac的题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL数组第k小数函数">
-<meta property="og:url" content="http://yoursite.com/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/index.html">
+<meta property="og:title" content="牛客蕊蕊乘车去上学">
+<meta property="og:url" content="http://yoursite.com/2020/08/18/%E7%89%9B%E5%AE%A2%E8%95%8A%E8%95%8A%E4%B9%98%E8%BD%A6%E5%8E%BB%E4%B8%8A%E5%AD%A6/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="在一个数组中，要找第k小数">
+<meta property="og:description" content="很早之前没ac的题">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-26T01:29:06.000Z">
-<meta property="article:modified_time" content="2020-05-26T02:20:26.650Z">
+<meta property="article:published_time" content="2020-08-18T08:58:25.000Z">
+<meta property="article:modified_time" content="2020-08-18T09:04:26.744Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="ACM">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -217,21 +216,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-STL数组第k小数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-牛客蕊蕊乘车去上学" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      STL数组第k小数函数
+      牛客蕊蕊乘车去上学
     </h1>
   
  -->
   
-  <a href="/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/" class="archive-article-date">
-	<time datetime="2020-05-26T01:29:06.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-26</time>
+  <a href="/2020/08/18/%E7%89%9B%E5%AE%A2%E8%95%8A%E8%95%8A%E4%B9%98%E8%BD%A6%E5%8E%BB%E4%B8%8A%E5%AD%A6/" class="archive-article-date">
+	<time datetime="2020-08-18T08:58:25.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-08-18</time>
 </a>
 
   
@@ -250,19 +249,17 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      STL数组第k小数函数
+      牛客蕊蕊乘车去上学
     </h1>
   
 </p>
     </center>
     
-    <p>在一个数组中，要找第k小数<a id="more"></a>，很多人的第一反应应该都是sort然后直接输出。但是昨天就被<code>5e6</code>卡了<code>nlogn</code>，这时候，stl里的一个函数就可以上场了：<code>nth_element()</code></p>
-<p>这个函数有四个参数：<br>1.first 容器开始位置<br>2.nth 要找的第k小（大）元素<br>3.last 容器结束位置<br>4.cmp 同sort，默认升序</p>
-<p>该函数唯一能保证的就是第k小（大）元素在所选容器区间的第k个位置。不过拥有$O(n)$的复杂度。</p>
-<p>函数结束之后，在k位置之前的数都小于第k的元素，在k位置之后的数都大于第k的元素。<font color =red>但是不保证有序。</font></p>
-<p>具体使用方式如下:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">20</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">2</span>;</span><br><span class="line">    nth_element(a + <span class="number">1</span>, a + k, a + <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"排序后:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[k] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <p>很早之前没ac的题<a id="more"></a>，很多人应该第一反应都觉得是（a+b）/2 </p>
+<p>看完这篇文章之后稍微明白了一点：<a href="http://www.duodaa.com/blog/index.php/archives/2080/" target="_blank" rel="noopener">为什么在等公交车时,要等的车总还没有来？</a></p>
+<p>事实上，虽然a公交车和b公交车出现的概率一样，但是作为个人，遇到a公交车和b公交车的概率是不一样的。我们把a公交车和b公交车出现的时间看成数轴上的线段，在无限长的数轴上，a线段和b线段的数量一样，但是b线段更长，那么在数轴上随机找一点，显然是落在b数线段上的概率更大，为b/(a+b)，类似的，a的概率为a/(a+b)。那么最后的答案就是a*a/(a+b)+b *b/(a+b)。</p>
+<p>AC代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>, (a * a + b * b) / (a + b));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -302,17 +299,6 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -373,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/26/STL%E6%95%B0%E7%BB%84%E7%AC%ACk%E5%B0%8F%E6%95%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/18/%E7%89%9B%E5%AE%A2%E8%95%8A%E8%95%8A%E4%B9%98%E8%BD%A6%E5%8E%BB%E4%B8%8A%E5%AD%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -387,18 +373,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/27/%E7%89%9B%E5%AE%A2%E5%91%A8%E5%91%A8%E7%BB%838/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          牛客周周练8
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/26/C++%E6%95%B4%E6%95%B0%E5%BF%AB%E8%AF%BB/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++整数快读</div>
+    <a href="/2020/08/16/spfa%E5%9B%9E%E7%82%89%E9%87%8D%E9%80%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SPFA回炉重造</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -448,7 +425,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Tue May 26 2020 09:29:06 GMT+0800',
+  	id: 'Tue Aug 18 2020 16:58:25 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
