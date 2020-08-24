@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>拓扑排序用bitset处理相同排名的集合 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####　前言">
+  <meta name="description" content="前言">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拓扑排序用bitset处理相同排名的集合">
 <meta property="og:url" content="http://yoursite.com/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="####　前言">
+<meta property="og:description" content="前言">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-24T11:58:35.000Z">
-<meta property="article:modified_time" content="2020-08-24T12:30:36.609Z">
+<meta property="article:modified_time" content="2020-08-24T12:34:20.566Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="bitset">
 <meta property="article:tag" content="拓扑排序">
@@ -257,8 +257,7 @@
 </p>
     </center>
     
-    <p>####　前言<a id="more"></a></p>
-<p>拓扑排序可以在有向无环图中以偏序求出全序，但是在一些图中，有些结点的rank是一样高的，（除非题目有特殊说明，编号小的rank高等情况），这样是不能求出正确的rank的。这时候，我们可以加入bitset，用bitset处理相同rank的结点集。</p>
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言<a id="more"></a></h4><p>拓扑排序可以在有向无环图中以偏序求出全序，但是在一些图中，有些结点的rank是一样高的，（除非题目有特殊说明，编号小的rank高等情况），这样是不能求出正确的rank的。这时候，我们可以加入bitset，用bitset处理相同rank的结点集。</p>
 <h4 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a>bitset</h4><p>使用头文件 bitset</p>
 <p>bitset类似于一个bool类型的数组，存放着01。可以在定义的时候进行初始化操作，可以用下标进行访问，也是从0开始，并且从默认最右边的一位为[0]（结合二进制数，其实很人性化），定义、访问及初始化方法如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">bitset</span>&lt;10&gt; <span class="title">q</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; q[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="function"><span class="built_in">bitset</span>&lt;10&gt; <span class="title">b</span><span class="params">(<span class="string">"1110"</span>)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">Output:</span></span><br><span class="line"><span class="comment">0000000011                                        </span></span><br><span class="line"><span class="comment">1 1 0 0 0 0 0 0 0 0</span></span><br><span class="line"><span class="comment">0000000011</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -429,7 +428,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#bitset"><span class="toc-number">1.</span> <span class="toc-text">bitset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拓扑排序使用bitset"><span class="toc-number">2.</span> <span class="toc-text">拓扑排序使用bitset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bitset"><span class="toc-number">2.</span> <span class="toc-text">bitset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拓扑排序使用bitset"><span class="toc-number">3.</span> <span class="toc-text">拓扑排序使用bitset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
                     </div>
                 </span>
             </div>
