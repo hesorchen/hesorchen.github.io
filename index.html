@@ -249,20 +249,10 @@
 </p>
     </center>
     
-    <p>字符串Hash原理，将字符串映射成一个值，是一个单向加密的过程。比较简单和常用的是进制哈希，我们把字符串看成是p进制数，然后使用unsigned long long的自然溢出（相当于是对$2^{64}-1$取模），如果两个字符串的hash值相同，则可以认为两个字符串相同。</p>
-<h4 id="单个字符串的Hash值"><a href="#单个字符串的Hash值" class="headerlink" title="单个字符串的Hash值"></a>单个字符串的Hash值</h4><p>要求长度为$len$的字符串$str$的Hash值</p>
-<p>先预处理出一个$pwd[]$数组，$pwd[i]$表示$p^i$。</p>
-<p>Hash[]表示字符串的哈希值（p进制取模值）。显然有</p>
-<p>$$Hash[i]=(Hash[i-1]+str[i]*pwd[len-i+1])%mod$$</p>
-<p>这样我们可以On求出$str$的哈希值。</p>
-<h4 id="子串的Hash值"><a href="#子串的Hash值" class="headerlink" title="子串的Hash值"></a>子串的Hash值</h4><p>在上面我们已经求得Hash[i]表示字符串<code>abcbc</code>的前缀子串的哈希值。假如现在我们要求区间<code>bc</code>这个子串的哈希值该怎么做呢？</p>
-<p>先来看Hash[i]：<br>$Hash[1] : p^1 * str[1]$<br>$Hash[2] : p^2 * str[1] + p^1  * str[2]$<br>$Hash[3] : p^3 * str[1] + p^2  * str[2] + $p^1  * str[3]$<br>$Hash[4] : p^4 * str[1] + p^3  * str[2] + p^2  * str[3] + p^1  * str[4]$<br>$Hash[5] : p^5 * str[1] + p^4  * str[2] + p^3  * str[3] + p^2  * str[4] + p^1  * str[5]$</p>
-<p>现在要求子串bc的哈希，也就是l=2，r=3的Hash值，就是</p>
-<p>$Hash[r]-Hash[l-1]*pwd[r-l+1]$</p>
-<p>可以发现，$Hash[5]-Hash[3]<em>pwd[2]$结果和$Hash[3]-Hash[1]</em>pwd[2]$一样。也论证了一样的字符串Hash值一样的结论。</p>
-<p>模板题：<a href="https://www.luogu.com.cn/problem/P3370" target="_blank" rel="noopener">洛谷P3370 【模板】字符串哈希</a></p>
-<p>AC代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> pwd[<span class="number">100010</span>], Hash[<span class="number">100010</span>];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>&gt; st;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, base = <span class="number">13331</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    pwd[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100000</span>; i++)</span><br><span class="line">        pwd[i] = pwd[i - <span class="number">1</span>] * base;</span><br><span class="line">    <span class="keyword">while</span> (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s + <span class="number">1</span>);</span><br><span class="line">        s[<span class="number">0</span>] = <span class="string">' '</span>;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len; i++)</span><br><span class="line">            Hash[i] = pwd[i] * s[len - i + <span class="number">1</span>] + Hash[i - <span class="number">1</span>];</span><br><span class="line">        st.insert(Hash[len]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, st.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>字符串Hash原理，将字符串映射成一个值
+    
+    <a class="article-more-a" href="/2020/09/16/%E5%AD%97%E7%AC%A6%E4%B8%B2Hash/#more">... ... >></a>
+    
     
 
     
