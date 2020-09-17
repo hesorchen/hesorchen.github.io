@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 124
+			总文章数 125
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,91 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-洛谷P2543LCS-滚动数组优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/17/%E6%B4%9B%E8%B0%B7P2543LCS-%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96/">洛谷P2543LCS,滚动数组优化</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/09/17/%E6%B4%9B%E8%B0%B7P2543LCS-%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96/" class="archive-article-date">
+	<time datetime="2020-09-17T08:41:46.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-09-17</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/09/17/%E6%B4%9B%E8%B0%B7P2543LCS-%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96/">洛谷P2543LCS,滚动数组优化</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p><a href="https://www.luogu.com.cn/problem/P2543" target="_blank" rel="noopener">P2543 [AHOI2004]奇怪的字符串 题目链接</a></p>
+<p>LCS dp解法模板题，状态转移方程：</p>
+<p>$dp[i][j]=max(dp[i-1][j],dp[i][j-1])$<br>$if(s1[i]==s2[j])$<br>$dp[i][j]=max(dp[i][j],dp[i-1][j-1]+1)$</p>
+<p>普通DP代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[<span class="number">10010</span>], s2[<span class="number">10010</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">10010</span>][<span class="number">10010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s1 + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s2 + <span class="number">1</span>);</span><br><span class="line">    s1[<span class="number">0</span>] = <span class="string">'*'</span>;</span><br><span class="line">    s2[<span class="number">0</span>] = <span class="string">' '</span>;</span><br><span class="line">    <span class="keyword">int</span> len1 = <span class="built_in">strlen</span>(s1) - <span class="number">1</span>, len2 = <span class="built_in">strlen</span>(s2) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span> (s1[i] == s2[j])</span><br><span class="line">                dp[i][j] = max(dp[i][j], dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[len1][len2]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数据范围$1e4*1e4$，内存限制$125MB$，可以开出int数组，不过状态转移只与上一维有关，因此可以用滚动数组。</p>
+<p>滚动数组DP代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[<span class="number">10010</span>], s2[<span class="number">10010</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">2</span>][<span class="number">10010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s1 + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s2 + <span class="number">1</span>);</span><br><span class="line">    s1[<span class="number">0</span>] = <span class="string">'*'</span>;</span><br><span class="line">    s2[<span class="number">0</span>] = <span class="string">' '</span>;</span><br><span class="line">    <span class="keyword">int</span> len1 = <span class="built_in">strlen</span>(s1) - <span class="number">1</span>, len2 = <span class="built_in">strlen</span>(s2) - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pos1 = <span class="number">0</span>, pos2 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[pos2][j] = max(dp[pos2][j - <span class="number">1</span>], dp[pos1][j]);</span><br><span class="line">            <span class="keyword">if</span> (s1[i] == s2[j])</span><br><span class="line">                dp[pos2][j] = max(dp[pos2][j], dp[pos1][j - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        pos1 ^= <span class="number">1</span>;</span><br><span class="line">        pos2 ^= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[pos1][len2]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/17/%E6%B4%9B%E8%B0%B7P2543LCS-%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-字符串Hash" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -953,97 +1038,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/23/8-23%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-LCA倍增解法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/LCA%E5%80%8D%E5%A2%9E%E8%A7%A3%E6%B3%95/">LCA倍增解法</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/08/19/LCA%E5%80%8D%E5%A2%9E%E8%A7%A3%E6%B3%95/" class="archive-article-date">
-	<time datetime="2020-08-19T14:23:09.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/08/19/LCA%E5%80%8D%E5%A2%9E%E8%A7%A3%E6%B3%95/">LCA倍增解法</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>LCA今天看了一下
-    
-    <a class="article-more-a" href="/2020/08/19/LCA%E5%80%8D%E5%A2%9E%E8%A7%A3%E6%B3%95/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/19/LCA%E5%80%8D%E5%A2%9E%E8%A7%A3%E6%B3%95/">展开全文 >></a>
     </p>
     
     
