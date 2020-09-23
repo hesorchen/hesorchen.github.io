@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 126
+			总文章数 127
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -214,6 +214,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-树上差分之点差分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86%E4%B9%8B%E7%82%B9%E5%B7%AE%E5%88%86/">树上差分之点差分</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/09/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86%E4%B9%8B%E7%82%B9%E5%B7%AE%E5%88%86/" class="archive-article-date">
+	<time datetime="2020-09-23T09:16:42.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-09-23</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/09/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86%E4%B9%8B%E7%82%B9%E5%B7%AE%E5%88%86/">树上差分之点差分</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>给定一棵树，给出若干次修改操作以及<font color = deeppink>一次</font>查询操作</p>
+<p>修改操作：给定两个点$u,v$，将$u,v$路径上所有的点权值$+k$</p>
+<p>查询操作：询问点$x$的权值</p>
+<p>思路：树上差分，要修改$u,v$路径上的所有点，只需</p>
+<p>$f[u]+=k$<br>$f[v]+=k$<br>$f[lca(u,v)]-=k$<br>$f[father[lca(u,v)]]-=k$</p>
+<p>点$x$的权值就是以$x$为根的子树的权值和(前缀和)。</p>
+<p><font color =deeppink>由于查询的时候需要跑一边dfs，因此查询次数不能过多</font></p>
+<p>AC代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v, w, next;</span><br><span class="line">&#125; e[<span class="number">200010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> head[<span class="number">50010</span>];</span><br><span class="line"><span class="keyword">int</span> ct = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[ct].v = v;</span><br><span class="line">    e[ct].next = head[u];</span><br><span class="line">    head[u] = ct++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> father[<span class="number">50010</span>][<span class="number">32</span>];</span><br><span class="line"><span class="keyword">int</span> depth[<span class="number">50010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> dep, <span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    depth[now] = dep;</span><br><span class="line">    father[now][<span class="number">0</span>] = fa;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span> &amp;&amp; father[now][i - <span class="number">1</span>]; i++)</span><br><span class="line">        father[now][i] = father[father[now][i - <span class="number">1</span>]][i - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head[now]; i; i = e[i].next)</span><br><span class="line">        <span class="keyword">if</span> (e[i].v != fa)</span><br><span class="line">            dfs(e[i].v, dep + <span class="number">1</span>, now);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (depth[u] &lt; depth[v])</span><br><span class="line">        swap(u, v);</span><br><span class="line">    <span class="keyword">int</span> cha = depth[u] - depth[v];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">30</span>; i++)</span><br><span class="line">        <span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; i) &amp; cha)</span><br><span class="line">            u = father[u][i];</span><br><span class="line">    <span class="keyword">if</span> (u == v)</span><br><span class="line">        <span class="keyword">return</span> u;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">30</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="keyword">if</span> (father[u][i] != father[v][i])</span><br><span class="line">        &#123;</span><br><span class="line">            u = father[u][i];</span><br><span class="line">            v = father[v][i];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> father[u][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fuck[<span class="number">50010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">chafen</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fa = lca(u, v);</span><br><span class="line">    fuck[father[fa][<span class="number">0</span>]]--;</span><br><span class="line">    fuck[fa]--;</span><br><span class="line">    fuck[u]++;</span><br><span class="line">    fuck[v]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = fuck[now];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head[now]; i; i = e[i].next)</span><br><span class="line">        <span class="keyword">if</span> (fa != e[i].v)</span><br><span class="line">            res += dfs2(e[i].v, now);</span><br><span class="line">    ans = max(res, ans);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp1, temp2;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;temp1, &amp;temp2);</span><br><span class="line">        add(temp1, temp2);</span><br><span class="line">        add(temp2, temp1);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp1, temp2;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;temp1, &amp;temp2);</span><br><span class="line">        chafen(temp1, temp2);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs2(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86%E4%B9%8B%E7%82%B9%E5%B7%AE%E5%88%86/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-字符串哈希Onlogn和On求最长回文子串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,8 +334,7 @@
 </p>
     </center>
     
-    <p><a href="https://www.acwing.com/problem/content/description/141/" target="_blank" rel="noopener">模板题链接 AcWing139. 回文子串的最大长度</a></p>
-<p>众所周知，manacher可以On求最长回文子串
+    <p><a href="https://www.acwing.com/problem/content/description/141/" target="_blank" rel="noopener">模板题链接 AcWing139. 回文子串的最大长度</a>
     
     <a class="article-more-a" href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/#more">... ... >></a>
     
@@ -939,101 +1023,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/09/02/%E6%B4%9B%E8%B0%B7P5318/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-bitset拓扑排序可达性统计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/">拓扑排序用bitset处理相同排名的集合</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/" class="archive-article-date">
-	<time datetime="2020-08-24T11:58:35.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/">拓扑排序用bitset处理相同排名的集合</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言
-    
-    <a class="article-more-a" href="/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">bitset</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">拓扑排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/24/bitset%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E5%8F%AF%E8%BE%BE%E6%80%A7%E7%BB%9F%E8%AE%A1/">展开全文 >></a>
     </p>
     
     
