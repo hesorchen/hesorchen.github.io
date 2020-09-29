@@ -6,21 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HDU1358KMP求循环节 | hesorchen</title>
+  <title>Army | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="直接说结论吧，KMP算法的前提是预处理一个next数组">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HDU1358KMP求循环节">
-<meta property="og:url" content="http://yoursite.com/2020/07/12/HDU1358KMP%E6%B1%82%E5%BE%AA%E7%8E%AF%E8%8A%82/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Army">
+<meta property="og:url" content="http://yoursite.com/2020/09/29/Army/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="直接说结论吧，KMP算法的前提是预处理一个next数组">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-12T09:11:44.000Z">
-<meta property="article:modified_time" content="2020-07-12T10:25:56.269Z">
+<meta property="article:published_time" content="2020-09-29T02:32:55.000Z">
+<meta property="article:modified_time" content="2020-09-29T02:32:55.656Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="题解">
-<meta property="article:tag" content="暑假集训打卡">
-<meta property="article:tag" content="KMP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -219,21 +214,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HDU1358KMP求循环节" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="pokémon-Army" class="article article-type-pokémon " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      HDU1358KMP求循环节
+      Army
     </h1>
   
  -->
   
-  <a href="/2020/07/12/HDU1358KMP%E6%B1%82%E5%BE%AA%E7%8E%AF%E8%8A%82/" class="archive-article-date">
-	<time datetime="2020-07-12T09:11:44.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-07-12</time>
+  <a href="/2020/09/29/Army/" class="archive-article-date">
+	<time datetime="2020-09-29T02:32:55.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-09-29</time>
 </a>
 
   
@@ -252,24 +247,13 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      HDU1358KMP求循环节
+      Army
     </h1>
   
 </p>
     </center>
     
-    <p>直接说结论吧，KMP算法的前提是预处理一个next数组<a id="more"></a>，一个字符串长度为len，那么这个字符串的最小循环节就是<strong>len-nxt[len]</strong>。<br>因此有：</p>
-<ol>
-<li>判断一个字符串是否完全循环可以用 <strong>(len%(len-nxt[len]))==0</strong>，并且<strong>nxt[len]!=0</strong></li>
-<li>该题中询问的是在末尾补上几个字符串可以使字符串完全循环，那么就用最小循环节（<strong>len-nxt[len]</strong>）- 最末尾多余的字符个数（<strong>nxt[len]%最小循环节</strong>）即可</li>
-</ol>
-<p>AC代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-07-03 17:05:01</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2020-07-12 17:06:22</span></span><br><span class="line"><span class="comment"> * @Description: https://hesorchen.github.io/</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS                      \</span></span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>); \</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);                  \</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FRE                              \</span></span><br><span class="line">    &#123;                                    \</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);   \</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); \</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line">ll nxt[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">100010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll len = <span class="built_in">strlen</span>(a);</span><br><span class="line">    ll j = <span class="number">0</span>, k = <span class="number">-1</span>;</span><br><span class="line">    nxt[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">-1</span> || a[j] == a[k])</span><br><span class="line">            nxt[++j] = ++k;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            k = nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;</span><br><span class="line">    ll t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">        get_nxt();</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strlen</span>(a) % (<span class="built_in">strlen</span>(a) - nxt[<span class="built_in">strlen</span>(a)]) == <span class="number">0</span> &amp;&amp; nxt[<span class="built_in">strlen</span>(a)] != <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="built_in">strlen</span>(a) - nxt[<span class="built_in">strlen</span>(a)] - (nxt[<span class="built_in">strlen</span>(a)] % (<span class="built_in">strlen</span>(a) - nxt[<span class="built_in">strlen</span>(a)])) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
-<li><a href="https://www.cnblogs.com/jackge/archive/2013/01/05/2846006.html" target="_blank" rel="noopener">KMP算法 —— next 数组的应用 — 前缀中最小循环节，最大重复次数</a></li>
-</ol>
-
+    
     
 
     
@@ -309,37 +293,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">暑假集训打卡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">KMP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -388,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/12/HDU1358KMP%E6%B1%82%E5%BE%AA%E7%8E%AF%E8%8A%82/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/29/Army/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -402,18 +356,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/07/15/SG%E5%AE%9A%E7%90%86%E5%92%8CSG%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          博弈论、SG定理和SG函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/11/HDU2087-1686/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HDU2087,1686</div>
+    <a href="/2020/09/26/%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%81%E8%B5%9B%E7%83%AD%E8%BA%AB%E8%B5%9B05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">黑龙江省赛热身赛05</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -431,7 +376,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -463,7 +408,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Sun Jul 12 2020 17:11:44 GMT+0800',
+  	id: 'Tue Sep 29 2020 10:32:55 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
