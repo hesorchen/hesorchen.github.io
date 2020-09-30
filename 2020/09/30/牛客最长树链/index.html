@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 链式前向星 | hesorchen</title>
+  <title>牛客最长树链 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/index.html">
+  <meta name="description" content="题目链接 最长树链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客最长树链">
+<meta property="og:url" content="http://yoursite.com/2020/09/30/%E7%89%9B%E5%AE%A2%E6%9C%80%E9%95%BF%E6%A0%91%E9%93%BE/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="题目链接 最长树链">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-30T07:26:32.000Z">
+<meta property="article:modified_time" content="2020-09-30T07:54:02.584Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -212,70 +216,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-牛客最长树链" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/Dijkstra-%E5%A0%86%E4%BC%98%E5%8C%96-%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="archive-article-date">
-	<time datetime="2020-05-01T12:19:18.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-
-        </div>
-    	 
+      <header class=" article-header">
+  <!-- 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/Dijkstra-%E5%A0%86%E4%BC%98%E5%8C%96-%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/">Dijkstra+堆优化+链式前向星</a>
+    <h1 class="article-title" itemprop="name">
+      牛客最长树链
     </h1>
   
+ -->
+  
+  <a href="/2020/09/30/%E7%89%9B%E5%AE%A2%E6%9C%80%E9%95%BF%E6%A0%91%E9%93%BE/" class="archive-article-date">
+	<time datetime="2020-09-30T07:26:32.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-09-30</time>
+</a>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最短路</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模板</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">迪杰斯特拉</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">堆优化</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">链式前向星</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
 
-          
+  
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      牛客最长树链
+    </h1>
+  
+</p>
+    </center>
+    
+    <p><a href="https://ac.nowcoder.com/acm/problem/13233" target="_blank" rel="noopener">题目链接 最长树链</a><a id="more"></a></p>
+<p>给出一颗树，每个结点都有一个权值，求出最长的一条链满足该链上所有点的最大公因数大于1。</p>
+<p>和队友讨论了一下，队友给出了暴力建图跑树的直径思路，我感觉会tle，不过经过好几轮hack和反hack，慢慢摸索出了一种正解。</p>
+<p>因为所要找的链的最大公因数要大于1，也就是这条链上所有结点都要有一个相同的质因子。</p>
+<p>按照结点权值的质因子对所有结点进行分类，分类后按照质因子进行建图，对每个新建的图跑一次树的直径就是一条最长链。</p>
+<p>例如样例，总共有$2、3、5$三个质因子，第一次考虑质因子$2$的时候，我们选择有质因子$2$的点进行建树。剩下结点$1、 2、 4$，对这三个点都跑一次树的直径<font color =deeppink>（因为这个图不一定是一颗完整的树，可能是多个不连通的树。当然，我们也不必所有点跑一遍，这样必然会tle，我们可以对跑过的连通块进行标记）</font>每次取max。</p>
+<p>上面提到的选点的操作，事实上，我们可以将原来的树用一个vis数组标记，只有被标记的点才是我们选择的点。</p>
+<p>$tips:$对于用于标记的数组，如果初始化操作要做很多次，我们可以用$vis[i]=ct$ 标记 ，用$vis[i]==ct$ 判断，每一轮$ct++$，这样会快很多</p>
+<p>AC代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[maxn], vis[maxn], vis2[maxn];</span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">1</span>, head[maxn], dis[maxn], ct = <span class="number">1</span>, visct = <span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u, v, nex;</span><br><span class="line">&#125; edge[maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    edge[cnt].v = v, edge[cnt].nex = head[u];</span><br><span class="line">    head[u] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; mp;</span><br><span class="line"><span class="keyword">int</span> p1, p2;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs1</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visct++;</span><br><span class="line">    dis[u] = <span class="number">1</span>;</span><br><span class="line">    vis[u] = visct;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(u);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[u] = visct;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; i; i = edge[i].nex)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> v = edge[i].v;</span><br><span class="line">            <span class="keyword">if</span> (vis[v] != visct &amp;&amp; vis2[v] == ct)</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v] = dis[u] + <span class="number">1</span>;</span><br><span class="line">                p1 = v, vis[v] = visct, q.push(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs2</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visct++;</span><br><span class="line">    dis[u] = <span class="number">1</span>;</span><br><span class="line">    vis[u] = visct;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(u);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[u] = visct;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; i; i = edge[i].nex)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> v = edge[i].v;</span><br><span class="line">            <span class="keyword">if</span> (vis[v] != visct &amp;&amp; vis2[v] == ct)</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v] = dis[u] + <span class="number">1</span>;</span><br><span class="line">                p2 = v, vis[v] = visct, q.push(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, u, v, x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;u, &amp;v), add(u, v), add(v, u);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j * j &lt;= x; j++) <span class="comment">//按照质因子对点进行分类</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">bool</span> fla = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">while</span> (x % j == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                x /= j;</span><br><span class="line">                <span class="keyword">if</span> (fla)</span><br><span class="line">                &#123;</span><br><span class="line">                    fla = <span class="literal">false</span>;</span><br><span class="line">                    mp[j].push_back(i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x &gt; <span class="number">1</span>)</span><br><span class="line">            mp[x].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;::iterator pt = mp.begin(); pt != mp.end(); pt++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> nowct = visct; <span class="comment">//记录这次质因子搜索的标记起始值</span></span><br><span class="line">        <span class="keyword">int</span> w = pt-&gt;first; <span class="comment">//质因子w</span></span><br><span class="line">        <span class="keyword">int</span> len = mp[w].size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            vis2[mp[w][i]] = ct; <span class="comment">//将含有质因子w的点记为实点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (vis[mp[w][i]] &gt;= nowct &amp;&amp; vis[mp[w][i]] &lt;= visct) <span class="comment">//避免同一块区域的反复搜索</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            bfs1(mp[w][i]);</span><br><span class="line">            bfs2(p1); <span class="comment">//bfs求树的直径</span></span><br><span class="line">            ans = max(ans, dis[p2]);</span><br><span class="line">        &#125;</span><br><span class="line">        ct++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -288,17 +317,130 @@
 	</div>
 
 
+    
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/30/%E7%89%9B%E5%AE%A2%E6%9C%80%E9%95%BF%E6%A0%91%E9%93%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/29/Army/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pokémon Army (easy version)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Wed Sep 30 2020 15:26:32 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+
+
+
 
           </div>
         </div>
@@ -358,9 +500,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,

@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Army | hesorchen</title>
+  <title>Pokémon Army (easy version) | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Army">
+  <meta name="description" content="题目链接  给出n个数 让你找到一个子序列$a_{j1}-a_{j2}+a_{j3}-a_{j4}+a_{j5}… …$和最大。 其实很快就想到过dp[i][2]记录前i个数两种状态结尾的最大值，不过没细想下去。 dp[i][1]表示前i个数以减号结尾的最大值，dp[i][0]表示前i个数以加号结尾的最大值 先处理出dp[i][0]为前i个数的最大值（也就是只选最大值以加号结尾） 然后有四种状态转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pokémon Army (easy version)">
 <meta property="og:url" content="http://yoursite.com/2020/09/29/Army/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="题目链接  给出n个数 让你找到一个子序列$a_{j1}-a_{j2}+a_{j3}-a_{j4}+a_{j5}… …$和最大。 其实很快就想到过dp[i][2]记录前i个数两种状态结尾的最大值，不过没细想下去。 dp[i][1]表示前i个数以减号结尾的最大值，dp[i][0]表示前i个数以加号结尾的最大值 先处理出dp[i][0]为前i个数的最大值（也就是只选最大值以加号结尾） 然后有四种状态转">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-29T02:32:55.000Z">
-<meta property="article:modified_time" content="2020-09-29T02:32:55.656Z">
+<meta property="article:modified_time" content="2020-09-30T07:32:26.920Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -72,7 +74,7 @@
 		</nav>
 
 		<nav>
-			总文章数 132
+			总文章数 133
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -214,14 +216,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="pokémon-Army" class="article article-type-pokémon " itemscope itemprop="blogPost">
+            <article id="post-Army" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      Army
+      Pokémon Army (easy version)
     </h1>
   
  -->
@@ -247,13 +249,20 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      Army
+      Pokémon Army (easy version)
     </h1>
   
 </p>
     </center>
     
-    
+    <p><a href="https://vjudge.net/contest/397584#problem/C" target="_blank" rel="noopener">题目链接 </a></p>
+<p>给出n个数 让你找到一个子序列$a_{j1}-a_{j2}+a_{j3}-a_{j4}+a_{j5}… …$和最大。</p>
+<p>其实很快就想到过dp[i][2]记录前i个数两种状态结尾的最大值，不过没细想下去。</p>
+<p>dp[i][1]表示前i个数以减号结尾的最大值，dp[i][0]表示前i个数以加号结尾的最大值</p>
+<p>先处理出dp[i][0]为前i个数的最大值（也就是只选最大值以加号结尾）</p>
+<p>然后有四种状态转移：<br>$dp[i][0]=max(dp[i][0],dp[i-1][0])$<br>$dp[i][0]=max(dp[i][0],dp[i-1][1]+a[i])$<br>$dp[i][1]=max(dp[i-1][1],dp[i][1])$<br>$dp[i][1]=max(dp[i-1][1],dp[i-1][0]-a[i])$<br>其中，因为dp[i][1]全为0，因此第三种可以省略。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">300010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dp[<span class="number">300010</span>][<span class="number">2</span>]; <span class="comment">//dp[i][1]表示前i个数以减号结尾的最大值，dp[i][0]表示前i个数以加号结尾的最大值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        fill(dp[<span class="number">0</span>], dp[<span class="number">0</span>] + <span class="number">300010</span> * <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> n, q;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;q);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a[i]);</span><br><span class="line">            dp[i][<span class="number">0</span>] = max(dp[i - <span class="number">1</span>][<span class="number">0</span>], a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = max(dp[i - <span class="number">1</span>][<span class="number">1</span>] + a[i], max(dp[i - <span class="number">1</span>][<span class="number">0</span>], dp[i][<span class="number">0</span>]));</span><br><span class="line">            dp[i][<span class="number">1</span>] = max(dp[i - <span class="number">1</span>][<span class="number">1</span>], dp[i - <span class="number">1</span>][<span class="number">0</span>] - a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, dp[n][<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     
 
     
@@ -294,6 +303,17 @@
     
     
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
     
@@ -355,6 +375,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/09/30/%E7%89%9B%E5%AE%A2%E6%9C%80%E9%95%BF%E6%A0%91%E9%93%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          牛客最长树链
+        
+      </div>
+    </a>
   
   
     <a href="/2020/09/26/%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%81%E8%B5%9B%E7%83%AD%E8%BA%AB%E8%B5%9B05/" id="article-nav-older" class="article-nav-link-wrap">
