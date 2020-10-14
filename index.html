@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 135
+			总文章数 136
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,87 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-CF711C三维DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/14/CF711C%E4%B8%89%E7%BB%B4DP/">CF711C三维DP</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2020/10/14/CF711C%E4%B8%89%E7%BB%B4DP/" class="archive-article-date">
+	<time datetime="2020-10-14T07:50:15.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2020-10-14</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/10/14/CF711C%E4%B8%89%E7%BB%B4DP/">CF711C三维DP</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p><a href="https://codeforces.com/contest/711/problem/C" target="_blank" rel="noopener">题目链接</a></p>
+<p>题目大意：公园里有$n$棵树，每棵树有颜色$a_i$，也可能没涂颜色，现在有$m$种颜料，可以给没颜色的树涂颜色，花费以矩阵的形式给出：$a[i][j]$表示第$i$棵树涂颜色$j$的花费。连续相同的一段颜色贡献为$1$，求所有树贡献恰好为$k$的最小花费。</p>
+<p>卡了半天的简单DP题。数据范围$100$，$O(n^4)$可写。设$dp[i][j][k]$为前$i$颗树，第$i$颗为$j$颜色，贡献为$k$的最小花费。</p>
+<p>AC代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, m, k, ans = INF;</span><br><span class="line"><span class="keyword">int</span> col[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dp[<span class="number">110</span>][<span class="number">110</span>][<span class="number">110</span>]; <span class="comment">//dp[i][j][l]表示第i棵树用颜色j产生l贡献的最小花费</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;col[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;mp[i][j]);</span><br><span class="line"></span><br><span class="line">    fill(dp[<span class="number">0</span>][<span class="number">0</span>], dp[<span class="number">0</span>][<span class="number">0</span>] + <span class="number">110</span> * <span class="number">110</span> * <span class="number">110</span>, INF); <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">if</span> (col[<span class="number">1</span>])</span><br><span class="line">        dp[<span class="number">1</span>][col[<span class="number">1</span>]][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            dp[<span class="number">1</span>][j][<span class="number">1</span>] = mp[<span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!col[i]) <span class="comment">//如果可以涂颜色</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= k; l++)</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j2 = <span class="number">1</span>; j2 &lt;= m; j2++)</span><br><span class="line">                        <span class="keyword">if</span> (j2 != j) <span class="comment">//和前一颗不同色</span></span><br><span class="line">                            dp[i][j][l] = min(dp[i][j][l], dp[i - <span class="number">1</span>][j2][l - <span class="number">1</span>] + mp[i][j]);</span><br><span class="line">                        <span class="keyword">else</span> <span class="comment">//和前一颗同色</span></span><br><span class="line">                            dp[i][j][l] = min(dp[i][j][l], dp[i - <span class="number">1</span>][j2][l] + mp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">//不能涂颜色</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= k; l++)</span><br><span class="line">                    <span class="keyword">if</span> (col[i] == j) <span class="comment">//和前一颗同色</span></span><br><span class="line">                        dp[i][col[i]][l] = min(dp[i][col[i]][l], dp[i - <span class="number">1</span>][j][l]);</span><br><span class="line">                    <span class="keyword">else</span> <span class="comment">//和前一颗不同色</span></span><br><span class="line">                        dp[i][col[i]][l] = min(dp[i][col[i]][l], dp[i - <span class="number">1</span>][j][l - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = INF;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) <span class="comment">//枚举最后一棵树的颜色</span></span><br><span class="line">        ans = min(ans, dp[n][i][k]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans == INF ? <span class="number">-1</span> : ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/10/14/CF711C%E4%B8%89%E7%BB%B4DP/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-2019CCPC秦皇岛A" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -909,86 +990,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/09/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86%E4%B9%8B%E7%82%B9%E5%B7%AE%E5%88%86/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-字符串哈希Onlogn和On求最长回文子串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">On求最长回文子串</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="archive-article-date">
-	<time datetime="2020-09-18T11:25:37.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-09-18</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">On求最长回文子串</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://www.acwing.com/problem/content/description/141/" target="_blank" rel="noopener">模板题链接 AcWing139. 回文子串的最大长度</a>
-    
-    <a class="article-more-a" href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/18/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8COnlogn%E5%92%8COn%E6%B1%82%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">展开全文 >></a>
     </p>
     
     
