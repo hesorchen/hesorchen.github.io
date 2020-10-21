@@ -249,10 +249,10 @@
 </p>
     </center>
     
-    <p>有$n$元钱，有塑料瓶装的牛奶和玻璃瓶装的牛奶，塑料瓶的装的$a$元一瓶，玻璃瓶装的$b$元一瓶，喝完可以用玻璃瓶换$c$元，问最多能喝多少瓶牛奶</p>
-<p>很显然可以发现，只有$(b-c)&lt;=a$才会考虑买玻璃瓶装的。另外，可以单独考虑买第一瓶玻璃瓶牛奶，相当于后面的玻璃瓶牛奶只需要$(b-c)$一瓶，注意最后还要加上$c$元。</p>
-<p>AC代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>,n,a,b,c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld"</span>,&amp;n,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    <span class="keyword">if</span>(b-c&lt;=a)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&gt;=b)</span><br><span class="line">        &#123;</span><br><span class="line">            n-=b;<span class="comment">//先买第一瓶玻璃瓶，接下去的可以看做b-c一瓶</span></span><br><span class="line">            ans=<span class="number">1</span>;<span class="comment">//第一瓶</span></span><br><span class="line">            ans+=n/(b-c);</span><br><span class="line">            n=n%(b-c);</span><br><span class="line">            n+=c;<span class="comment">//买完最后一瓶还要加上C元</span></span><br><span class="line">        &#125;</span><br><span class="line">        ans+=n/a;<span class="comment">//看是否还能买塑料瓶</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ans = n/a;<span class="comment">//买塑料的</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>有$n$元钱，有塑料瓶装的牛奶和玻璃瓶装的牛奶
+    
+    <a class="article-more-a" href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/#more">... ... >></a>
+    
     
 
     
