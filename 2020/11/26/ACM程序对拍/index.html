@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hesorchen</title>
+  <title>ACM程序对拍 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hesorchen">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM程序对拍">
+<meta property="og:url" content="http://yoursite.com/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/index.html">
 <meta property="og:site_name" content="hesorchen">
+<meta property="og:description" content="前言">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201126124039564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-11-26T04:20:24.000Z">
+<meta property="article:modified_time" content="2020-11-26T11:43:44.626Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201126124039564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -212,16 +218,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-ACM程序对拍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ACM程序对拍" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/">ACM程序对拍</a>
+    <h1 class="article-title" itemprop="name">
+      ACM程序对拍
     </h1>
   
  -->
@@ -234,6 +238,10 @@
   
 
   
+  <span class="archive-article-date">
+    阅读量 <span id="busuanzi_value_page_pv"></span>
+  </span>
+  
   </header>
 
   
@@ -242,19 +250,70 @@
     <center>
       <p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/">ACM程序对拍</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      ACM程序对拍
     </h1>
   
 </p>
     </center>
     
-    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言
-    
-    <a class="article-more-a" href="/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/#more">... ... >></a>
-    
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言<a id="more"></a></h4><p>很多时候我们写了一份代码，造了很多数据都没问题，但是提交的时候一直Wrong Answer，这时候我们就可以用对拍来快速查找错误的数据。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>造出大量的随机数据，用正确代码和你的代码跑这些数据，对比输出的不同。</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p><strong>文件基础：</strong></p>
+<ul>
+<li>rand.cpp：一份能造<strong>合法的随机数据</strong>的代码</li>
+<li>std.cpp：一份<strong>可以保证答案正确性</strong>的代码</li>
+<li>my.cpp：一份你的WA的代码</li>
+<li>rand.out：存放rand.cpp运行后生成的合法的随机数据</li>
+<li>std.out：使用std.cpp跑rand.out中的数据后生成的输出</li>
+<li>my.out：使用my.cpp跑rand.out中的数据后生成的输出</li>
+</ul>
+<p><strong>需掌握的知识：</strong></p>
+<p>1.输入输出重定向（<a href="https://blog.csdn.net/zz460833359/article/details/48734935" target="_blank" rel="noopener">相关链接</a>），也就是文件读写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">freopen(<span class="string">"1.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">freopen(<span class="string">"1.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br></pre></td></tr></table></figure>
+
+<p>2.生成区间随机数：a+rand()%(b-a+1)可以生成一个$[a,b]$的正整数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> <span class="comment">//闭区间</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> l + rand() % (r - l + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; get(<span class="number">1</span>, <span class="number">100</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>3.Windows下cmd中使用FC命令详细对比两个文件相似之处（<a href="https://blog.csdn.net/qq_41045071/article/details/86601746" target="_blank" rel="noopener">相关链接</a>）：打开cmd命令行，输入FC 第一个文件的绝对路径 第二个文件的绝对路径。</p>
+<p><img src="https://img-blog.csdnimg.cn/20201126124039564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlc29yY2hlbg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><strong>这样，我们只需先写一份rand.cpp，运行出多组合法数据，再用std.cpp和my.cpp分别跑这些数据，最后用windows cmd中的FC命令比对两个文件不一样的地方，rand.out中对应的数据就是Wrong Answer的数据啦</strong></p>
+
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixinpay.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
     
   </div>
   <div class="article-info article-info-index">
@@ -274,804 +333,128 @@
 
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/">展开全文 >></a>
-    </p>
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/26/ACM%E7%A8%8B%E5%BA%8F%E5%AF%B9%E6%8B%8D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ACM—TC 联合招新赛1题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原理"><span class="toc-number">2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现"><span class="toc-number">3.</span> <span class="toc-text">实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
 
 
 
-  
-    <article id="post-ACM—TC 联合招新赛1题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/">ACM—TC 联合招新赛1题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/" class="archive-article-date">
-	<time datetime="2020-11-22T05:44:56.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-22</time>
-</a>
 
-  
 
-  
-  </header>
 
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/">ACM—TC 联合招新赛1题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <blockquote>
-<p>本场题目难度较上场有所增加，思维量较大，但是涉及的知识点都已经提及（都可写。
-    
-    <a class="article-more-a" href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/#more">... ... >></a>
-    
-    
 
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/22/ACM%E2%80%94TC%20%E8%81%94%E5%90%88%E6%8B%9B%E6%96%B0%E8%B5%9B1%E9%A2%98%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
 
+<div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
 
-  
-    <article id="post-第十一届蓝桥杯大赛软件类决赛" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/15/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%86%B3%E8%B5%9B/">第十一届蓝桥杯大赛软件类决赛C/C++大学B组部分题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/15/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%86%B3%E8%B5%9B/" class="archive-article-date">
-	<time datetime="2020-11-15T01:50:12.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-15</time>
-</a>
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '26004048a892dc3a5ce7',
+  	clientSecret: 'f50a531be12f6b82b420bb8be9b1e344681798ba',
+  	repo: 'hesorchen.github.io',
+  	owner: 'hesorchen',
+  	admin: ['hesorchen'],
+  	id: 'Thu Nov 26 2020 12:20:24 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
 
-  
 
-  
-  </header>
 
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/15/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%86%B3%E8%B5%9B/">第十一届蓝桥杯大赛软件类决赛C/C++大学B组部分题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h4 id="试题-A-美丽的-2"><a href="#试题-A-美丽的-2" class="headerlink" title="试题 A: 美丽的 2 "></a>试题 A: 美丽的 2
-    
-    <a class="article-more-a" href="/2020/11/15/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%86%B3%E8%B5%9B/#more">... ... >></a>
-    
-    
 
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/15/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%86%B3%E8%B5%9B/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-郑州轻工业大学新生周赛2题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/09/%E9%83%91%E5%B7%9E%E8%BD%BB%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E5%91%A8%E8%B5%9B2%E9%A2%98%E8%A7%A3/">郑州轻工业大学新生周赛2题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/09/%E9%83%91%E5%B7%9E%E8%BD%BB%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E5%91%A8%E8%B5%9B2%E9%A2%98%E8%A7%A3/" class="archive-article-date">
-	<time datetime="2020-11-09T01:37:55.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/09/%E9%83%91%E5%B7%9E%E8%BD%BB%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E5%91%A8%E8%B5%9B2%E9%A2%98%E8%A7%A3/">郑州轻工业大学新生周赛2题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <blockquote>
-<p>可写题应该有 A、B、C、D、F、G、H。其他题感兴趣的同学可以看看。</p>
-</blockquote>
-<p><a href="http://acm.zzuli.edu.cn/problem.php?cid=1522&pid=0" target="_blank" rel="noopener">问题 A: 年龄判断</a>
-    
-    <a class="article-more-a" href="/2020/11/09/%E9%83%91%E5%B7%9E%E8%BD%BB%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E5%91%A8%E8%B5%9B2%E9%A2%98%E8%A7%A3/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/09/%E9%83%91%E5%B7%9E%E8%BD%BB%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E5%91%A8%E8%B5%9B2%E9%A2%98%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-HDU1045二分图最大匹配或DFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">HDU1045二分图最大匹配或DFS</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/" class="archive-article-date">
-	<time datetime="2020-11-07T13:03:35.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-07</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">HDU1045二分图最大匹配或DFS</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1045" target="_blank" rel="noopener">HDU 1045Fire Net</a>
-    
-    <a class="article-more-a" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HDU题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-二分图判断以及二分图最大匹配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/07/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/">二分图判断以及二分图最大匹配</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/07/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/" class="archive-article-date">
-	<time datetime="2020-11-07T09:48:04.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-07</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/07/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/">二分图判断以及二分图最大匹配</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p><a href="https://baike.baidu.com/item/%E4%BA%8C%E5%88%86%E5%9B%BE/9089095?fr=aladdin" target="_blank" rel="noopener">二分图</a>又称作二部图
-    
-    <a class="article-more-a" href="/2020/11/07/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">匈牙利</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/07/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-天梯选拔赛补题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/%E5%A4%A9%E6%A2%AF%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/">天梯选拔赛补题</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/01/%E5%A4%A9%E6%A2%AF%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/" class="archive-article-date">
-	<time datetime="2020-11-01T08:32:10.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/01/%E5%A4%A9%E6%A2%AF%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/">天梯选拔赛补题</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://vjudge.z180.cn/contest/404190#problem/A" target="_blank" rel="noopener">A - My Friend of Misery</a>
-    
-    <a class="article-more-a" href="/2020/11/01/%E5%A4%A9%E6%A2%AF%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/01/%E5%A4%A9%E6%A2%AF%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-Guest From the Past贪心思维数学" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/">Guest From the Past贪心思维数学</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/" class="archive-article-date">
-	<time datetime="2020-10-21T07:22:55.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-10-21</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/">Guest From the Past贪心思维数学</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p>有$n$元钱，有塑料瓶装的牛奶和玻璃瓶装的牛奶
-    
-    <a class="article-more-a" href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/10/21/Guest%20From%20the%20Past%E8%B4%AA%E5%BF%83%E6%80%9D%E7%BB%B4%E6%95%B0%E5%AD%A6/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-STLunordered-map模数冲突" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/21/STLunordered-map%E6%A8%A1%E6%95%B0%E5%86%B2%E7%AA%81/">STL unordered_map模数冲突</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/10/21/STLunordered-map%E6%A8%A1%E6%95%B0%E5%86%B2%E7%AA%81/" class="archive-article-date">
-	<time datetime="2020-10-21T02:07:46.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-10-21</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/10/21/STLunordered-map%E6%A8%A1%E6%95%B0%E5%86%B2%E7%AA%81/">STL unordered_map模数冲突</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="http://codeforces.com/problemset/problem/977/F" target="_blank" rel="noopener">CodeForces 977F. Consecutive Subsequence</a>
-    
-    <a class="article-more-a" href="/2020/10/21/STLunordered-map%E6%A8%A1%E6%95%B0%E5%86%B2%E7%AA%81/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/10/21/STLunordered-map%E6%A8%A1%E6%95%B0%E5%86%B2%E7%AA%81/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-第十一届蓝桥杯CC-大学B组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/17/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFCC-%E5%A4%A7%E5%AD%A6B%E7%BB%84/">第十一届蓝桥杯C/C++大学B组部分题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/10/17/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFCC-%E5%A4%A7%E5%AD%A6B%E7%BB%84/" class="archive-article-date">
-	<time datetime="2020-10-17T08:28:52.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/10/17/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFCC-%E5%A4%A7%E5%AD%A6B%E7%BB%84/">第十一届蓝桥杯C/C++大学B组部分题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h4 id="试题A-门牌制作"><a href="#试题A-门牌制作" class="headerlink" title="试题A.门牌制作"></a>试题A.门牌制作
-    
-    <a class="article-more-a" href="/2020/10/17/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFCC-%E5%A4%A7%E5%AD%A6B%E7%BB%84/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">蓝桥杯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/10/17/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFCC-%E5%A4%A7%E5%AD%A6B%E7%BB%84/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1131,8 +514,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
