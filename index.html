@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 152
+			总文章数 153
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,116 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-HDU2089不要62数位DP入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/12/HDU2089%E4%B8%8D%E8%A6%8162%E6%95%B0%E4%BD%8DDP%E5%85%A5%E9%97%A8/">HDU2089不要62数位DP入门</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/01/12/HDU2089%E4%B8%8D%E8%A6%8162%E6%95%B0%E4%BD%8DDP%E5%85%A5%E9%97%A8/" class="archive-article-date">
+	<time datetime="2021-01-12T12:37:22.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-01-12</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/01/12/HDU2089%E4%B8%8D%E8%A6%8162%E6%95%B0%E4%BD%8DDP%E5%85%A5%E9%97%A8/">HDU2089不要62数位DP入门</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
+<p>上学期差不多整个学期都在打各种比赛，几乎没学新算法，因此寒假好好补一波算法，不过数位DP入个门也花了我两天，学习效率还没回来… …</p>
+</blockquote>
+<h4 id="模板题"><a href="#模板题" class="headerlink" title="模板题"></a>模板题</h4><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2089" target="_blank" rel="noopener">题目链接</a></p>
+<p>给定一个数字区间[l,r]，问你区间内有多少数不含4，也不含连续的62。</p>
+<p>题目范围是1e7，可以On预处理+前缀和O1查询，代码就不放了。</p>
+<h4 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h4><p>今天的重点是数位DP。</p>
+<p>数位DP的好处在于直接对位进行暴力，另外加上记忆化，可以大大减少时间。例如枚举千位时，一次枚举就相当于暴力下的一千次枚举。</p>
+<p>初学数位DP，我感觉他的本质就是记忆化搜索。因此先上无记忆化的搜索代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">20</span>], pos;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> sta, <span class="keyword">int</span> lim)</span> <span class="comment">//枚举到第pos位，上一位是否是6，该位是否有约束</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!pos)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, up = lim ? a[pos] : <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= up; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (sta &amp;&amp; i == <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">4</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        sum += dfs(pos - <span class="number">1</span>, i == <span class="number">6</span>, lim &amp;&amp; i == up);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> mx)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (mx)</span><br><span class="line">    &#123;</span><br><span class="line">        a[++pos] = mx % <span class="number">10</span>;</span><br><span class="line">        mx /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dfs(pos, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r &amp;&amp; l + r)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; solve(r) - solve(l - <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这份代码的写法其实比较奇怪，算是半个数位DP的写法吧。其中的lim是数位dp中一个关键点，可以看底下的参考博客理解。</p>
+<p>这份代码本质上就是暴力，如果查询次数多或者数据范围加到1e9以上肯定是会TLE的，但是加上记忆化就不一样了，记忆化可以剪掉一大部分递归栈。记忆化只多了四五行代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-12-30 16:53:18</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-01-12 21:17:10</span></span><br><span class="line"><span class="comment"> * @Description: 栽种绝处的花</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">20</span>], pos;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">20</span>][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> sta, <span class="keyword">int</span> lim)</span> <span class="comment">//枚举到第pos位，上一位是否是6，该位是否有约束</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!pos)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (!lim &amp;&amp; dp[pos][sta] != <span class="number">-1</span>) <span class="comment">//记忆化</span></span><br><span class="line">        <span class="keyword">return</span> dp[pos][sta];</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, up = lim ? a[pos] : <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= up; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (sta &amp;&amp; i == <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">4</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        sum += dfs(pos - <span class="number">1</span>, i == <span class="number">6</span>, lim &amp;&amp; i == up);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!lim) <span class="comment">//记忆化</span></span><br><span class="line">        dp[pos][sta] = sum;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> mx)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">-1</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">    pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (mx)</span><br><span class="line">    &#123;</span><br><span class="line">        a[++pos] = mx % <span class="number">10</span>;</span><br><span class="line">        mx /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dfs(pos, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r &amp;&amp; l + r)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; solve(r) - solve(l - <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的记忆化需要判断!limit，这是一个稍难的点，事实上，就是为了避免<code>limit</code>或者<code>非limit</code>两种状态的冲突，经过实测，我们完全可以记忆化中的一种，不过就此题来说，显然!limit的状态更多，因此选择记忆这种效率更高。具体理解看底下的参考博客吧。</p>
+<h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ol>
+<li><a href="https://blog.csdn.net/wust_zzwh/article/details/52100392" target="_blank" rel="noopener">数位dp总结 之 从入门到模板</a></li>
+</ol>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数位DP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/01/12/HDU2089%E4%B8%8D%E8%A6%8162%E6%95%B0%E4%BD%8DDP%E5%85%A5%E9%97%A8/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-30天极限自律养成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -927,105 +1037,6 @@
 
 
   
-    <article id="post-HDU1045二分图最大匹配或DFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">HDU1045二分图最大匹配或DFS</a>
-    </h1>
-  
- -->
-  
-  <a href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/" class="archive-article-date">
-	<time datetime="2020-11-07T13:03:35.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-11-07</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">HDU1045二分图最大匹配或DFS</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1045" target="_blank" rel="noopener">HDU 1045Fire Net</a>
-    
-    <a class="article-more-a" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HDU题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/07/HDU1045%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%E6%88%96DFS/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1431,6 +1442,10 @@ MathJax.Hub.Queue(function() {
             
             <li class="article-tag-list-item">
               <a href="javascript:void(0)" class="js-tag color4">STL</a>
+            </li>
+            
+            <li class="article-tag-list-item">
+              <a href="javascript:void(0)" class="js-tag color5">数位DP</a>
             </li>
             
             <div class="clearfix"></div>
