@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 170
+			总文章数 171
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -214,6 +214,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CFC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/03/CFC/">Educational Codeforces Round 105 (Rated for Div. 2)C</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/03/03/CFC/" class="archive-article-date">
+	<time datetime="2021-03-03T01:35:57.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-03-03</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/03/03/CFC/">Educational Codeforces Round 105 (Rated for Div. 2)C</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://codeforces.com/contest/1494/problem/C" target="_blank" rel="noopener">题目链接</a></p>
+<p>一维坐标上有n个箱子ai，还有m个特殊位置bi。你刚开始位于位置0，你可以推箱子，不能翻越、拉箱子。问你最多可以把多少个箱子推到特殊位置。</p>
+<p>刚开始位于坐标0，正负半轴对称，因此只需考虑一边，另一边同理。</p>
+<p>以正半轴为例，我们只能往正方向推动箱子，且这个状态不可逆。那么我们必然存在POS，使得人走到位置POS（沿途将箱子往前推）得到最优解。贪心的思考一下，我们必须会把推动的连续个箱子的终止位置（即最右边那个箱子）控制在某个bi。因此只需要枚举结束位置bi即可。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-12-30 16:53:18</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-03-03 09:36:20</span></span><br><span class="line"><span class="comment"> * @Description: 栽种绝处的花</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">B</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="keyword">int</span> n, m, temp, ran;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Hash</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * ran * <span class="number">13331</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">suffix</span><span class="params">(m + <span class="number">5</span>)</span></span>;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it : A[<span class="number">1</span>])</span><br><span class="line">        mp[Hash(it)] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> lena = A[<span class="number">1</span>].size();</span><br><span class="line">    <span class="keyword">int</span> lenb = B[<span class="number">1</span>].size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenb - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        suffix[i] = suffix[i + <span class="number">1</span>] + mp.count(Hash(B[<span class="number">1</span>][i]));</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenb - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) <span class="comment">// (0,bi]全推到bi,(bi,不动</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> posR = upper_bound(A[<span class="number">1</span>].begin(), A[<span class="number">1</span>].end(), B[<span class="number">1</span>][i]) - A[<span class="number">1</span>].begin(); <span class="comment">//(posR,不动</span></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> End = B[<span class="number">1</span>][i];</span><br><span class="line">        <span class="keyword">int</span> sum = max(<span class="number">0</span>, posR);</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>)</span><br><span class="line">            res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> Beg = B[<span class="number">1</span>][i] - sum + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> posL = lower_bound(B[<span class="number">1</span>].begin(), B[<span class="number">1</span>].end(), Beg) - B[<span class="number">1</span>].begin();</span><br><span class="line">            res = i - posL + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, res + suffix[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">suffix</span><span class="params">(m + <span class="number">5</span>)</span></span>;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it : A[<span class="number">0</span>])</span><br><span class="line">        mp[Hash(it)] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> lena = A[<span class="number">0</span>].size();</span><br><span class="line">    <span class="keyword">int</span> lenb = B[<span class="number">0</span>].size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenb - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        suffix[i] = suffix[i + <span class="number">1</span>] + mp.count(Hash(B[<span class="number">0</span>][i]));</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenb - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) <span class="comment">// (0,bi]全推到bi,(bi,不动</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> posR = upper_bound(A[<span class="number">0</span>].begin(), A[<span class="number">0</span>].end(), B[<span class="number">0</span>][i]) - A[<span class="number">0</span>].begin(); <span class="comment">//(posR,不动</span></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> End = B[<span class="number">0</span>][i];</span><br><span class="line">        <span class="keyword">int</span> sum = max(<span class="number">0</span>, posR);</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>)</span><br><span class="line">            res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> Beg = B[<span class="number">0</span>][i] - sum + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> posL = lower_bound(B[<span class="number">0</span>].begin(), B[<span class="number">0</span>].end(), Beg) - B[<span class="number">0</span>].begin();</span><br><span class="line">            res = i - posL + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, res + suffix[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    ran = rand() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        A[<span class="number">0</span>].clear();</span><br><span class="line">        A[<span class="number">1</span>].clear();</span><br><span class="line">        B[<span class="number">0</span>].clear();</span><br><span class="line">        B[<span class="number">1</span>].clear();</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">            <span class="keyword">if</span> (temp &lt; <span class="number">0</span>)</span><br><span class="line">                A[<span class="number">0</span>].emplace_back(-temp);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                A[<span class="number">1</span>].emplace_back(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">            <span class="keyword">if</span> (temp &lt; <span class="number">0</span>)</span><br><span class="line">                B[<span class="number">0</span>].emplace_back(-temp);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                B[<span class="number">1</span>].emplace_back(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(A[<span class="number">0</span>].begin(), A[<span class="number">0</span>].end());</span><br><span class="line">        reverse(B[<span class="number">0</span>].begin(), B[<span class="number">0</span>].end());</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'\t'</span> &lt;&lt; solve1() + solve2() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/03/03/CFC/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-牛客寒假集训营第四场H表达式-树形DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,11 +330,10 @@
 </p>
     </center>
     
-    <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://ac.nowcoder.com/acm/contest/9984/H" target="_blank" rel="noopener">吴楚月的表达式</a></p>
-<p>题解</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一个非空表达式前缀可以表示成 a+b 的形式。</span><br><span class="line">如果后面接了一个 +x ，则变成 (a+b)+x；</span><br><span class="line">如果后面接了一个 -x ，则变成 (a+b)-x；</span><br><span class="line">如果后面接了一个 *x ，则变成 a+(b*x)；</span><br><span class="line">如果后面接了一个 /x ，则变成 a+(b/x)。</span><br><span class="line">最后还是可以表示成 a+b 的形式。</span><br><span class="line">因此只需要遍历整棵树维护每个节点对应的 a+b 即可。</span><br></pre></td></tr></table></figure>
-
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-11-26 09:12:46</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-02-22 10:52:35</span></span><br><span class="line"><span class="comment"> * @Description: 栽种绝处的花</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qpow</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>)</span><br><span class="line">            res = res * a % mod;</span><br><span class="line">        b /= <span class="number">2</span>;</span><br><span class="line">        a = a * a % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">inverse</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> qpow(x, mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> val[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> opt[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> b[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> head[<span class="number">100010</span>], ct = <span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v, next;</span><br><span class="line">&#125; Edge[<span class="number">200010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Edge[ct].v = v;</span><br><span class="line">    Edge[ct].next = head[u];</span><br><span class="line">    head[u] = ct++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head[pos]; i; i = Edge[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u = pos;</span><br><span class="line">        <span class="keyword">int</span> v = Edge[i].v;</span><br><span class="line">        <span class="keyword">if</span> (v == fa)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (opt[v] == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            a[v] = (a[u] + b[u]) % mod;</span><br><span class="line">            b[v] = val[v];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (opt[v] == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            a[v] = (a[u] + b[u]) % mod;</span><br><span class="line">            b[v] = -val[v];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (opt[v] == <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            a[v] = a[u];</span><br><span class="line">            b[v] = b[u] * val[v] % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            a[v] = a[u];</span><br><span class="line">            b[v] = b[u] * inverse(val[v]) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        dfs(v, pos);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; val[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> fa;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; fa;</span><br><span class="line">        add(fa, i);</span><br><span class="line">        add(i, fa);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">string</span> temp;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">if</span> (temp[i] == <span class="string">'+'</span>)</span><br><span class="line">            opt[i + <span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (temp[i] == <span class="string">'-'</span>)</span><br><span class="line">            opt[i + <span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (temp[i] == <span class="string">'*'</span>)</span><br><span class="line">            opt[i + <span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (temp[i] == <span class="string">'/'</span>)</span><br><span class="line">            opt[i + <span class="number">2</span>] = <span class="number">4</span>;</span><br><span class="line">    b[<span class="number">1</span>] = val[<span class="number">1</span>];</span><br><span class="line">    dfs(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (a[<span class="number">1</span>] + b[<span class="number">1</span>] + mod + mod) % mod;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; (a[i] + b[i] + mod + mod) % mod;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+    <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目
+    
+    <a class="article-more-a" href="/2021/02/22/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E9%9B%86%E8%AE%AD%E8%90%A5%E7%AC%AC%E5%9B%9B%E5%9C%BAH%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E6%A0%91%E5%BD%A2DP/#more">... ... >></a>
+    
     
 
     
@@ -924,89 +1004,9 @@
 
 
   
-    <article id="post-CF499div2题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/27/CF499div2%E9%A2%98%E8%A7%A3/">CF499div2题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/01/27/CF499div2%E9%A2%98%E8%A7%A3/" class="archive-article-date">
-	<time datetime="2021-01-27T13:27:31.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-01-27</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/01/27/CF499div2%E9%A2%98%E8%A7%A3/">CF499div2题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <p><a href="https://codeforces.com/contest/1011" target="_blank" rel="noopener">比赛链接</a>
-    
-    <a class="article-more-a" href="/2021/01/27/CF499div2%E9%A2%98%E8%A7%A3/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/01/27/CF499div2%E9%A2%98%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
