@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>MySQL学习笔记 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@TOC 课程引入">
+  <meta name="description" content="课程引入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL学习笔记">
 <meta property="og:url" content="http://yoursite.com/2021/04/10/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="@TOC 课程引入">
+<meta property="og:description" content="课程引入">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-10T06:26:45.478Z">
-<meta property="article:modified_time" content="2021-04-19T08:16:09.900Z">
+<meta property="article:published_time" content="2021-04-10T09:44:51.000Z">
+<meta property="article:modified_time" content="2021-04-20T13:25:43.939Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -74,7 +74,7 @@
 		</nav>
 
 		<nav>
-			总文章数 179
+			总文章数 181
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -229,7 +229,7 @@
  -->
   
   <a href="/2021/04/10/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-	<time datetime="2021-04-10T06:26:45.478Z" itemprop="datePublished"><i
+	<time datetime="2021-04-10T09:44:51.000Z" itemprop="datePublished"><i
 			class="icon-calendar icon"></i>2021-04-10</time>
 </a>
 
@@ -255,8 +255,7 @@
 </p>
     </center>
     
-    <p>@<a href="目录">TOC</a></p>
-<h2 id="课程引入"><a href="#课程引入" class="headerlink" title="课程引入"></a>课程引入<a id="more"></a></h2><h4 id="为什么要学数据库"><a href="#为什么要学数据库" class="headerlink" title="为什么要学数据库"></a>为什么要学数据库</h4><p>常见的数据库管理系统有MySQL、Oracle、DB2、SqlServer。程序员在客户端程序，通过数据库管理系统，对数据进行增删改查。其中，MySQL由于开源、免费等因素，是<strong>当前最受欢迎</strong>的数据库管理系统。淘宝、网易、百度、Facebook等众多互联网公司都在使用MySQL，学精了MySQL，就业市场广阔。</p>
+    <h2 id="课程引入"><a href="#课程引入" class="headerlink" title="课程引入"></a>课程引入<a id="more"></a></h2><h4 id="为什么要学数据库"><a href="#为什么要学数据库" class="headerlink" title="为什么要学数据库"></a>为什么要学数据库</h4><p>常见的数据库管理系统有MySQL、Oracle、DB2、SqlServer。程序员在客户端程序，通过数据库管理系统，对数据进行增删改查。其中，MySQL由于开源、免费等因素，是<strong>当前最受欢迎</strong>的数据库管理系统。淘宝、网易、百度、Facebook等众多互联网公司都在使用MySQL，学精了MySQL，就业市场广阔。</p>
 <p>将数据存放在内存中不能持久化存储，存放在普通文件中不方便管理。<br>数据库管理系统的好处：</p>
 <ul>
 <li>实现数据持久化</li>
@@ -341,7 +340,14 @@
 
 <h4 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># order by 排序列表（asc升序，desc降序）</span></span><br><span class="line"><span class="comment"># 注意先筛选（where）后排序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	employee_id,salary,manager_id</span><br><span class="line"><span class="keyword">From</span> </span><br><span class="line">	employees</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	salary <span class="keyword">BETWEEN</span> <span class="number">10000</span> <span class="keyword">and</span> <span class="number">20000</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">	salary <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多关键字排序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	employee_id,salary,manager_id</span><br><span class="line"><span class="keyword">From</span> </span><br><span class="line">	employees</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	salary <span class="keyword">BETWEEN</span> <span class="number">10000</span> <span class="keyword">and</span> <span class="number">20000</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">	manager_id <span class="keyword">asc</span>,salary <span class="keyword">desc</span>;</span><br><span class="line"><span class="comment"># 从前往后排序，先按manager_id升序，再按salary降序。</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h4 id="SQL中的-号"><a href="#SQL中的-号" class="headerlink" title="SQL中的+号"></a>SQL中的+号</h4><p>SQL中的+号只能用于数字间的运算，如果一方为非数字，会尝试将其转换为数字进行运算。如果其中一方为NULL，那么结果必然为NULL。</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 调用</span></span><br><span class="line"><span class="keyword">select</span> 函数名(实参列表)</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见的字符函数"><a href="#常见的字符函数" class="headerlink" title="常见的字符函数"></a>常见的字符函数</h4><p><font color =deeppink>注意，SQL语言中的索引都从1开始。</font></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取字符串长度（字节）</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">length</span>(<span class="string">"abc123"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串拼接</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(first_name,<span class="string">' '</span>,last_name) <span class="string">'姓名'</span></span><br><span class="line"><span class="keyword">from</span> employees;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将last_name中第一个字母大写，其余小写</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="keyword">upper</span>(<span class="keyword">substr</span>(first_name,<span class="number">1</span>,<span class="number">1</span>)),<span class="keyword">lower</span>(<span class="keyword">substr</span>(first_name,<span class="number">3</span>))) <span class="string">'姓名'</span></span><br><span class="line"><span class="keyword">from</span> employees;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见的数学函数"><a href="#常见的数学函数" class="headerlink" title="常见的数学函数"></a>常见的数学函数</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># round 四舍五入</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">round</span>(<span class="number">1.456</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># ceil 向上取整</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">1.1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># floor 向下取整</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="number">1.9</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="SQL中的-号"><a href="#SQL中的-号" class="headerlink" title="SQL中的+号"></a>SQL中的+号</h4><p>SQL中的+号只能用于数字间的运算，如果一方为非数字，会尝试将其转换为数字进行运算。如果其中一方为NULL，那么结果必然为NULL。</p>
 <center>未完待续... ...</center>
     
 
@@ -474,7 +480,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#课程引入"><span class="toc-number">1.</span> <span class="toc-text">课程引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要学数据库"><span class="toc-number">1.0.1.</span> <span class="toc-text">为什么要学数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库相关概念"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据库相关概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库是如何存储数据的"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据库是如何存储数据的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL服务的登陆和退出"><span class="toc-number">1.0.4.</span> <span class="toc-text">MySQL服务的登陆和退出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL常见命令"><span class="toc-number">1.0.5.</span> <span class="toc-text">MySQL常见命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL语法规范"><span class="toc-number">1.0.6.</span> <span class="toc-text">MySQL语法规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL语言的细分"><span class="toc-number">1.0.7.</span> <span class="toc-text">SQL语言的细分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询"><span class="toc-number">2.</span> <span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础查询"><span class="toc-number">2.0.1.</span> <span class="toc-text">基础查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件查询"><span class="toc-number">2.0.2.</span> <span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#排序查询"><span class="toc-number">2.0.3.</span> <span class="toc-text">排序查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL中的-号"><span class="toc-number">3.0.1.</span> <span class="toc-text">SQL中的+号</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#课程引入"><span class="toc-number">1.</span> <span class="toc-text">课程引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要学数据库"><span class="toc-number">1.0.1.</span> <span class="toc-text">为什么要学数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库相关概念"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据库相关概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库是如何存储数据的"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据库是如何存储数据的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL服务的登陆和退出"><span class="toc-number">1.0.4.</span> <span class="toc-text">MySQL服务的登陆和退出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL常见命令"><span class="toc-number">1.0.5.</span> <span class="toc-text">MySQL常见命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL语法规范"><span class="toc-number">1.0.6.</span> <span class="toc-text">MySQL语法规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL语言的细分"><span class="toc-number">1.0.7.</span> <span class="toc-text">SQL语言的细分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询"><span class="toc-number">2.</span> <span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础查询"><span class="toc-number">2.0.1.</span> <span class="toc-text">基础查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件查询"><span class="toc-number">2.0.2.</span> <span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#排序查询"><span class="toc-number">2.0.3.</span> <span class="toc-text">排序查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的字符函数"><span class="toc-number">3.0.1.</span> <span class="toc-text">常见的字符函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的数学函数"><span class="toc-number">3.0.2.</span> <span class="toc-text">常见的数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL中的-号"><span class="toc-number">3.0.3.</span> <span class="toc-text">SQL中的+号</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -506,7 +512,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Sat Apr 10 2021 14:26:45 GMT+0800',
+  	id: 'Sat Apr 10 2021 17:44:51 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
