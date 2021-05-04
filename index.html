@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 185
+			总文章数 186
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -214,6 +214,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CF730J Bottles思维+01背包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/04/CF730J%20Bottles%E6%80%9D%E7%BB%B4+01%E8%83%8C%E5%8C%85/">CF730J Bottles思维+01背包</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/05/04/CF730J%20Bottles%E6%80%9D%E7%BB%B4+01%E8%83%8C%E5%8C%85/" class="archive-article-date">
+	<time datetime="2021-05-04T02:40:36.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-05-04</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/05/04/CF730J%20Bottles%E6%80%9D%E7%BB%B4+01%E8%83%8C%E5%8C%85/">CF730J Bottles思维+01背包</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h2 id="题目"><a href="#题目" class="headerlink" title="题目 "></a>题目
+    
+    <a class="article-more-a" href="/2021/05/04/CF730J%20Bottles%E6%80%9D%E7%BB%B4+01%E8%83%8C%E5%8C%85/#more">... ... >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/05/04/CF730J%20Bottles%E6%80%9D%E7%BB%B4+01%E8%83%8C%E5%8C%85/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-uva662DP-回溯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,15 +318,10 @@
 </p>
     </center>
     
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>少输出个字母s，好不容易看出来了，然后提交的时候又没注释文件读写，对拍的时候又造错数据，AC代码数组越界了，debug半天才发现原来写的就是对的。</p>
-</blockquote>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>有n(&lt;=200)个餐厅位于x轴上。有m(&lt;=30)个供应商，每个供应商可以选择x轴上的一个位置，为任意k个餐厅提供供应。一个供应商的花费为他到所有他供应的餐厅的距离之和。问每个餐厅都要有一家供应商提供供应，所有供应商的最小花费和是多少。所有餐厅和供应商都在整数点上。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>$dp[i][j]$表示前$i$个饭店，$j$个供应商的最小花费。</p>
-<p>$dp[i][j]=min(dp[i][j],dp[k][j-1]+cost[k][i])$</p>
-<p>$cost[k][i]$表示$k$到$i$的最小花费，一段直线上的最优点就是中位数。可以$n^3$暴力预处理。</p>
-<p>枚举k转移状态。前$j-1$个供应商为前$k$家餐厅提供供应，第$j$个供应商为$[k+1,i]$家餐厅提供服务。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> med[<span class="number">210</span>][<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">210</span>][<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">210</span>][<span class="number">35</span>]; <span class="comment">//dp[i][j]表示前i个饭店，有j个供应商的最小贡献</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125; last[<span class="number">210</span>][<span class="number">210</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125; ans[<span class="number">210</span>][<span class="number">210</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> CA1, CA2;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> <span class="comment">//前a个饭店，b个供应商时 最后一个供应商服务区间就是 [ans[a][b].l，ans[a][b].r]</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!b)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    dfs(ans[a][b].l - <span class="number">1</span>, b - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (ans[a][b].l != ans[a][b].r)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Depot %d at restaurant %d serves restaurants %d to %d\n"</span>, ++CA2, ans[a][b].l + ans[a][b].r &gt;&gt; <span class="number">1</span>, ans[a][b].l, ans[a][b].r);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Depot %d at restaurant %d serves restaurant %d\n"</span>, ++CA2, ans[a][b].r, ans[a][b].r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Chain %d\n"</span>, ++CA1);</span><br><span class="line">    CA2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            w[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt;= j; k++)</span><br><span class="line">                w[i][j] += <span class="built_in">abs</span>(a[i + j &gt;&gt; <span class="number">1</span>] - a[k]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0x3f3f3f3f</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        dp[j][<span class="number">1</span>] = w[<span class="number">1</span>][j];</span><br><span class="line">        ans[j][<span class="number">1</span>] = node2&#123;<span class="number">1</span>, j&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= m; j++) <span class="comment">//</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> mid = <span class="number">1</span>; mid &lt; i; mid++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[i][j] &gt; dp[mid][j - <span class="number">1</span>] + w[mid + <span class="number">1</span>][i])</span><br><span class="line">                &#123;</span><br><span class="line">                    dp[i][j] = dp[mid][j - <span class="number">1</span>] + w[mid + <span class="number">1</span>][i];</span><br><span class="line">                    ans[i][j] = node2&#123;mid + <span class="number">1</span>, i&#125;; <span class="comment">//保存最后一个供应商的服务区间信息</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    dfs(n, m);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Total distance sum = %d\n\n"</span>, dp[n][m]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &amp;&amp; (n + m))</span><br><span class="line">        solve();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言 "></a>前言
+    
+    <a class="article-more-a" href="/2021/04/30/uva662DP-%E5%9B%9E%E6%BA%AF/#more">... ... >></a>
+    
     
 
     
@@ -822,86 +886,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/04/10/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-洛谷P1137旅行计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/09/%E6%B4%9B%E8%B0%B7P1137%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92/">洛谷P1137旅行计划</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/04/09/%E6%B4%9B%E8%B0%B7P1137%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92/" class="archive-article-date">
-	<time datetime="2021-04-09T07:30:27.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-04-09</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/04/09/%E6%B4%9B%E8%B0%B7P1137%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92/">洛谷P1137旅行计划</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.luogu.com.cn/problem/P1137" target="_blank" rel="noopener">题目链接</a>
-    
-    <a class="article-more-a" href="/2021/04/09/%E6%B4%9B%E8%B0%B7P1137%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/04/09/%E6%B4%9B%E8%B0%B7P1137%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92/">展开全文 >></a>
     </p>
     
     
