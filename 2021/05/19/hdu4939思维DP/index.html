@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目Stupid Tower Defense">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-19T02:40:00.000Z">
-<meta property="article:modified_time" content="2021-05-19T02:53:36.627Z">
+<meta property="article:modified_time" content="2021-05-19T03:06:42.441Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -257,12 +257,13 @@
     
     <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4939" target="_blank" rel="noopener">Stupid Tower Defense</a><a id="more"></a></p>
 <p>在坐标轴$[1,n]$上，每两个相邻的整数点之间可以放置一座防御塔。</p>
+<p>怪物初始时 $t$ 秒移动一个单位。</p>
 <ul>
-<li><p>防御塔$1$：在当前线段上的敌人每单位时间受到$x$伤害。例如在$[1,2)$上放置一座防御塔$1$，怪物在$[1,2)$上行走会受到$x$伤害。</p>
+<li><p>防御塔$1$：在当前线段上的敌人每秒受到$x$伤害。例如在$[1,2)$上放置一座防御塔$1$，怪物在$[1,2)$上行走每秒会受到$x$伤害。</p>
 </li>
-<li><p>防御塔$2$：在当前线段后的敌人每单位时间受到$y$伤害。例如在$[1,2)$上放置一座防御塔$2$，怪物在$[2,n)$上行走会受到$y$伤害。</p>
+<li><p>防御塔$2$：在当前线段后的敌人每秒受到$y$伤害。例如在$[1,2)$上放置一座防御塔$2$，怪物在$[2,n)$上行走每秒会受到$y$伤害。</p>
 </li>
-<li><p>防御塔$3$：在当前线段后的敌人被减速$z$。例如在$[1,2)$上放置一座防御塔$3$，怪物在$[2,n)$上行走会被减速$z$。</p>
+<li><p>防御塔$3$：在当前线段后的敌人被减速$z$。例如在$[1,2)$上放置一座防御塔$3$，怪物在$[2,n)$上行走会被减速$z$，也就是$t=t+z$。</p>
 </li>
 </ul>
 <p>防御塔2/3的效果可以叠加。</p>
