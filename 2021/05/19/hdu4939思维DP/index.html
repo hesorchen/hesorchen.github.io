@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目Stupid Tower Defense">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-19T02:40:00.000Z">
-<meta property="article:modified_time" content="2021-05-19T03:06:42.441Z">
+<meta property="article:modified_time" content="2021-05-19T03:14:58.940Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -267,6 +267,7 @@
 </li>
 </ul>
 <p>防御塔2/3的效果可以叠加。</p>
+<p>数据范围 （2&lt;=n&lt;=1500 , 0&lt;=x,y,z&lt;=60000 1&lt;=t&lt;=3）</p>
 <p>问一个敌人从$1$走到$n$受到的最大伤害是多少。</p>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>经过一点分析，显然有<strong>防御塔1</strong>肯定是连续的放置在最后面一段区间。</p>
 <p>令$DP[i][j]$为前$i$个防御塔，放置$j$个防御塔$2$、$i-j$个防御塔$3$的最大伤害，$i$后面全为防御塔$3$。这时候，前面防御塔2/3的排列顺序对后面的贡献无影响。只记录数量即可。</p>
