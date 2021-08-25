@@ -16,7 +16,7 @@
 <meta property="og:description" content="前置知识矩阵">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-25T11:20:09.000Z">
-<meta property="article:modified_time" content="2021-08-25T11:57:27.544Z">
+<meta property="article:modified_time" content="2021-08-25T12:07:28.795Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -256,23 +256,24 @@
     </center>
     
     <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵<a id="more"></a></h4><p>矩阵是一个$n \times m$的阵列，下面是一个$3\times 3$的矩阵：</p>
-<p>$$\begin{bmatrix}<br>1&amp;0&amp;0\<br>0&amp;1&amp;0\<br>0&amp;0&amp;1\<br>\end{bmatrix}$$</p>
+<p>$$\begin{bmatrix}<br>1&amp;0&amp;0\\<br>0&amp;1&amp;0\\<br>0&amp;0&amp;1\<br>\end{bmatrix}$$</p>
 <h4 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h4><p>若矩阵A的大小为$n\times m$ ，另一矩阵B的大小为$m\times p$，则两个矩阵可以做乘法，得到的矩阵C大小为$n*p$。具体的乘法规则如下：</p>
-<p>矩阵A：<br>$\begin{bmatrix}<br>a_{11}&amp;a_{12}&amp;a_{13}\<br>a_{21}&amp;a_{22}&amp;a_{23}<br>\end{bmatrix}$</p>
-<p>矩阵B：<br>$\begin{bmatrix}<br>b_{11}&amp;b_{12}\<br>b_{21}&amp;b_{22}\<br>b_{31}&amp;b_{32}<br>\end{bmatrix}$</p>
-<p>相乘得到矩阵C：<br>$\begin{bmatrix}<br>a_{11}\times b_{11}+a_{12}\times b_{21}+a_{13}\times b_{31} &amp;a_{11}\times b_{12}+a_{12}\times b_{22}+a_{13}\times b_{32}\<br>a_{21}\times b_{11}+a_{22}\times b_{21}+a_{23}\times b_{31}&amp;a_{21}\times b_{12}+a_{22}\times b_{22}+a_{23}\times b_{32}<br>\end{bmatrix}$</p>
+<p>矩阵A：<br>$\begin{bmatrix}<br>a_{11}&amp;a_{12}&amp;a_{13}\\<br>a_{21}&amp;a_{22}&amp;a_{23}\<br>\end{bmatrix}$</p>
+<p>矩阵B：<br>$\begin{bmatrix}<br>b_{11}&amp;b_{12}\\<br>b_{21}&amp;b_{22}\\<br>b_{31}&amp;b_{32}\<br>\end{bmatrix}$</p>
+<p>相乘得到矩阵C：<br>$\begin{bmatrix}<br>a_{11}\times b_{11}+a_{12}\times b_{21}+a_{13}\times b_{31} &amp;a_{11}\times b_{12}+a_{12}\times b_{22}+a_{13}\times b_{32}\\<br>a_{21}\times b_{11}+a_{22}\times b_{21}+a_{23}\times b_{31}&amp;a_{21}\times b_{12}+a_{22}\times b_{22}+a_{23}\times b_{32}<br>\end{bmatrix}$</p>
 <p>C++代码实现矩阵乘法:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">            C[i][j] += A[i][k] * B[k][j];</span><br></pre></td></tr></table></figure>
 
 
 <p><strong>性质</strong>：</p>
 <ol>
-<li><p>矩阵乘法不满足交换律，但是满足结合律。即$(AB)C=A(BC)$。<br>对角线为1的矩阵</p>
-</li>
-<li><p><a href="https://baike.baidu.com/item/%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5/8540268?fr=aladdin" target="_blank" rel="noopener">单位矩阵</a>：单位矩阵起着特殊的作用，如同数的乘法中的1，这种矩阵被称为单位矩阵。它是个方阵，从左上角到右下角的对角线（称为主对角线）上的元素均为1。除此以外全都为0。根据单位矩阵的特点，任何矩阵与单位矩阵相乘都等于本身。</p>
-</li>
-<li><p><a href="https://baike.baidu.com/item/%E9%9B%B6%E7%9F%A9%E9%98%B5/4732636?fr=aladdin" target="_blank" rel="noopener">零矩阵</a>：零矩阵即所有元素皆为0的矩阵。</p>
-</li>
+<li>矩阵乘法不满足交换律，但是满足结合律。即$(AB)C=A(BC)$。</li>
+</ol>
+<ol start="2">
+<li><a href="https://baike.baidu.com/item/%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5/8540268?fr=aladdin" target="_blank" rel="noopener">单位矩阵</a>：单位矩阵起着特殊的作用，如同数的乘法中的1，这种矩阵被称为单位矩阵。它是个方阵，从左上角到右下角的对角线（称为主对角线）上的元素均为1。除此以外全都为0。根据单位矩阵的特点，任何矩阵与单位矩阵相乘都等于本身。</li>
+</ol>
+<ol start="3">
+<li><a href="https://baike.baidu.com/item/%E9%9B%B6%E7%9F%A9%E9%98%B5/4732636?fr=aladdin" target="_blank" rel="noopener">零矩阵</a>：零矩阵即所有元素皆为0的矩阵。</li>
 </ol>
 <h2 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h2><p>类似于快速幂用于加速乘法，矩阵快速幂用于加速矩阵乘法。我们可以将$O(n)$的乘法优化到$O(logn)$。</p>
 <p>可以对比一下快速幂与矩阵快速幂：</p>
