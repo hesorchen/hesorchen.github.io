@@ -16,7 +16,7 @@
 <meta property="og:description" content="由于早上刚学，理解不是很深刻，此篇博客仅供自己加深记忆用">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-02T04:49:45.000Z">
-<meta property="article:modified_time" content="2020-07-03T23:37:54.841Z">
+<meta property="article:modified_time" content="2021-08-23T07:57:50.566Z">
 <meta property="article:author" content="hesorchen">
 <meta property="article:tag" content="暑假集训打卡">
 <meta property="article:tag" content="数论">
@@ -76,7 +76,7 @@
 		</nav>
 
 		<nav>
-			总文章数 230
+			总文章数 232
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -259,7 +259,7 @@
     
     <p>由于早上刚学，理解不是很深刻，此篇博客仅供自己加深记忆用<a id="more"></a></p>
 <h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>比较直观的就是在方程组$ax+by=gcd(a,b)$中求解整数解$x,y$。另外通过一系列的变换等作用很大。</p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>递归法求$x,y$：当b为0时，显然特解为$x=1,y=0$，在朴素欧几里得的递归写法中，最后可能会递归到$b=0$，利用这一特点，我们在扩展欧几里得中递归到特解，然后回溯到$a,b$的解。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>递归法求$x,y$：当b为0时，显然特解为$x=1,y=0$，在朴素欧几里得的递归写法中，最后肯定会递归到$b=0$，利用这一特点，我们在扩展欧几里得中递归到特解，然后回溯到$a,b$的解。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a, ll b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center>示例（朴素欧几里得递归写法）</center>
 
