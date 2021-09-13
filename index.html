@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 235
+			总文章数 236
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,85 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-力扣2003小大合并" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/13/%E5%8A%9B%E6%89%A32003%E5%B0%8F%E5%A4%A7%E5%90%88%E5%B9%B6/">力扣2003三种解法 启发式合并、线段树维护mex运算、思维</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/09/13/%E5%8A%9B%E6%89%A32003%E5%B0%8F%E5%A4%A7%E5%90%88%E5%B9%B6/" class="archive-article-date">
+	<time datetime="2021-09-13T11:56:39.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-09-13</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/09/13/%E5%8A%9B%E6%89%A32003%E5%B0%8F%E5%A4%A7%E5%90%88%E5%B9%B6/">力扣2003三种解法 启发式合并、线段树维护mex运算、思维</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://leetcode-cn.com/problems/smallest-missing-genetic-value-in-each-subtree/" target="_blank" rel="noopener">2003. 每棵子树内缺失的最小基因值</a></p>
+<p>给出一颗有根树，每个节点有一个权值$w_i$，求出所有子树的mex值，一个子树的mex值定义为在该子树中最小的未出现的正整数。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>Solution I</strong> </p>
+<p>启发式合并</p>
+<p>考虑暴力维护每颗子树包含的数据，当前子树包含的正整数就是所有儿子包含的正整数加上根，并且根据mex运算性质，父亲结点的mex值肯定大于等于儿子结点。</p>
+<p>但是暴力合并的时空复杂度都是$O(n^2)$。可以在合并的时候每次都将小的集合往大的集合合并，这样时间复杂度最坏为$O(nlogn)$。（当树为满二叉树的时候）</p>
+<p>代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; mp[<span class="number">400005</span>];</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st[<span class="number">100005</span>];</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; mex;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> v : mp[u])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (v == fa)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            dfs(v, u);</span><br><span class="line">            <span class="keyword">if</span> (st[u].size() &lt; st[v].size())</span><br><span class="line">                swap(st[u], st[v]);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> it : st[v])</span><br><span class="line">                st[u].insert(it);</span><br><span class="line">            mex[u] = max(mex[u], mex[v]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (st[u].count(mex[u]))</span><br><span class="line">            ++mex[u];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">smallestMissingValueSubtree</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;parents, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = parents.size();</span><br><span class="line">        mex = <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            st[i].insert(nums[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> fa = parents[i];</span><br><span class="line">            <span class="keyword">if</span> (fa == <span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            mp[i].emplace_back(fa);</span><br><span class="line">            mp[fa].emplace_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        dfs(<span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> mex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution II</strong></p>
+<p>可以发现，权值为1到根结点这一条链上的答案不为一，其他点的答案都为1。因此可以考虑拿出这一条链暴力维护。有上面mex的性质，时间复杂度为$O(n)$。代码有空再补。</p>
+<p><strong>Solution III</strong></p>
+<p>根据dfs序重新标号。用线段树维护区间mex。代码有空再补。</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/13/%E5%8A%9B%E6%89%A32003%E5%B0%8F%E5%A4%A7%E5%90%88%E5%B9%B6/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-Codeforces Global Round 16A-E" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -817,75 +896,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/08/18/HDU6567%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83%E3%80%81%E6%8D%A2%E6%A0%B9DP/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-CF1526D结论-树状数组-逆序对性质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/18/CF1526D%E7%BB%93%E8%AE%BA-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E5%AF%B9%E6%80%A7%E8%B4%A8/">CF1526D结论/树状数组/逆序对性质</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/08/18/CF1526D%E7%BB%93%E8%AE%BA-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E5%AF%B9%E6%80%A7%E8%B4%A8/" class="archive-article-date">
-	<time datetime="2021-08-18T02:32:06.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-08-18</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/08/18/CF1526D%E7%BB%93%E8%AE%BA-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E5%AF%B9%E6%80%A7%E8%B4%A8/">CF1526D结论/树状数组/逆序对性质</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="https://codeforces.com/problemset/problem/1526/D" target="_blank" rel="noopener">D. Kill Anton</a>
-    
-    <a class="article-more-a" href="/2021/08/18/CF1526D%E7%BB%93%E8%AE%BA-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E5%AF%B9%E6%80%A7%E8%B4%A8/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/18/CF1526D%E7%BB%93%E8%AE%BA-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E9%80%86%E5%BA%8F%E5%AF%B9%E6%80%A7%E8%B4%A8/">展开全文 >></a>
     </p>
     
     
