@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 237
+			总文章数 239
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,228 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-1244E" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/16/1244E/">CF1244E</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/09/16/1244E/" class="archive-article-date">
+	<time datetime="2021-09-16T11:58:33.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-09-16</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/09/16/1244E/">CF1244E</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="https://codeforces.com/contest/1244/problem/E" target="_blank" rel="noopener">E. Minimizing Difference</a></p>
+<p>给出n个正整数，最多执行k次操作。每次操作可以选择一个数加一或减一。问操作后最小值和最大值的最小差值是多少。</p>
+<h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h2><p>贪心。</p>
+<p>每次肯定选择最小值加一或者最大值减一。选哪一个取决于最小值的数量少还是最大值的数量少。假设最大值有x个，那么我们得将这x个最大值都减1才能使最终贡献减一，最小值同理。因此不断贪心合并即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %lld"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;temp);</span><br><span class="line">        mp[temp]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> it1 = mp.begin();</span><br><span class="line">        <span class="keyword">int</span> mn = it1-&gt;first;</span><br><span class="line">        <span class="keyword">int</span> mn_num = it1-&gt;second;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> it2 = mp.rbegin();</span><br><span class="line">        <span class="keyword">int</span> mx = it2-&gt;first;</span><br><span class="line">        <span class="keyword">int</span> mx_num = it2-&gt;second;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mn == mx)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &lt; min(mn_num, mx_num))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mn_num &lt; mx_num)</span><br><span class="line">        &#123;</span><br><span class="line">            it1++;</span><br><span class="line">            <span class="keyword">int</span> val = it1-&gt;first;</span><br><span class="line">            <span class="keyword">int</span> times = min(<span class="number">1l</span>l * val - mn, k / mn_num);</span><br><span class="line">            k -= <span class="number">1l</span>l * times * mn_num;</span><br><span class="line">            mp[mn + times] += mp[mn];</span><br><span class="line">            mp.erase(mn);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            it2++;</span><br><span class="line">            <span class="keyword">int</span> val = it2-&gt;first;</span><br><span class="line">            <span class="keyword">int</span> times = min(<span class="number">1l</span>l * mx - val, k / mx_num);</span><br><span class="line">            k -= <span class="number">1l</span>l * times * mx_num;</span><br><span class="line">            mp[mx - times] += mp[mx];</span><br><span class="line">            mp.erase(mx);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mn = mp.begin()-&gt;first;</span><br><span class="line">    <span class="keyword">int</span> mx = mp.rbegin()-&gt;first;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, mx - mn);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    solve();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/16/1244E/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-概率论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/15/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/09/15/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="archive-article-date">
+	<time datetime="2021-09-15T02:20:00.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-09-15</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/09/15/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h2 id="随机事件及其运算"><a href="#随机事件及其运算" class="headerlink" title="随机事件及其运算"></a>随机事件及其运算</h2><h4 id="基本事件与样本空间"><a href="#基本事件与样本空间" class="headerlink" title="基本事件与样本空间"></a>基本事件与样本空间</h4><p>1.样本点：随机试验中的每一个可能出现的试验结果称为这个试验的一个样本点，记作$\omega _i$。</p>
+<p>2.样本空间：全体样本点组成的集合称为这个试验的样本空间，记作$Ω$．即$Ω = {\omega _1,\omega _2,…  ,\omega _n}$</p>
+<p>3.基本事件：仅含一个样本点的事件称为基本事件。含有多个样本点的事件称为复合事件。</p>
+<p>4.必然事件——记作Ω</p>
+<p>5.不可能事件——记作$\varnothing$</p>
+<p>投掷一颗骰子，出现点数1为基本事件。出现点数为奇数为复合事件。</p>
+<p>样本空间Ω的任一子集A称为随机事件。属于事件A的一个样本点出现，则称事件A发生。</p>
+<h4 id="事件间的运算"><a href="#事件间的运算" class="headerlink" title="事件间的运算"></a>事件间的运算</h4><p>1.并（和）(union): A∪B 称为事件A与B的和事件. 其含义是:当且仅当事件A,B 中至少有一个发生时,事件A∪B发生. </p>
+<p>2.交（积）(intersection): A∩B称为事件A与事件B的积事件,或记作AB.其含义是:当且仅当A, B同时发生时，事件AB发生.</p>
+<p>3.差(Difference): A - B 称为事件A与事件B的差事件.其含义是:当且仅当A发生、B不发生时，事件A-B发生.</p>
+<h4 id="事件间的关系"><a href="#事件间的关系" class="headerlink" title="事件间的关系"></a>事件间的关系</h4><p>1.事件的包含（A$\subset$ B）: 称事件B包含事件A，或A是B的子事件.其含义是: 事件A发生必导致事件B 发生. </p>
+<p>2.事件的相等（A=B）</p>
+<p>3.互不相容(互斥)事件(incompatible event): 若A∩B= $\varnothing$，称事件A与B是互不相容事件或互斥事件，指事件A与事件B不能同时发生.</p>
+<p>4.对立事件(互逆事件)(complementary event): 若A∪B=Ω 且 A∩B=$\varnothing$，则称事件A与B为互逆事件. 又称A与B互为对立事件.对立事件不能同时发生且必有1个发生。记作$\overline A$。</p>
+<p>1.交换律：A∪B=B∪A； A∩B=B∩A ．</p>
+<p>2.结合律：A∪(B∪C)=(A∪B)∪C；  A∩(B∩C)=(A∩B)∩C ．</p>
+<p>3.分配律：A∪(B∩C)=(A∪B)∩(A∪C)；   A∩(B∪C)=(A∩B)∪(A∩C)  </p>
+<p>4.德.摩根律(对偶律) ：$\overline{A∪B}$ = $\overline{A}∩\overline{B}$； $\overline{A∩B}$ = $\overline{A}∪\overline{B}$</p>
+<p><img src="https://img-blog.csdnimg.cn/f45f2ccf9f794c3894b01c19c932b7f0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaGVzb3JjaGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="事件的概率"><a href="#事件的概率" class="headerlink" title="事件的概率"></a>事件的概率</h2><h4 id="概率的统计定义"><a href="#概率的统计定义" class="headerlink" title="概率的统计定义"></a>概率的统计定义</h4><p>1.定义:  若在相同的条件进行n次试验, 其中随机事件A发生的次数为$n_A$(A发生的频数)，则称$\frac{n_A}{n}$为事件A发生的频率（frequency），记作$f_n(A)$ ，即$$f_n(A)=\frac{n_A}{n}$$</p>
+<p>2.性质</p>
+<p>(1) 0≤$f_n(A)$≤1   </p>
+<p>(2)  $f_n$(Ω)=1</p>
+<p>(3) 若$A_1$, $A_2$, …, $A_k$ 是两两不相容的事件，则$f_n(A_1∪A_2∪A_3∪… ∪A_k)=f_n(A_1)+f_n(A_2)+f_n(A_3)+…+f_n(A_k)$</p>
+<h4 id="概率的公理化定义"><a href="#概率的公理化定义" class="headerlink" title="概率的公理化定义"></a>概率的公理化定义</h4><p>1.定义: 设 E 是随机试验, 其样本空间S.  对于E的每一 事件A 赋于一个实数, 记为P (A),  称为事件A的概率,   如果集合函数P (•)满足下列条件:      </p>
+<p>(1)非负性：对于每一个事件A，有 0≤P(A)≤1</p>
+<p>(2)规范性（正则性）:对于必然事件Ω , 有 P (Ω)=1</p>
+<p>(3)可列可加性: 设$A_1$,$A_2$, … 是两两互不相容的事件,则有$$P(\cup_{1}^{\infty} A_i)=\sum_1^{\infty}P(A_i)$$</p>
+<p>2.性质</p>
+<p>(1)不可能事件概率为0</p>
+<blockquote>
+<p>证明如下：<br>Ω=Ω∪$\varnothing$∪$\varnothing$∪$\varnothing$…<br>由公理3可知<br>P(Ω)=P(Ω)+P($\varnothing$)+P($\varnothing$)+P($\varnothing$)+…<br>所以<br>P($\varnothing$)=0<br>即<br>不可能事件的概率为零</p>
+</blockquote>
+<p>(2)有限可加性<br>设$A_1$,$A_2$,$A_3$… $A_n$,两两互不相容，则$$P(\cup_1^n A_i)=\sum_1^np(A_i)$$</p>
+<p>(3)逆事件的概率，$P(\overline{A})=1-P(A)$</p>
+<p>(4)差事件的概率（减法公式)： $P(A－B)=P(A)－ P(AB)$</p>
+<p>(5)加法公式：对任意两个随机事件A、B，有$P(A∪B)=P(A)+P(B)-P(AB)$ </p>
+<p>加法公式可以推广到有限个随机事件。</p>
+<p>$P(A∪B∪C∪…)=$<br>$P(A)+P(B)+P(C)+…$<br>$-P(AB)-P(AC)-…-P(BC)-…$<br>$+P(ABC)+P(ABD)+…+P(BCD)+…$<br>…</p>
+<h2 id="古典概型与几何概型"><a href="#古典概型与几何概型" class="headerlink" title="古典概型与几何概型"></a>古典概型与几何概型</h2><h4 id="排列与组合"><a href="#排列与组合" class="headerlink" title="排列与组合"></a>排列与组合</h4><p>两条原理</p>
+<p>加法原理：设完成一件事可以分为两类（两种途径），第一种途径有$n_1$种方法，第二种途径有$n_2$种方法，则完成这件事共有$n_1\times n_2$种方法。</p>
+<p>乘法原理：设完成一件事需分两步，第一步有$n_1$种方法,第二步有$n_2$种方法，则完成这件事共有$n_1\times n_2$种方法。</p>
+<p>排列与组合公式</p>
+<ol>
+<li>排列（permutation/arrangement）<br>从n个不同元素中任取r (r&lt;=n)个排成一列（考虑元素先后出现次序），称此为一个排列，此种排列的总数为$A_n^r=n(n-1)..(n-r+1)=\frac{n!}{(n-r)!}$</li>
+</ol>
+<p>若r = n，则称为全排列，全排列的总数为$A_n^n=n!$</p>
+<ol start="2">
+<li><p>重复排列<br>从n个不同元素中每次取出一个，放回后再取出下一个，如此连续取r次所得的排列称为重复排列，此种重复排列数共有$n^r$个，这里r允许大于n．</p>
+</li>
+<li><p>组合(combination)<br>从n个不同元素中任取r (r&lt;=n)个并成一组（不考虑元素先后出现次序），称为一个组合，此种组合的总数为$C_n^r=\frac{n(n-1)…(n-r+1)}{r!}=\frac{n!}{r!(n-r)!}$</p>
+</li>
+</ol>
+<h4 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h4><p>1、有限性</p>
+<p>每次试验中，所有可能发生的结果只有有限个，即样本空间Ω是个有限集</p>
+<p>2、等可能性</p>
+<p>每次试验中，每一种可能结果的发生的可能性相同，即<br>$$P(A_1)=P(A_2)=P(A_3)=…=P(A_n)=\frac{1}{n}$$</p>
+<h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><p>1、无限性</p>
+<p>每次试验中，所有可能发生的结果有无限个。</p>
+<p>2、等可能性</p>
+<p>每次试验中，每一种可能结果的发生的可能性相同。</p>
+<p><img src="https://img-blog.csdnimg.cn/8045e371a34448ce8ed2c466732cd4e0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaGVzb3JjaGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="条件概率和三个基本公式"><a href="#条件概率和三个基本公式" class="headerlink" title="条件概率和三个基本公式"></a>条件概率和三个基本公式</h2><h4 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h4><p>1.定义：设Ａ，Ｂ为同一个随机试验中的两个随机事件 ,   且Ｐ（Ｂ）＞０， 则称$P(A|B)=\frac{P(AB)}{P(B)}$为在事件B发生的条件下，事件A发生的条件概率。</p>
+<p>2.性质：条件概率P(·|A)满足概率的三个基本属性。由于条件概率符合概率定义的三个条件，所以前面所证明的一些概率性质对于条件概率也同样适用。</p>
+<p>计算条件概率有两种方法:  </p>
+<p>1.公式法<br>先计算$P(A),P(B)$，然后根据公式计算$P(A|B)=\frac{P(AB)}{P(B)}$</p>
+<p>2.缩减样本空间法：<br>在A发生的前提下, 确定B的缩减样本空间, 并在其中计算B发生的概率, 从而得到P(B|A).</p>
+<h4 id="乘法公式"><a href="#乘法公式" class="headerlink" title="乘法公式"></a>乘法公式</h4><p>对于任意的事件A, B, 若P(A)&gt;0，则P(AB)=P(A)P(B|A)<br>或P(B)=P(B)P(A|B)                （P(B)&gt;0）</p>
+<p>[注] 乘法公式可以推广到多个事件的情形:<br>1°设A,B,C为事件，且P(AB)&gt;0, 则有P(ABC)=P(A) P(B|A)P(C|BA)</p>
+<p>2°设$A_1, A_2, …A_n$为n个事件,  且$P(A_1A_2…A_{n-1})&gt;0$,则有$P(A_1A_2A_3…A_n)=P(A_1)P(A_2|A1)…P(A_n|A_1A_2…A_{n-1})$</p>
+<h4 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h4><p>定义：设Ω为试验E的样本空间，$B_1,B_2,B_3…B_n$为E的一组事件，若所有B事件两两不相容且交事件为Ω，则称$B_1,B_2,B_3…B_n$是样本空间Ω的一个划分或称$B_1,B_2,B_3…B_n$是一个互斥事件完备组。</p>
+<p>定理：设试验E的样本空间为Ω,A为 E的事件,$B_1,B_2,B_3…B_n$为Ω的一个划分, 且 $P(i)&gt;0$，则$$P(A)=P(A|B_1)P(B_1)+P(A|B_2)P(B_2)+P(A|B_3)P(B_3)+…+P(A|B_n)P(B_n)$$</p>
+<p>$$=\sum_1^nP(A|B_i)P(B_i)$$</p>
+<p>称为全概率公式。</p>
+<h4 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/15/%E6%A6%82%E7%8E%87%E8%AE%BA/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-旅行商问题状压DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -748,144 +970,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/08/23/2021%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%E5%A4%8D%E8%B5%9B1002%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-HDU2228栈、深搜、树哈希-同构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/18/HDU2228%E6%A0%88%E3%80%81%E6%B7%B1%E6%90%9C%E3%80%81%E6%A0%91%E5%93%88%E5%B8%8C-%E5%90%8C%E6%9E%84/">HDU2228栈、深搜、树哈希/同构</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/08/18/HDU2228%E6%A0%88%E3%80%81%E6%B7%B1%E6%90%9C%E3%80%81%E6%A0%91%E5%93%88%E5%B8%8C-%E5%90%8C%E6%9E%84/" class="archive-article-date">
-	<time datetime="2021-08-18T12:00:59.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-08-18</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/08/18/HDU2228%E6%A0%88%E3%80%81%E6%B7%B1%E6%90%9C%E3%80%81%E6%A0%91%E5%93%88%E5%B8%8C-%E5%90%8C%E6%9E%84/">HDU2228栈、深搜、树哈希/同构</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=2228" target="_blank" rel="noopener">Same or not</a>
-    
-    <a class="article-more-a" href="/2021/08/18/HDU2228%E6%A0%88%E3%80%81%E6%B7%B1%E6%90%9C%E3%80%81%E6%A0%91%E5%93%88%E5%B8%8C-%E5%90%8C%E6%9E%84/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/18/HDU2228%E6%A0%88%E3%80%81%E6%B7%B1%E6%90%9C%E3%80%81%E6%A0%91%E5%93%88%E5%B8%8C-%E5%90%8C%E6%9E%84/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-树同构-树哈希" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/18/%E6%A0%91%E5%90%8C%E6%9E%84-%E6%A0%91%E5%93%88%E5%B8%8C/">树同构/树哈希</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/08/18/%E6%A0%91%E5%90%8C%E6%9E%84-%E6%A0%91%E5%93%88%E5%B8%8C/" class="archive-article-date">
-	<time datetime="2021-08-18T09:23:20.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-08-18</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/08/18/%E6%A0%91%E5%90%8C%E6%9E%84-%E6%A0%91%E5%93%88%E5%B8%8C/">树同构/树哈希</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="https://www.luogu.com.cn/problem/P5043" target="_blank" rel="noopener">P5043 【模板】树同构（[BJOI2015]树的同构）</a>
-    
-    <a class="article-more-a" href="/2021/08/18/%E6%A0%91%E5%90%8C%E6%9E%84-%E6%A0%91%E5%93%88%E5%B8%8C/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/18/%E6%A0%91%E5%90%8C%E6%9E%84-%E6%A0%91%E5%93%88%E5%B8%8C/">展开全文 >></a>
     </p>
     
     
