@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 244
+			总文章数 245
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,75 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-归并排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/23/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2021/09/23/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+	<time datetime="2021-09-23T08:00:06.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-09-23</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2021/09/23/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>平均时间复杂度：$O(nlogn)$<br>最好时间复杂度：$O(nlogn)$<br>最坏时间复杂度：$O(nlogn)$<br>空间复杂度：$O(n)$<br>稳定性：稳定</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">int</span> temp[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergesort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    mergesort(a, l, mid);</span><br><span class="line">    mergesort(a, mid + <span class="number">1</span>, r); <span class="comment">//递归解决子区间</span></span><br><span class="line">    <span class="keyword">int</span> p_l = l, p_r = mid + <span class="number">1</span>, p = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p_l &lt;= mid &amp;&amp; p_r &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[p_l] &lt;= a[p_r])</span><br><span class="line">            temp[p++] = a[p_l++]; <span class="comment">//先放到临时数组中</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            temp[p++] = a[p_r++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//最后会有一个子区间有剩余</span></span><br><span class="line">    <span class="keyword">while</span> (p_l &lt;= mid)</span><br><span class="line">        temp[p++] = a[p_l++];</span><br><span class="line">    <span class="keyword">while</span> (p_r &lt;= r)</span><br><span class="line">        temp[p++] = a[p_r++];</span><br><span class="line">    <span class="comment">//将排好序的数组重新放回原数组中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++)</span><br><span class="line">        a[i] = temp[i - l + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line"></span><br><span class="line">    mergesort(a, <span class="number">1</span>, n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/23/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-欧拉筛处理莫比乌斯函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -826,75 +895,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/09/13/%E5%8A%9B%E6%89%A32003%E5%B0%8F%E5%A4%A7%E5%90%88%E5%B9%B6/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-Codeforces Global Round 16A-E" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/13/Codeforces%20Global%20Round%2016A-E/">Codeforces Global Round 16 A-E</a>
-    </h1>
-  
- -->
-  
-  <a href="/2021/09/13/Codeforces%20Global%20Round%2016A-E/" class="archive-article-date">
-	<time datetime="2021-09-13T07:26:45.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2021/09/13/Codeforces%20Global%20Round%2016A-E/">Codeforces Global Round 16 A-E</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <h2 id="A-Median-Maximization"><a href="#A-Median-Maximization" class="headerlink" title="A. Median Maximization"></a><a href="https://codeforces.com/contest/1566/problem/A" target="_blank" rel="noopener">A. Median Maximization</a>
-    
-    <a class="article-more-a" href="/2021/09/13/Codeforces%20Global%20Round%2016A-E/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/09/13/Codeforces%20Global%20Round%2016A-E/">展开全文 >></a>
     </p>
     
     
