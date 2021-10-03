@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>欧拉筛线性处理莫比乌斯函数 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欧拉筛线性处理莫比乌斯函数代码 12345678910111213141516171819202122232425262728293031#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;const int N &#x3D; 1e6 + 5;int prime[N];bool vis[N];int mobius[N];void init()&amp;#123;">
+  <meta name="description" content="欧拉筛线性处理莫比乌斯函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉筛线性处理莫比乌斯函数">
 <meta property="og:url" content="http://yoursite.com/2021/09/22/%E6%AC%A7%E6%8B%89%E7%AD%9B%E5%A4%84%E7%90%86%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="欧拉筛线性处理莫比乌斯函数代码 12345678910111213141516171819202122232425262728293031#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;const int N &#x3D; 1e6 + 5;int prime[N];bool vis[N];int mobius[N];void init()&amp;#123;">
+<meta property="og:description" content="欧拉筛线性处理莫比乌斯函数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-22T02:39:47.000Z">
-<meta property="article:modified_time" content="2021-09-22T02:44:20.868Z">
+<meta property="article:modified_time" content="2021-09-29T00:11:27.174Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -74,7 +74,7 @@
 		</nav>
 
 		<nav>
-			总文章数 245
+			总文章数 247
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -255,7 +255,7 @@
 </p>
     </center>
     
-    <h2 id="欧拉筛线性处理莫比乌斯函数"><a href="#欧拉筛线性处理莫比乌斯函数" class="headerlink" title="欧拉筛线性处理莫比乌斯函数"></a>欧拉筛线性处理莫比乌斯函数</h2><p>代码</p>
+    <h2 id="欧拉筛线性处理莫比乌斯函数"><a href="#欧拉筛线性处理莫比乌斯函数" class="headerlink" title="欧拉筛线性处理莫比乌斯函数"></a>欧拉筛线性处理莫比乌斯函数<a id="more"></a></h2><p>代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> prime[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> mobius[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> times = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!vis[i])</span><br><span class="line">            prime[++prime[<span class="number">0</span>]] = i, mobius[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= prime[<span class="number">0</span>] &amp;&amp; prime[j] * i &lt; N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            vis[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            mobius[i * prime[j]] = -mobius[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
