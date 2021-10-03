@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>python函数 | hesorchen</title>
+  <title>POJ1556计算几何、最短路 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python函数">
+  <meta name="description" content="--- title: POJ1556计算几何、最短路 date: 2021-10-03 20:10:02 categories: tags: password: ---  &gt; 写一道POJ的题就要吐槽一次编译  ![在这里插入图片描述](https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;caad384b17b8499aa1dd0892dc20f56d.png?x-oss-process">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python函数">
-<meta property="og:url" content="http://yoursite.com/2020/06/07/python%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="POJ1556计算几何、最短路">
+<meta property="og:url" content="http://yoursite.com/2021/10/03/POJ1556%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E3%80%81%E6%9C%80%E7%9F%AD%E8%B7%AF/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="python函数">
+<meta property="og:description" content="--- title: POJ1556计算几何、最短路 date: 2021-10-03 20:10:02 categories: tags: password: ---  &gt; 写一道POJ的题就要吐槽一次编译  ![在这里插入图片描述](https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;caad384b17b8499aa1dd0892dc20f56d.png?x-oss-process">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-07T04:44:25.000Z">
-<meta property="article:modified_time" content="2020-06-11T00:33:00.690Z">
+<meta property="article:published_time" content="2021-10-03T12:10:02.452Z">
+<meta property="article:modified_time" content="2021-10-03T12:16:37.358Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -217,21 +216,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python函数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-POJ1556计算几何、最短路" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      python函数
+      POJ1556计算几何、最短路
     </h1>
   
  -->
   
-  <a href="/2020/06/07/python%E5%87%BD%E6%95%B0/" class="archive-article-date">
-	<time datetime="2020-06-07T04:44:25.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-06-07</time>
+  <a href="/2021/10/03/POJ1556%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E3%80%81%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="archive-article-date">
+	<time datetime="2021-10-03T12:10:02.452Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-10-03</time>
 </a>
 
   
@@ -250,77 +249,39 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      python函数
+      POJ1556计算几何、最短路
     </h1>
   
 </p>
     </center>
     
-    <blockquote>
-<p>python函数 <a id="more"></a></p>
-</blockquote>
-<h3 id="函数定义与调用"><a href="#函数定义与调用" class="headerlink" title="函数定义与调用"></a>函数定义与调用</h3><p>定义：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接函数标识符名称和圆括号()。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。</li>
-<li>函数的第一行语句可以选择性地使用文档字符串，用于存放函数说明。</li>
-<li>函数内容以冒号起始，并且缩进。</li>
-<li>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。</li>
-</ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name, word)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say(a, b)</span><br><span class="line">print(say.__doc__)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">My first function</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例1</center>
+    <pre><code>---
+title: POJ1556计算几何、最短路
+date: 2021-10-03 20:10:02
+categories:
+tags:
+password:
+---
 
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h4 id="形参与实参"><a href="#形参与实参" class="headerlink" title="形参与实参"></a>形参与实参</h4><p>形参；函数定义时括号中的内容，例如示例1中的name和word<br>实参：函数调用时传入函数的内容，例如示例1中的字符串a和字符串b</p>
-<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>防止参数调用的时候顺序混淆，具体使用如下；</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name, word)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say(a, b)</span><br><span class="line">say(name=a, word=b)  <span class="comment"># 关键字参数</span></span><br><span class="line">say(word=b, name=a)  <span class="comment"># 关键字参数</span></span><br><span class="line">print(say.__doc__)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">My first function</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例2</center>
+&gt; 写一道POJ的题就要吐槽一次编译
 
-<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>和C++中的默认参数使用方法相似，如果不传入参数，那么使用默认参数值</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(name=<span class="string">'zhangsan'</span>, word=<span class="string">'hello'</span>)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line"></span><br><span class="line">say()</span><br><span class="line">say(word=b)</span><br><span class="line">say(name=a)</span><br><span class="line">say(a, b)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">zhangsan : hello</span></span><br><span class="line"><span class="string">zhangsan : write the code ,change the world !</span></span><br><span class="line"><span class="string">hesor : hello</span></span><br><span class="line"><span class="string">hesor : write the code ,change the world !</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例3</center>
-
-<h4 id="收集参数"><a href="#收集参数" class="headerlink" title="收集参数"></a>收集参数</h4><p>不确定函数会使用多少个参数，在参数名前面加上<code>*</code>表示默认参数<br>默认参数可以看成是元组<br>最好结合关键字参数和默认参数使用</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(*word, name=<span class="string">'zhangsan'</span>)</span>:</span></span><br><span class="line">    <span class="string">'My first function'</span></span><br><span class="line">    print(len(word))</span><br><span class="line">    print(name, <span class="string">':'</span>, word)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'hesor'</span></span><br><span class="line">b = <span class="string">'write the code ,change the world !'</span></span><br><span class="line">c = <span class="string">'hello world !'</span></span><br><span class="line"></span><br><span class="line">say(b, c, name=a)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">hesor : ('write the code ,change the world !', 'hello world !')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<h3 id="函数与过程"><a href="#函数与过程" class="headerlink" title="函数与过程"></a>函数与过程</h3><p>过程可以理解为没有返回值的函数<br>函数的一大特点就是可以有返回值<br>python中的函数没有像C语言中的函数类型，但是可以返回任何类型的值，甚至可以返回多个类型、多个值（打包成元组、列表返回）</p>
-<h3 id="局部变量与全局变量"><a href="#局部变量与全局变量" class="headerlink" title="局部变量与全局变量"></a>局部变量与全局变量</h3><p>不要试图在函数中改变全局变量的值，那样只会新创建一个局部变量，如果真的要这么做，现在函数体内使用global关键字</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a  <span class="comment"># 声明a为全局变量</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">print(a)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">10</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例4</center>
-
-<h3 id="内嵌函数"><a href="#内嵌函数" class="headerlink" title="内嵌函数"></a>内嵌函数</h3><p>即函数嵌套函数</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        x *= x</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    f2()</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(f1())</span><br></pre></td></tr></table></figure>
-<center>示例5</center>
+![在这里插入图片描述](https://img-blog.csdnimg.cn/caad384b17b8499aa1dd0892dc20f56d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaGVzb3JjaGVu,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 
-<p>与全局变量和局部变量相类似的，可以得到上述示例中的f1() f2()中的x作用域，为了能在f2()中调用x的值，我们可以使用<code>nonlocal</code>关键字，方法同<code>global</code></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> x</span><br><span class="line">        x *= x</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    f2()</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(f1())</span><br></pre></td></tr></table></figure>
-<center>示例6</center>
+## 题目
 
-<p>区分<code>global</code>与<code>nonlocal</code>：<br>1、局部作用域改变全局变量用<code>global</code><br>2、内层函数改变外层函数变量用<code>nonlocal</code>， <code>nonlocal</code>不能定义新的外层函数变量，只能改变已有的外层函数变量<br>经过测试，<code>nonlocal</code>可以调用多层嵌套的外部函数</p>
-<h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><p>格式:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lambda 参数a,参数b : 表达式</span><br></pre></td></tr></table></figure>
-<p>等价于一个 有两个参数<code>a</code>、<code>b</code>的，return<code>表达式</code>的函数</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">2</span> + <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span> <span class="keyword">return</span> x * <span class="number">2</span> + <span class="number">3</span></span><br><span class="line"></span><br><span class="line">print(f1(<span class="number">5</span>))</span><br><span class="line">print(f2(<span class="number">5</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">f1 f2 等价</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例7</center>
+[The Doors](http://poj.org/problem?id=1556)&lt;!--more--&gt;
 
-<h3 id="filter-与map"><a href="#filter-与map" class="headerlink" title="filter()与map()"></a>filter()与map()</h3><p><code>filter()</code>：意即过滤器，顾名思义过滤掉不需要的东西<br>格式：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter(function,可迭代对象)</span><br></pre></td></tr></table></figure>
-<p>其中function为lambda表达式或者是函数，也就是过滤条件<br>第二个参数为可迭代对象<br>filter函数返回的是对象</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x % <span class="number">2</span></span><br><span class="line"></span><br><span class="line">list1 = range(<span class="number">10</span>)</span><br><span class="line">print(list(filter(is_odd, list1)))</span><br><span class="line">print(list(filter(<span class="keyword">lambda</span> x: x % <span class="number">2</span>, list1)))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">[1, 3, 5, 7, 9]</span></span><br><span class="line"><span class="string">[1, 3, 5, 7, 9]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例8</center>
+## 解题思路
 
-<p><code>map()</code>：映射，对迭代对象进行处理</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(function,可迭代对象)</span><br></pre></td></tr></table></figure>
-<p>其中function为lambda表达式或者是函数，作为处理方式</p>
-<p>第二个参数为可迭代对象</p>
-<p>map函数返回的是对象</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">2</span>+<span class="number">3</span></span><br><span class="line"></span><br><span class="line">list1 = range(<span class="number">10</span>)</span><br><span class="line">print(list(map(f, list1)))</span><br><span class="line">print(list(map(<span class="keyword">lambda</span> x: x * <span class="number">2</span>+<span class="number">3</span>, list1)))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Output:</span></span><br><span class="line"><span class="string">[3, 5, 7, 9, 11, 13, 15, 17, 19, 21]</span></span><br><span class="line"><span class="string">[3, 5, 7, 9, 11, 13, 15, 17, 19, 21]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<center>示例9</center>
+对于所有点对，判断能不能建边。
 
-<p>以及前几天我遇到过的一行多个整数的输入问题：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = list(map(int, list(input().split())))</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<center>示例10</center>
+如果有某个墙挡住了这条边，那么不能建边。即判断两线段是否相交，不能算端点。
 
-<center><font color=deeppink>以上差不多就是Python函数基础的全部内容了^_^</font></center>
+
+## 代码
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2500</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">    Point <span class="keyword">operator</span>-(<span class="keyword">const</span> Point &amp;temp) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        Point T;</span><br><span class="line">        T.x = x - temp.x;</span><br><span class="line">        T.y = y - temp.y;</span><br><span class="line">        <span class="keyword">return</span> T;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; Vector;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cross</span><span class="params">(Vector A, Vector B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A.x * B.y - A.y * B.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dot</span><span class="params">(Vector A, Vector B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A.x * B.x + A.y * B.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">check</span><span class="params">(Point a, Point b, Point c, Point d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Vector V1 = b - a;</span><br><span class="line">    Vector V2 = c - a;</span><br><span class="line">    Vector V3 = d - a;</span><br><span class="line"></span><br><span class="line">    Vector V4 = c - d;</span><br><span class="line">    Vector V5 = a - d;</span><br><span class="line">    Vector V6 = b - d;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (cross(V1, V3) * cross(V1, V2) &lt; <span class="number">0</span> &amp;&amp; cross(V4, V5) * cross(V4, V6) &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> ct, cnt;</span><br><span class="line">Point p1[N];</span><br><span class="line">Point p2[N];</span><br><span class="line">Point p[N];</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;&gt; vec[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> dis[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">        dis[i] = <span class="number">1e18</span>, vis[i] = <span class="number">0</span>;</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    priority_queue&lt;pair&lt;<span class="keyword">double</span>, <span class="keyword">int</span>&gt;&gt; q;</span><br><span class="line">    q.push(make_pair(<span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q.size())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> w = -q.top().first;</span><br><span class="line">        <span class="keyword">int</span> u = q.top().second;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (vis[u])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        vis[u] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> m = vec[u].size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!vis[vec[u][i].first])</span><br><span class="line">                <span class="keyword">if</span> (vec[u][i].second + w &lt; dis[vec[u][i].first])</span><br><span class="line">                &#123;</span><br><span class="line">                    dis[vec[u][i].first] = vec[u][i].second + w;</span><br><span class="line">                    q.push(make_pair(-dis[vec[u][i].first], vec[u][i].first));</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, dis[cnt]);</span><br><span class="line">&#125;</span><br><span class="line">Point temp;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ct = cnt = <span class="number">0</span>;</span><br><span class="line">    temp.x = <span class="number">0</span>, temp.y = <span class="number">5</span>;</span><br><span class="line">    p[++cnt] = temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;x);</span><br><span class="line">        <span class="keyword">double</span> y[<span class="number">6</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;y[i]);</span><br><span class="line">            temp.x = x, temp.y = y[i];</span><br><span class="line">            p[++cnt] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.x = x, temp.y = <span class="number">0</span>;</span><br><span class="line">        p1[++ct] = temp;</span><br><span class="line"></span><br><span class="line">        temp.x = x, temp.y = y[<span class="number">1</span>];</span><br><span class="line">        p2[ct] = temp;</span><br><span class="line"></span><br><span class="line">        temp.x = x, temp.y = y[<span class="number">2</span>];</span><br><span class="line">        p1[++ct] = temp;</span><br><span class="line"></span><br><span class="line">        temp.x = x, temp.y = y[<span class="number">3</span>];</span><br><span class="line">        p2[ct] = temp;</span><br><span class="line"></span><br><span class="line">        temp.x = x, temp.y = y[<span class="number">4</span>];</span><br><span class="line">        p1[++ct] = temp;</span><br><span class="line"></span><br><span class="line">        temp.x = x, temp.y = <span class="number">10</span>;</span><br><span class="line">        p2[ct] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    temp.x = <span class="number">10</span>, temp.y = <span class="number">5</span>;</span><br><span class="line">    p[++cnt] = temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">        vec[i].clear();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">bool</span> f = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= ct; k++)</span><br><span class="line">                <span class="keyword">if</span> (check(p[i], p[j], p1[k], p2[k])) <span class="comment">//是否有线段挡着</span></span><br><span class="line">                &#123;</span><br><span class="line">                    f = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">if</span> (f) <span class="comment">//如果没有线段挡着 建边i-j</span></span><br><span class="line">            &#123;</span><br><span class="line">                vec[i].push_back(make_pair(j, <span class="built_in">sqrt</span>(dot(p[i] - p[j], p[i] - p[j]))));</span><br><span class="line">                <span class="comment">// vec[j].push_back(make_pair(i, sqrt(dot(p[i] - p[j], p[i] - p[j]))));</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dij();<span class="comment">//建图完毕，跑最短路</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n != <span class="number">-1</span>)</span><br><span class="line">        solve();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
     
 
     
@@ -360,29 +321,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -431,7 +370,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/07/python%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/10/03/POJ1556%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E3%80%81%E6%9C%80%E7%9F%AD%E8%B7%AF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -445,18 +384,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/06/08/python%E5%AD%97%E5%85%B8dict/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          python字典dict
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/07/python%E5%BA%8F%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python序列</div>
+    <a href="/2021/10/03/POJ2398%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E3%80%81%E5%8F%89%E7%A7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">POJ2398计算几何、叉积判断点在线段左/右侧</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -474,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数定义与调用"><span class="toc-number">1.</span> <span class="toc-text">函数定义与调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数"><span class="toc-number">2.</span> <span class="toc-text">函数参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#形参与实参"><span class="toc-number">2.1.</span> <span class="toc-text">形参与实参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键字参数"><span class="toc-number">2.2.</span> <span class="toc-text">关键字参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#默认参数"><span class="toc-number">2.3.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#收集参数"><span class="toc-number">2.4.</span> <span class="toc-text">收集参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数与过程"><span class="toc-number">3.</span> <span class="toc-text">函数与过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部变量与全局变量"><span class="toc-number">4.</span> <span class="toc-text">局部变量与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内嵌函数"><span class="toc-number">5.</span> <span class="toc-text">内嵌函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda表达式"><span class="toc-number">6.</span> <span class="toc-text">lambda表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter-与map"><span class="toc-number">7.</span> <span class="toc-text">filter()与map()</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -506,7 +436,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Sun Jun 07 2020 12:44:25 GMT+0800',
+  	id: 'Sun Oct 03 2021 20:10:02 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
