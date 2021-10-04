@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>POJ2253 | hesorchen</title>
+  <title>POJ2653线段相交 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="給出n个点的坐标，问点1到点2的所有路径中，两点最大距离的最小值是多少。">
+  <meta name="description" content="题目Pick-up sticks">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ2253">
-<meta property="og:url" content="http://yoursite.com/2020/05/06/POJ2253/index.html">
+<meta property="og:title" content="POJ2653线段相交">
+<meta property="og:url" content="http://yoursite.com/2021/10/04/POJ2653%E7%BA%BF%E6%AE%B5%E7%9B%B8%E4%BA%A4/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="給出n个点的坐标，问点1到点2的所有路径中，两点最大距离的最小值是多少。">
+<meta property="og:description" content="题目Pick-up sticks">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-06T01:37:49.000Z">
-<meta property="article:modified_time" content="2020-05-06T02:36:56.781Z">
+<meta property="article:published_time" content="2021-10-04T07:59:16.000Z">
+<meta property="article:modified_time" content="2021-10-04T08:06:42.912Z">
 <meta property="article:author" content="hesorchen">
-<meta property="article:tag" content="题解">
-<meta property="article:tag" content="最短路">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
@@ -76,7 +74,7 @@
 		</nav>
 
 		<nav>
-			总文章数 248
+			总文章数 251
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -218,21 +216,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-POJ2253" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-POJ2653线段相交" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      POJ2253
+      POJ2653线段相交
     </h1>
   
  -->
   
-  <a href="/2020/05/06/POJ2253/" class="archive-article-date">
-	<time datetime="2020-05-06T01:37:49.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2020-05-06</time>
+  <a href="/2021/10/04/POJ2653%E7%BA%BF%E6%AE%B5%E7%9B%B8%E4%BA%A4/" class="archive-article-date">
+	<time datetime="2021-10-04T07:59:16.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2021-10-04</time>
 </a>
 
   
@@ -251,20 +249,16 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      POJ2253
+      POJ2653线段相交
     </h1>
   
 </p>
     </center>
     
-    <p>給出n个点的坐标，问点1到点2的所有路径中，两点最大距离的最小值是多少。<a id="more"></a>其实这种最小化最大值的题，用二分+dj应该没问题，但是其实还有更简单的方法，只需要改变松弛操作即可。</p>
-<p>最短路经典松弛操作：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (dis[v] &gt; dis[u] + w)</span><br><span class="line">    dis[v] = dis[u] + w;</span><br></pre></td></tr></table></figure>
-
-<p>我们从本质出发，为什么这样更新呢？因为我们求最短路时最后想要的是最小的总dis。回到这题，我们最后想要的每条路径上所有小段的dis中的最小值。那么只需改变松弛操作为:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (dis[v] &gt; <span class="built_in">max</span>(dis[u] , w))</span><br><span class="line">    dis[v] = <span class="built_in">max</span>(dis[u] , w);</span><br></pre></td></tr></table></figure>
-<p>另外，这题n=200的数据范围，可以用Floyd写，更简单。<br><code>Dijkstra代码</code>：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Author: hesorchen</span></span><br><span class="line"><span class="comment"> * @Date: 2020-04-14 10:33:26</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2020-05-06 09:33:04</span></span><br><span class="line"><span class="comment"> * @Link: https://hesorchen.github.io/</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI cos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(abcd) (abcd &amp; (-abcd))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fre                              \</span></span><br><span class="line">    &#123;                                    \</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);   \</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); \</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> w;</span><br><span class="line">    <span class="keyword">int</span> v, next;</span><br><span class="line">&#125; edge[<span class="number">40010</span>];</span><br><span class="line"><span class="keyword">int</span> head[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">double</span> dis[<span class="number">210</span>];</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">210</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">&#125; p[<span class="number">210</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node3</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u;</span><br><span class="line">    <span class="keyword">double</span> w;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(node3 <span class="keyword">const</span> b) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> w &gt; b.w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">priority_queue&lt;node3&gt; q;</span><br><span class="line"><span class="keyword">int</span> ct = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">double</span> w)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    edge[ct].v = v;</span><br><span class="line">    edge[ct].w = w;</span><br><span class="line">    edge[ct].next = head[u];</span><br><span class="line">    head[u] = ct++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">distant</span><span class="params">(node2 a, node2 b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dj</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    fill(dis, dis + <span class="number">210</span>, <span class="number">1000000000</span>);</span><br><span class="line">    fill(vis, vis + <span class="number">210</span>, <span class="number">0</span>);</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    q.push(node3&#123;<span class="number">1</span>, <span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.top().u;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; i; i = edge[i].next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> v = edge[i].v;</span><br><span class="line">            <span class="keyword">if</span> (dis[v] &gt; max(dis[u], edge[i].w))</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v] = max(dis[u], edge[i].w);</span><br><span class="line">                q.push(node3&#123;v, dis[v]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// fre;</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> cas = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!n)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        ct = <span class="number">1</span>;</span><br><span class="line">        fill(head, head + <span class="number">210</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; p[i].x &gt;&gt; p[i].y;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                add(j, i, distant(p[i], p[j]));</span><br><span class="line">                add(i, j, distant(p[i], p[j]));</span><br><span class="line">            &#125;</span><br><span class="line">        dj();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Scenario #%d\nFrog Distance = "</span>, cas++);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.3f\n\n"</span>, dis[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="http://poj.org/problem?id=2653" target="_blank" rel="noopener">Pick-up sticks</a><a id="more"></a></p>
+<p>二维平面给出一些棍子，问哪些棍子没被其他棍子压着。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>$O(n^2)$暴力判断即可。<br>因为保证了答案不超过1000，因此最坏时间复杂度是$O(min(n^2,kn))$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">    Point <span class="keyword">operator</span>-(<span class="keyword">const</span> Point temp)</span><br><span class="line">    &#123;</span><br><span class="line">        Point T;</span><br><span class="line">        T.x = x - temp.x;</span><br><span class="line">        T.y = y - temp.y;</span><br><span class="line">        <span class="keyword">return</span> T;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; Vector;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cross</span><span class="params">(Vector A, Vector B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A.x * B.y - B.x * A.y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sign</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; eps)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x &gt; eps)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">f</span><span class="params">(Point a1, Point a2, Point b1, Point b2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (max(a1.x, a2.x) &lt; min(b1.x, b2.x) ||</span><br><span class="line">        max(a1.y, a2.y) &lt; min(b1.y, b2.y) ||</span><br><span class="line">        max(b1.x, b2.x) &lt; min(a1.x, a2.x) ||</span><br><span class="line">        max(b1.y, b2.y) &lt; min(a1.y, a2.y))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//先通过快速排斥实验</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> c1 = cross(a2 - a1, b1 - a1), c2 = cross(a2 - a1, b2 - a1);</span><br><span class="line">    <span class="keyword">double</span> c3 = cross(b2 - b1, a2 - b1), c4 = cross(b2 - b1, a1 - b1);</span><br><span class="line">    <span class="keyword">return</span> sign(c1) * sign(c2) &lt;= <span class="number">0</span> &amp;&amp; sign(c3) * sign(c4) &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point Start[N], End[N];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>, &amp;Start[i].x, &amp;Start[i].y);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>, &amp;End[i].x, &amp;End[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (f(Start[i], End[i], Start[j], End[j]))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag)</span><br><span class="line">            ans.push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> m = ans.size();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Top sticks: "</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans[i]);</span><br><span class="line">        <span class="keyword">if</span> (i == m - <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"."</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">", "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n)</span><br><span class="line">        solve();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 
     
@@ -306,33 +300,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     
@@ -381,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/06/POJ2253/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/10/04/POJ2653%E7%BA%BF%E6%AE%B5%E7%9B%B8%E4%BA%A4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -395,18 +363,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/06/%E4%BC%A0%E9%80%92%E9%97%AD%E5%8C%85POj3660/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/10/04/POJ3304/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          POJ3660传递闭包
+          POJ3304 思维、判断线段和直线相交
         
       </div>
     </a>
   
   
-    <a href="/2020/05/05/%E6%B4%9B%E8%B0%B7p1462%E4%BA%8C%E5%88%86-%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">二分+迪杰斯特拉</div>
+    <a href="/2021/10/04/POJ1410%E7%BA%BF%E6%AE%B5%E7%9B%B8%E4%BA%A4%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E6%96%A5%E5%AE%9E%E9%AA%8C%E3%80%81%E8%B7%A8%E7%AB%8B%E5%AE%9E%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">POJ1410线段相交、快速排斥实验、跨立实验</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -424,7 +392,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -456,7 +424,7 @@ if(true){
   	repo: 'hesorchen.github.io',
   	owner: 'hesorchen',
   	admin: ['hesorchen'],
-  	id: 'Wed May 06 2020 09:37:49 GMT+0800',
+  	id: 'Mon Oct 04 2021 15:59:16 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
