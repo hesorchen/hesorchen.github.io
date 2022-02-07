@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | hesorchen</title>
+  <title>Redis_NoSQL入门学习笔记 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="NoSQL简介NoSQL &#x3D; Not Only SQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+<meta property="og:title" content="Redis_NoSQL入门学习笔记">
 <meta property="og:url" content="http://yoursite.com/2022/01/28/Redis_NoSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="hesorchen">
 <meta property="og:description" content="NoSQL简介NoSQL &#x3D; Not Only SQL">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/7/30/16c4345eae4aa6cd~tplv-t2oaga2asx-watermark.awebp">
 <meta property="article:published_time" content="2022-01-28T05:33:24.000Z">
-<meta property="article:modified_time" content="2022-01-29T12:13:31.122Z">
+<meta property="article:modified_time" content="2022-02-07T02:43:30.542Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/7/30/16c4345eae4aa6cd~tplv-t2oaga2asx-watermark.awebp">
   
     <link rel="alternative" href="/atom.xml" title="hesorchen" type="application/atom+xml">
   
@@ -223,7 +225,7 @@
   <!-- 
   
     <h1 class="article-title" itemprop="name">
-      test
+      Redis_NoSQL入门学习笔记
     </h1>
   
  -->
@@ -249,7 +251,7 @@
       <p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      test
+      Redis_NoSQL入门学习笔记
     </h1>
   
 </p>
@@ -300,12 +302,9 @@
 </li>
 </ol>
 <p>参考博客：<a href="https://blog.csdn.net/SnailMann/article/details/88298976" target="_blank" rel="noopener">【技术杂记】如何正确的理解CAP和BASE理论？</a></p>
-<h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><p>Redis:REmote DIctionary Server(远程字典服务器)，是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的(key/value)分布式内存数据库，基于内存运行，并支持持久化的NoSQL数据库，是当前最热门的NoSql数据库之一，也被人们称为数据结构服务器。</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>Redis:REmote DIctionary Server(远程字典服务器)，是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的(key/value)分布式内存数据库，基于内存运行，并支持持久化的NoSQL数据库，是当前最热门的NoSql数据库之一，也被人们称为数据结构服务器。</p>
 <h4 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h4><p>切换数据库</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 数据库编号</span><br></pre></td></tr></table></figure>
-
-<p>查看当前数据库key的数量</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DBsize</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select 数据库编号</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">查看当前数据库key的数量</span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line">DBsize</span><br></pre></td></tr></table></figure>
 <p>列出当前数据库所有key</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
 
@@ -358,6 +357,107 @@
 <p>zset的成员是唯一的,但分数(score)却可以重复。</p>
 <p>一些常用命令：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ZADD zst1 score1 v1 score2 v2 score3 v3 # 向zset插入值，若不存在，则创建</span><br><span class="line">ZRANGE zst1 L R $ 按照从小到大返回第L到第R个值</span><br></pre></td></tr></table></figure>
+
+<h4 id="持久化之RDB"><a href="#持久化之RDB" class="headerlink" title="持久化之RDB"></a>持久化之RDB</h4><p>RDB快照用官方的话来说：RDB持久化方案是按照指定时间间隔对你的数据集生成的时间点快照。它是Redis数据库中数据的内存快照，它是一个二进制文件（默认名称为：dump.rdb，可修改），存储了文件生成时Redis数据库中所有的数据内容。可用于Redis的数据备份、转移与恢复。</p>
+<p><strong>配置参数</strong></p>
+<p>RDB快照的触发方式及运行行为受配置参数的影响，打开配置文件redis.conf（windows版本在redis.windows.conf）查看“SNAPSHOTTING”章节，了解RDB快照的参数及作用。</p>
+<ol>
+<li><p><code>save &lt;seconds&gt; &lt;changes&gt;</code><br> save参数是Redis触发自动备份的触发策略，seconds为统计时间（单位：秒）， changes为在统计时间内发生写入的次数。save m n的意思是：m秒内有n条写入就触发一次快照，即备份一次。save参数可以配置多组，满足在不同条件的备份要求。如果需要关闭RDB的自动备份策略，可以使用save “”。以下为几种配置的说明：</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">save <span class="number">900</span> <span class="number">1</span>：表示<span class="number">900</span>秒（<span class="number">15</span>分钟）内至少有<span class="number">1</span>个key的值发生变化，则执行</span><br><span class="line"></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span>：表示<span class="number">300</span>秒（<span class="number">5</span>分钟）内至少有<span class="number">1</span>个key的值发生变化，则执行</span><br><span class="line"></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span>：表示<span class="number">60</span>秒（<span class="number">1</span>分钟）内至少有<span class="number">10000</span>个key的值发生变化，则执行</span><br><span class="line"></span><br><span class="line">save <span class="string">""</span>： 该配置将会关闭RDB方式的持久化</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>dbfilename</code>：快照文件的名称，默认为dump.rdb。</p>
+</li>
+<li><p><code>dir</code>：快照文件保存目录，默认与当前配置文件在同一目录。</p>
+</li>
+</ol>
+<ol start="4">
+<li><code>stop-writes-on-bgsave-error</code>：默认值为yes。如果为yes，当启用了RDB且最后一次后台保存数据失败，Redis将会停止接收数据。这会让用户意识到数据没有正确持久化到磁盘上，否则没有人会注意到灾难（disaster）发生了。如果Redis重启了，那么又可以重新开始接收数据了。</li>
+</ol>
+<ol start="5">
+<li><p><code>rdbcompression</code>：默认值yes。备份数据时是否使用LZF算法压缩字符串对象。默认是开启的，这样可以节约存储空间，但是在生成备份文件时消耗部分CPU。</p>
+</li>
+<li><p><code>rdbchecksum</code>：保存和加载rdb文件时是否使用CRC64校验，默认开启。启用此参数可以使rdb文件更加安全，提高稳定性，但是会有一定的性能（大约10%）损失。如果rdb文件创建时未使用校验和，那么校验和将被设置为0，以此告知Redis跳过校验。</p>
+</li>
+</ol>
+<p><strong>持久化流程</strong></p>
+<p>在Redis内完成RDB持久化的方法有rdbSave和rdbSaveBackground两个函数方法（源码文件rdb.c中），先简单说下两者差别：</p>
+<p>rdbSave：是同步执行的，方法调用后就会立刻启动持久化流程。由于Redis是单线程模型，持久化过程中会阻塞，Redis无法对外提供服务；<br>rdbSaveBackground：是后台（异步）执行的，该方法会fork出子进程，真正的持久化过程是在子进程中执行的，主进程会继续提供服务；</p>
+<p>参考资料：<a href="https://segmentfault.com/a/1190000039208707" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039208707</a></p>
+<h4 id="持久化之AOF"><a href="#持久化之AOF" class="headerlink" title="持久化之AOF"></a>持久化之AOF</h4><p>redis默认未开启AOF，开启方式：打开配置文件<code>redis.conf</code>，修改参数：appendonly yes</p>
+<p>AOF( append only file )持久化以独立日志的方式记录每次写命令，并在 Redis 重启时在重新执行 AOF 文件中的命令以达到恢复数据的目的。AOF 的主要作用是解决数据持久化的实时性。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/7/30/16c4345eae4aa6cd~tplv-t2oaga2asx-watermark.awebp" alt=""><br>如上图所示，AOF 持久化功能的实现可以分为命令追加( append )、文件写入( write )、文件同步( sync )、文件重写(rewrite)和重启加载(load)。其流程如下：</p>
+<ul>
+<li>所有的写命令会追加到 AOF 缓冲中。</li>
+<li>AOF 缓冲区根据对应的策略向硬盘进行同步操作。</li>
+<li>随着 AOF 文件越来越大，需要定期对 AOF 文件进行重写，达到压缩的目的。</li>
+<li>当 Redis 重启时，可以加载 AOF 文件进行数据恢复。</li>
+</ul>
+<p><strong>文件写入和同步</strong></p>
+<p>Redis 每次结束一个事件循环之前，它都会调用 <code>flushAppendOnlyFile</code> 函数，判断是否需要将 AOF 缓存区中的内容写入和同步到 AOF 文件中。</p>
+<p><code>flushAppendOnlyFile</code> 函数的行为由 redis.conf 配置中的 appendfsync 选项的值来决定。该选项有三个可选值，分别是 <code>always</code>、<code>everysec</code> 和 <code>no</code>：</p>
+<ol>
+<li><p><code>always</code>：Redis 在每个事件循环都要将 AOF 缓冲区中的所有内容写入到 AOF 文件，并且同步 AOF 文件，所以 <code>always</code> 的效率是 <code>appendfsync</code> 选项三个值当中最差的一个，但从安全性来说，也是最安全的。当发生故障停机时，AOF 持久化也只会丢失一个事件循环中所产生的命令数据。</p>
+</li>
+<li><p><code>everysec</code>：Redis 在每个事件循环都要将 AOF 缓冲区中的所有内容写入到 AOF 文件中，并且每隔一秒就要在子线程中对 AOF 文件进行一次同步。从效率上看，该模式足够快。当发生故障停机时，只会丢失一秒钟的命令数据。</p>
+</li>
+<li><p><code>no</code>：Redis 在每一个事件循环都要将 AOF 缓冲区中的所有内容写入到 AOF 文件。而 AOF 文件的同步由操作系统控制。这种模式下速度最快，但是同步的时间间隔较长，出现故障时可能会丢失较多数据。</p>
+</li>
+</ol>
+<p><strong>AOF文件的重写</strong></p>
+<p>AOF是写日志文件，因此占用空间会越来越大，可以通过等价重写实现减小空间。</p>
+<p>在redis.conf文件中，可以找到以下内容：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span>-aof-rewrite-percentage <span class="number">100</span></span><br><span class="line"><span class="keyword">auto</span>-aof-rewrite-min-size <span class="number">64</span>mb</span><br></pre></td></tr></table></figure>
+<p>当满足文件大小大于<code>auto-aof-rewrite-min-size</code>，并且当前文件大小比最近一次rewrite之后的文件大百分之<code>auto-aof-rewrite-percentage</code>时，会自动触发rewrite。</p>
+<p>注意：AOF实际的重写工作是针对数据库的当前值来进行的，程序既不读写、也不使用原有的 AOF 文件。</p>
+<p>参考资料：<a href="https://redisbook.readthedocs.io/en/latest/internal/aof.html#id11" target="_blank" rel="noopener">AOF</a></p>
+<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>redis事务命令：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">discard # 取消事务，放弃执行事务块内的所有命令。</span><br><span class="line">exec # 执行所有事务块内的命令。</span><br><span class="line">multi # 标记一个事务块的开始。</span><br><span class="line">unwatch # 取消watch命令对所有key的监视。</span><br><span class="line">watch key # 监视一个（或多个）key，如果在事务执行之前这个key被其他命令所改动，那么事务将会被打断。</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>五种情况：</p>
+<ol>
+<li><p>正常执行</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; multi</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> a <span class="number">1</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; incrby a <span class="number">3</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get a</span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; exec</span><br><span class="line"><span class="number">1</span>) OK</span><br><span class="line"><span class="number">2</span>) (integer) <span class="number">4</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"4"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>放弃事务：discard</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; multi</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> a <span class="number">100</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; discard</span><br><span class="line">OK</span><br></pre></td></tr></table></figure></li>
+<li><p>全体连坐：如果有编译错误，整个事务不会执行</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; multi</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> a <span class="number">10</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; ssset b <span class="number">10</span></span><br><span class="line">(error) ERR unknown command 'ssset'</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; exec</span><br><span class="line">(error) EXECABORT Transaction discarded because of previous errors.</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>冤头债主：如果有运行错误，只有错误的语句不执行</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; multi</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> name mike</span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; incr name</span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> name2 john</span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; exec</span><br><span class="line"><span class="number">1</span>) OK</span><br><span class="line"><span class="number">2</span>) (error) ERR value is <span class="keyword">not</span> an integer <span class="keyword">or</span> out of range</span><br><span class="line"><span class="number">3</span>) OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name</span><br><span class="line"><span class="string">"mike"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name2</span><br><span class="line"><span class="string">"john"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>watch监控</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> balance <span class="number">100</span></span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> debt <span class="number">0</span></span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; watch balance debt</span><br><span class="line">OK</span><br><span class="line">【<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> balance <span class="number">199999</span>】</span><br><span class="line">【OK】</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; multi</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; decrby balance <span class="number">10</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; incrby debt <span class="number">10</span></span><br><span class="line">QUEUED</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; exec</span><br><span class="line"><span class="number">1</span>) (integer) <span class="number">90</span></span><br><span class="line"><span class="number">2</span>) (integer) <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>小结：</p>
+<ol>
+<li>watch指令类似于乐观锁。</li>
+<li>exec之后所有的监控锁都会被清除。</li>
+</ol>
+<h4 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h4><p>建立主从关系：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof 【masterip】 【masterport】</span><br></pre></td></tr></table></figure>
+
+<p>查看服务器角色：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info replication</span><br></pre></td></tr></table></figure>
+
+<p>结束与主机的连接：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof no one</span><br></pre></td></tr></table></figure>
+
+<p>slave机只能读，不能写。</p>
+<p><strong>复制原理</strong></p>
+<p>Slave启动成功连接到master后会发送一个sync命令，Master接到命令启动后台的存盘进程，同时收集所有接收到的用于修改数据集命令，在后台进程执行完毕之后，master将传送整个数据文件到slave,以完成一次完全同步。</p>
+<p>全量复制：在slave服务在接收到数据库文件数据后，将其存盘并加载到内存中。<br>增量复制：Master继续将新的所有收集到的修改命令依次传给slave,完成同步<br>首次连接到master使用全量复制，然后使用增量复制。但是只要是重新连接master，一次完全同步(全量复制)将被自动执行。</p>
+<p><strong>哨兵模式</strong></p>
+<p>哨兵顾名思义，就是来为Redis集群站哨的，一旦发现问题能做出相应的应对处理。其功能包括</p>
+<ol>
+<li>监控master、slave是否正常运行</li>
+<li>当master出现故障时，能自动将一个slave转换为master（大哥挂了，选一个小弟上位）</li>
+</ol>
+<p>参考资料：<a href="https://juejin.cn/post/6844904097116585991" target="_blank" rel="noopener">一文掌握Redis主从复制、哨兵、Cluster三种集群模式</a></p>
+
     
 
     
@@ -480,7 +580,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL简介"><span class="toc-number">1.</span> <span class="toc-text">NoSQL简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NoSQL四种分类"><span class="toc-number">1.0.1.</span> <span class="toc-text">NoSQL四种分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式基础之CAP和BASE理论"><span class="toc-number">2.</span> <span class="toc-text">分布式基础之CAP和BASE理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#集中式和分布式"><span class="toc-number">2.0.1.</span> <span class="toc-text">集中式和分布式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分布式系统设计理论CAP"><span class="toc-number">2.0.2.</span> <span class="toc-text">分布式系统设计理论CAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BASE理论"><span class="toc-number">2.0.3.</span> <span class="toc-text">BASE理论</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis简介"><span class="toc-number">3.</span> <span class="toc-text">Redis简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见命令"><span class="toc-number">3.0.1.</span> <span class="toc-text">常见命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五大数据类型"><span class="toc-number">3.0.2.</span> <span class="toc-text">五大数据类型</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL简介"><span class="toc-number">1.</span> <span class="toc-text">NoSQL简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NoSQL四种分类"><span class="toc-number">1.0.1.</span> <span class="toc-text">NoSQL四种分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式基础之CAP和BASE理论"><span class="toc-number">2.</span> <span class="toc-text">分布式基础之CAP和BASE理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#集中式和分布式"><span class="toc-number">2.0.1.</span> <span class="toc-text">集中式和分布式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分布式系统设计理论CAP"><span class="toc-number">2.0.2.</span> <span class="toc-text">分布式系统设计理论CAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BASE理论"><span class="toc-number">2.0.3.</span> <span class="toc-text">BASE理论</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">3.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简介"><span class="toc-number">3.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见命令"><span class="toc-number">3.0.2.</span> <span class="toc-text">常见命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五大数据类型"><span class="toc-number">3.0.3.</span> <span class="toc-text">五大数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持久化之RDB"><span class="toc-number">3.0.4.</span> <span class="toc-text">持久化之RDB</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持久化之AOF"><span class="toc-number">3.0.5.</span> <span class="toc-text">持久化之AOF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务"><span class="toc-number">3.0.6.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主从复制"><span class="toc-number">3.0.7.</span> <span class="toc-text">主从复制</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
