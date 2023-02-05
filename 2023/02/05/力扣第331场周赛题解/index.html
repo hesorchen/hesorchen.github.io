@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>力扣第331场周赛题解 | hesorchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="T1 从数量最多的堆取走礼物">
+  <meta name="description" content="rank T1 T2 T3 T4    331 &#x2F; 4256 0:01:46 0:06:18 (1) 0:11:58 0:57:29 (4)   T1 从数量最多的堆取走礼物">
 <meta property="og:type" content="article">
 <meta property="og:title" content="力扣第331场周赛题解">
 <meta property="og:url" content="http://yoursite.com/2023/02/05/%E5%8A%9B%E6%89%A3%E7%AC%AC331%E5%9C%BA%E5%91%A8%E8%B5%9B%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="hesorchen">
-<meta property="og:description" content="T1 从数量最多的堆取走礼物">
+<meta property="og:description" content="rank T1 T2 T3 T4    331 &#x2F; 4256 0:01:46 0:06:18 (1) 0:11:58 0:57:29 (4)   T1 从数量最多的堆取走礼物">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-05T04:00:04.000Z">
-<meta property="article:modified_time" content="2023-02-05T04:10:44.229Z">
+<meta property="article:modified_time" content="2023-02-05T04:24:08.516Z">
 <meta property="article:author" content="hesorchen">
 <meta name="twitter:card" content="summary">
   
@@ -255,7 +255,25 @@
 </p>
     </center>
     
-    <h4 id="T1-从数量最多的堆取走礼物"><a href="#T1-从数量最多的堆取走礼物" class="headerlink" title="T1 从数量最多的堆取走礼物"></a><a href="https://leetcode.cn/contest/weekly-contest-331/problems/take-gifts-from-the-richest-pile/" target="_blank" rel="noopener">T1 从数量最多的堆取走礼物</a><a id="more"></a></h4><p>模拟题，每次操作找出最大值$maxx$并将其变成$sqrt(maxx)$，$k$次操作后求和。</p>
+    <table>
+<thead>
+<tr>
+<th align="center">rank</th>
+<th align="right">T1</th>
+<th align="right">T2</th>
+<th align="right">T3</th>
+<th align="right">T4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">331 / 4256</td>
+<td align="right">0:01:46</td>
+<td align="right">0:06:18 (1)</td>
+<td align="right">0:11:58</td>
+<td align="right">0:57:29 (4)</td>
+</tr>
+</tbody></table>
+<h4 id="T1-从数量最多的堆取走礼物"><a href="#T1-从数量最多的堆取走礼物" class="headerlink" title="T1 从数量最多的堆取走礼物"></a><a href="https://leetcode.cn/contest/weekly-contest-331/problems/take-gifts-from-the-richest-pile/" target="_blank" rel="noopener">T1 从数量最多的堆取走礼物</a><a id="more"></a></h4><p>模拟题，每次操作找出最大值$maxx$并将其变成$sqrt(maxx)$，$k$次操作后求和。</p>
 <p>数据范围很小，可以暴力模拟，更好的方法是使用优先队列模拟。</p>
 <p>时间复杂度 $O(max(n,k)log(n))$<br>空间复杂度 $O(n)$</p>
 <p>参考代码</p>
