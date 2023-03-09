@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 292
+			总文章数 293
 		</nav>
 		<nav class="header-smart-menu">
 			
@@ -213,6 +213,107 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-记录一次思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  <!-- 
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%80%9D%E8%80%83/">记录实现操作系统互斥锁的一次思考</a>
+    </h1>
+  
+ -->
+  
+  <a href="/2023/03/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%80%9D%E8%80%83/" class="archive-article-date">
+	<time datetime="2023-03-08T13:05:23.000Z" itemprop="datePublished"><i
+			class="icon-calendar icon"></i>2023-03-08</time>
+</a>
+
+  
+
+  
+  </header>
+
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <center>
+      <p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2023/03/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%80%9D%E8%80%83/">记录实现操作系统互斥锁的一次思考</a>
+    </h1>
+  
+</p>
+    </center>
+    
+    <p>今天实现操作系统互斥锁的时候遇到一个有趣的问题。</p>
+<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>有两个进程分别名为 taskA，taskB，采取时间片轮转的方式交替运行——也即维护了一个 ready_queue，根据时钟中断来 FIFO 地调度任务。它们的任务是无限循环调用 sys_print() 来打印自己的名称。</p>
+<p>我还设置了一个 mutex 互斥锁，它包含一个 0/1 互斥信号量：用于表示锁是否已经被取走，还有一个等待队列 waiting_queue：用于存放正在等待该锁的进程。</p>
+<p>为了保证打印出来的字符不错乱，我为 sys_print() 函数设置一个 mutex 对象，我们暂且称之为 print_mutex。在调用 sys_print() 前执行 mutex_lock() 上锁，如果此时锁已经被取走，那么将当前任务加入 print_mutex 的 waiting_queue。调用 sys_print() 后执行 mutex_unlock() 解锁，如果 waiting_queue 中有任务，那么将 print_mutex 直接分配给其中的第一个任务，同时将该任务加入进程的就绪队列，否则将锁归还，由需要该锁的进程主动来取锁。</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>想一想，这时候运行系统，屏幕上的输出形式是怎么样的呢？</p>
+<p>容易想到一些情况：</p>
+<p>一：交替连续输出，且无打印出错误，形如以下形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+
+<p>二：交替连续输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">tastaskB</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">ttaskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+
+<p>三：严格交替输出，且无打印出错误，形如以下形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+
+<p>四：严格交替输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tasktaskB</span><br><span class="line">tataskB</span><br><span class="line">taskA</span><br><span class="line">tataskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+
+<p>其实还有很多其他可能，碍于篇幅受限，不再列出。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>很容易想到，加了互斥锁 print_mutex 后，肯定不会出现打印错乱的情况，因此情况二和情况四首先排除，那么到底是情况一还是情况三呢？大家可以根据场景先思考一下。</p>
+<p>好了，公布答案，最终形式其实既不是情况一也不是情况三，而是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br></pre></td></tr></table></figure>
+
+<p>也就是<strong>一个任务先连续输出，然后两个任务严格交替输出</strong>，如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/d5675fd9d9074af0be2839808d57a11e.png" alt="在这里插入图片描述"></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>原因如下：假设先上时间片运行的是 taskA，那么在第一个时间片周期中， taskA 可以调用 sys_print() 函数若干次，当时间片发生切换的瞬间，taskA 会被挂起，然后重新加入到 ready_queue 尾部，等待下一次被分配 cpu，而由于这个任务的功能很简单，可以简化成以下形式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">taskA</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        metux_lock();   <span class="comment">//关中断保证原子操作</span></span><br><span class="line">        sys_print();</span><br><span class="line">        mutex_unlock(); <span class="comment">//关中断保证原子操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中 mutex_lock() 和 mutex_unlock() 都关中断保证了不会有时钟中断发生， 所以在切换进程的时候，taskA 可能会</p>
+<ol>
+<li>停留在 metux_lock() 之前、mutex_unlock() 之后</li>
+<li>停留在 sys_print() 中</li>
+</ol>
+<p>显然，由于sys_print() 需要与外围设备端口交互，包含的指令数也比较多，而情况1 包含的指令数极少，<strong>因此 taskA 此时绝大概率停留在 sys_print() 中</strong>，也就是 taskA 持有 print_mutex 互斥锁，并在 ready_queue 中等待执行，而这时候 taskB 虽然被分配了时间片，但在执行 mutex_lock() 的时候发现锁已被取走，只能进入 print_mutex 的 waiting_queue 等待。taskA 重新上cpu 运行，执行完上次执行一半的 sys_print() 之后，紧接着执行 mutex_unlock() 将锁分配给锁等待队列中的 taskB，下一轮循环时，taskA 执行 mutex_lock() 发生锁等待被挂起，循环往复，两者就严格交替打印了。</p>
+<p>事实上，如果 taskA 在切换时间片的时候遇到的是情况 1，那么也可能出现两个进程交替连续打印的情况，但是这个概率极小。</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%80%9D%E8%80%83/">展开全文 >></a>
+    </p>
+    
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-力扣第331场周赛题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -837,77 +938,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/04/11/LRU%E7%AE%97%E6%B3%95%20%E5%93%88%E5%B8%8C%E8%A1%A8+%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-    </p>
-    
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-第十三届蓝桥杯C++A组部分题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  <!-- 
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/09/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFC++A%E7%BB%84%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">第十三届蓝桥杯C/C++A组部分题解</a>
-    </h1>
-  
- -->
-  
-  <a href="/2022/04/09/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFC++A%E7%BB%84%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" class="archive-article-date">
-	<time datetime="2022-04-09T05:00:10.000Z" itemprop="datePublished"><i
-			class="icon-calendar icon"></i>2022-04-09</time>
-</a>
-
-  
-
-  
-  </header>
-
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <center>
-      <p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2022/04/09/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFC++A%E7%BB%84%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">第十三届蓝桥杯C/C++A组部分题解</a>
-    </h1>
-  
-</p>
-    </center>
-    
-    <blockquote>
-<p>不保证正确性</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2022/04/09/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFC++A%E7%BB%84%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/#more">... ... >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/04/09/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFC++A%E7%BB%84%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">展开全文 >></a>
     </p>
     
     
