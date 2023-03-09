@@ -255,26 +255,27 @@
 <p>为了保证打印出来的字符不错乱，我为 sys_print() 函数设置一个 mutex 对象，我们暂且称之为 print_mutex。在调用 sys_print() 前执行 mutex_lock() 上锁，如果此时锁已经被取走，那么将当前任务加入 print_mutex 的 waiting_queue。调用 sys_print() 后执行 mutex_unlock() 解锁，如果 waiting_queue 中有任务，那么将 print_mutex 直接分配给其中的第一个任务，同时将该任务加入进程的就绪队列，否则将锁归还，由需要该锁的进程主动来取锁。</p>
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>想一想，这时候运行系统，屏幕上的输出形式是怎么样的呢？</p>
 <p>容易想到一些情况：</p>
-<p>一：交替连续输出，且无打印出错误，形如以下形式</p>
+<p>一、交替连续输出，且无打印出错误，形如以下形式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 
-<p>二：交替连续输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
+<p>二、交替连续输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">tastaskB</span><br><span class="line">taskB</span><br><span class="line">taskB</span><br><span class="line">ttaskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 
-<p>三：严格交替输出，且无打印出错误，形如以下形式</p>
+<p>三、严格交替输出，且无打印出错误，形如以下形式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 
-<p>四：严格交替输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
+<p>四、严格交替输出，但在进程切换的瞬间，有打印错乱的可能，形如以下形式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tasktaskB</span><br><span class="line">tataskB</span><br><span class="line">taskA</span><br><span class="line">tataskA</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 
 <p>其实还有很多其他可能，碍于篇幅受限，不再列出。</p>
 <h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>很容易想到，加了互斥锁 print_mutex 后，肯定不会出现打印错乱的情况，因此情况二和情况四首先排除，那么到底是情况一还是情况三呢？大家可以根据场景先思考一下。</p>
 <p>好了，公布答案，最终形式其实既不是情况一也不是情况三，而是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">taskA</span><br><span class="line">taskB</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 
 <p>也就是<strong>一个任务先连续输出，然后两个任务严格交替输出</strong>，如下图：</p>
 <p><img src="https://img-blog.csdnimg.cn/d5675fd9d9074af0be2839808d57a11e.png" alt="在这里插入图片描述"></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>原因如下：假设先上时间片运行的是 taskA，那么在第一个时间片周期中， taskA 可以调用 sys_print() 函数若干次，当时间片发生切换的瞬间，taskA 会被挂起，然后重新加入到 ready_queue 尾部，等待下一次被分配 cpu，而由于这个任务的功能很简单，可以简化成以下形式：</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>假设先上时间片运行的是 taskA，那么在第一个时间片周期中， taskA 可以调用 sys_print() 函数若干次，当时间片发生切换的瞬间，taskA 会被挂起，然后重新加入到 ready_queue 尾部，等待下一次被分配 cpu。</p>
+<p>这个任务的功能很简单，可以简化成以下形式：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">taskA</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        metux_lock();   <span class="comment">//关中断保证原子操作</span></span><br><span class="line">        sys_print();</span><br><span class="line">        mutex_unlock(); <span class="comment">//关中断保证原子操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其中 mutex_lock() 和 mutex_unlock() 都关中断保证了不会有时钟中断发生， 所以在切换进程的时候，taskA 可能会</p>
